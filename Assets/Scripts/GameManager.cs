@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    private Vector2 gravity;
+
     private static GameManager instance;
     public static GameManager Instance
     {
@@ -19,12 +21,34 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        gravity = Physics2D.gravity;
         instance = this;
     }
 
-
-    public void ChangeGravity(float x, float y)
+    private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            this.ChangeGravity(Vector2.down);
+        }
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            this.ChangeGravity(Vector2.up);
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            this.ChangeGravity(Vector2.left);
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            this.ChangeGravity(Vector2.right);
+        }
+    }
 
+
+    public void ChangeGravity(Vector2 gravity)
+    {
+        Physics2D.gravity = gravity * 600;
+        this.gravity = Physics2D.gravity;
     }
 }

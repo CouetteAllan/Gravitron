@@ -12,6 +12,9 @@ public class JeanMichelTesteur : MonoBehaviour
 
     [SerializeField]
     private float speed;
+    [SerializeField]
+    private float jump;
+    private bool isJumping = true;
 
     private Rigidbody2D rb2d;
 
@@ -33,6 +36,16 @@ public class JeanMichelTesteur : MonoBehaviour
     {
         currentState.Update(this);
         this.Move();
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log(isJumping);
+            if (!isJumping)
+            {
+                isJumping = true;
+                this.Jump();
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -52,5 +65,15 @@ public class JeanMichelTesteur : MonoBehaviour
         Vector2 position = this.transform.position;
         position += move * this.speed * Time.deltaTime;
         this.transform.position = position;
+    }
+
+    private void Jump()
+    {
+        this.rb2d.AddForce(Vector2.up * jump);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        isJumping = false;
     }
 }

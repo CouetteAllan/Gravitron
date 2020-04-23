@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GravityDownState : GravityBaseState
+public class WalkingState : JeanBaseState
 {
-    public override void EnterState(GravityController gravity)
+    public override void EnterState(JeanMichelTesteur jean)
     {
         throw new System.NotImplementedException();
     }
 
-    public override void OnCollisionEnter2D(GravityController gravity)
+    public override void OnCollisionEnter2D(JeanMichelTesteur jean)
     {
         throw new System.NotImplementedException();
     }
 
-    public override void Update(GravityController gravity)
+    public override void Update(JeanMichelTesteur jean)
     {
         throw new System.NotImplementedException();
     }

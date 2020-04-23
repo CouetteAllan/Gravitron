@@ -19,6 +19,23 @@ public class JeanMichelTesteur : MonoBehaviour
     void Update()
     {
         this.Move();
+
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            this.ChangeGravity(0, -600);
+        }
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            this.ChangeGravity(0, 600);
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            this.ChangeGravity(-600, 0);
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            this.ChangeGravity(600, 0);
+        }
     }
 
     private void Move()
@@ -28,5 +45,10 @@ public class JeanMichelTesteur : MonoBehaviour
         Vector2 position = this.rb2d.position;
         position += move * this.speed * Time.deltaTime;
         this.rb2d.MovePosition(position);
+    }
+
+    private void ChangeGravity(float x, float y)
+    {
+        Physics2D.gravity = new Vector2(x, y);
     }
 }

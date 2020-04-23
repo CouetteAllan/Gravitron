@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
     }
 
 
+    public void ChangeGravity(float x, float y)
+    {
 
-
+    }
 }

@@ -1,7 +1,6 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
-public abstract class JeanBaseState : MonoBehaviour
+public abstract class JeanBaseState 
 {
     public abstract void EnterState(JeanMichelTesteur jean);
 

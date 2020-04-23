@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class JeanMichelTesteur : MonoBehaviour
 {
+    [HideInInspector]
     public JeanBaseState currentState;
     public readonly IdleState idleState = new IdleState();
     public readonly WalkingState walkingState = new WalkingState();
@@ -12,11 +13,19 @@ public class JeanMichelTesteur : MonoBehaviour
 
     [SerializeField]
     private float speed;
+    public float Speed
+    {
+        get { return speed; }
+    }
     [SerializeField]
     private float jump;
     private bool isJumping = true;
 
     private Rigidbody2D rb2d;
+    public Rigidbody2D Rigidbody2D
+    {
+        get { return rb2d; }
+    }
 
     private void Awake()
     {
@@ -29,23 +38,10 @@ public class JeanMichelTesteur : MonoBehaviour
         rb2d = this.GetComponent<Rigidbody2D>();
     }
     
-
     
-    // Update is called once per frame
     void Update()
     {
         currentState.Update(this);
-        this.Move();
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log(isJumping);
-            if (!isJumping)
-            {
-                isJumping = true;
-                this.Jump();
-            }
-        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -57,23 +53,10 @@ public class JeanMichelTesteur : MonoBehaviour
         currentState = state;
         currentState.EnterState(this);
     }
-
-    private void Move()
-    {
-        float horizontal = Input.GetAxis("Horizontal");
-        Vector2 move = new Vector2(horizontal, 0);
-        Vector2 position = this.transform.position;
-        position += move * this.speed * Time.deltaTime;
-        this.transform.position = position;
-    }
-
+    
     private void Jump()
     {
         this.rb2d.AddForce(Vector2.up * jump);
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        isJumping = false;
-    }
+    
 }

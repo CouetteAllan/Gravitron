@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
 
     public void ChangeGravity(Vector2 gravity)
     {
-        Physics2D.gravity = gravity * 600;
+        Physics2D.gravity = gravity * 20;
         this.gravity = Physics2D.gravity;
     }
 }

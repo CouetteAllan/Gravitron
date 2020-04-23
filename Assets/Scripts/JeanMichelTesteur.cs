@@ -22,19 +22,19 @@ public class JeanMichelTesteur : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            this.ChangeGravity(0, -600);
+            this.ChangeGravity(0, -9.81f);
         }
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            this.ChangeGravity(0, 600);
+            this.ChangeGravity(0, 9.81f);
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            this.ChangeGravity(-600, 0);
+            this.ChangeGravity(-9.81f, 0);
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            this.ChangeGravity(600, 0);
+            this.ChangeGravity(9.81f, 0);
         }
     }
 

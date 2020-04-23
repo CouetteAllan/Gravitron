@@ -18,7 +18,11 @@ public class JeanMichelTesteur : MonoBehaviour
         get { return speed; }
     }
     [SerializeField]
-    private float jump;
+    private float jump = 400;
+    public float Jump
+    {
+        get { return jump; }
+    }
     private bool isJumping = true;
 
     private Rigidbody2D rb2d;
@@ -54,9 +58,5 @@ public class JeanMichelTesteur : MonoBehaviour
         currentState.EnterState(this);
     }
     
-    private void Jump()
-    {
-        this.rb2d.AddForce(Vector2.up * jump);
-    }
     
 }

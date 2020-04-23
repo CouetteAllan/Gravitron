@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private Vector2 gravity;
+    private Vector2 localGravity;
 
     private static GameManager instance;
     public static GameManager Instance
@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        gravity = Physics2D.gravity;
+        localGravity = Physics2D.gravity;
         instance = this;
     }
 
@@ -46,8 +46,16 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void ChangeGravity(Vector2 newGravity)
+    public void ChangeGravity(Vector2 direction)
     {
-        this.gravity = newGravity * gravity;
+        Physics2D.gravity = direction * localGravity.magnitude;
+        this.localGravity = Physics2D.gravity;//change la gravité
     }
+
+    public Vector2 SendGravity()
+    {
+        return this.localGravity;
+    }
+
+
 }

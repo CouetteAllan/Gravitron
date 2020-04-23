@@ -21,6 +21,11 @@ public class IdleState : JeanBaseState
             jean.TransitionToState(jean.walkingState);
         }
 
-        
+        if (Input.GetButtonDown("Jump"))
+        {
+            jean.Rigidbody2D.AddForce(Vector2.up * jean.Jump);
+            jean.TransitionToState(jean.jumpingState);
+        }
+
     }
 }

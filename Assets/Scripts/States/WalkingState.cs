@@ -18,13 +18,18 @@ public class WalkingState : JeanBaseState
     {
         float horizontal = Input.GetAxis("Horizontal");
         Vector2 move = new Vector2(horizontal, 0);
-        Vector2 position = jean.transform.position;
+        Vector2 position = jean.Rigidbody2D.position;
         position += move * jean.Speed * Time.deltaTime;
-        jean.transform.position = position;
+        jean.Rigidbody2D.position = position;
 
         if (Input.GetButtonUp("Right")&&Input.GetButtonUp("Left"))
         {
             jean.TransitionToState(jean.idleState);
+        }
+        if (Input.GetButtonDown("Jump"))
+        {
+            jean.Rigidbody2D.AddForce(Vector2.up * jean.Jump);
+            jean.TransitionToState(jean.jumpingState);
         }
     }
 }

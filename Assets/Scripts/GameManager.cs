@@ -5,6 +5,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private Vector2 localGravity;
+    private string gravityInputDirection = "";
+
+    private Vector2 direction;
 
     private static GameManager instance;
     public static GameManager Instance
@@ -21,40 +24,31 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        localGravity = Physics2D.gravity;
         instance = this;
+        localGravity = Physics2D.gravity;
     }
 
-    private void Update()
+    
+    public void ChangeGravity()
     {
-        switch ()
+        switch (gravityInputDirection)
         {
-
+            case "up":
+                direction = Vector2.up;
+                break;
+            case "left":
+                direction = Vector2.left;
+                break;
+            case "right":
+                direction = Vector2.right;
+                break;
+            case "down":
+                direction = Vector2.down;
+                break;
+            default:
+                Debug.Log("No Gravity");
+                break;
         }
-
-        
-        /*
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            this.ChangeGravity(Vector2.down);
-        }
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            this.ChangeGravity(Vector2.up);
-        }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            this.ChangeGravity(Vector2.left);
-        }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            this.ChangeGravity(Vector2.right);
-        } */
-    }
-
-
-    public void ChangeGravity(Vector2 direction)
-    {
         Physics2D.gravity = direction * localGravity.magnitude;
         this.localGravity = Physics2D.gravity;//change la gravité
     }
@@ -63,6 +57,11 @@ public class GameManager : MonoBehaviour
     {
         Vector2 gravityDirection = this.localGravity.normalized ;
         return gravityDirection;
+    }
+
+    public void GetGravityInput(string input)
+    {
+        this.gravityInputDirection = input;
     }
 
 

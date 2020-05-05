@@ -11,6 +11,8 @@ public class JeanMichelTesteur : MonoBehaviour
     public readonly JumpingState jumpingState = new JumpingState();
     public readonly GravityState gravityState = new GravityState();
 
+    
+
     [SerializeField]
     private float speed;
     public float Speed
@@ -30,11 +32,7 @@ public class JeanMichelTesteur : MonoBehaviour
         get { return rb2d; }
     }
 
-    private void Awake()
-    {
-
-    }
-
+    
     void Start()
     {
         TransitionToState(idleState);
@@ -44,18 +42,44 @@ public class JeanMichelTesteur : MonoBehaviour
     
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            GameManager.Instance.GetGravityInput("down");
+            TransitionToState(gravityState);
+        }
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            GameManager.Instance.GetGravityInput("up");
+            TransitionToState(gravityState);
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            GameManager.Instance.GetGravityInput("left");
+            TransitionToState(gravityState);
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            GameManager.Instance.GetGravityInput("right");
+            TransitionToState(gravityState);
+        }
+
+        GameManager.Instance.ChangeGravity();
         currentState.Update(this);
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         currentState.OnCollisionEnter2D(this);
     }
+
     public void TransitionToState(JeanBaseState state)
     {
         currentState = state;
         currentState.EnterState(this);
     }
+    
+
     
     
 }

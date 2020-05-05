@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class WalkingState : JeanBaseState
 {
-    private Vector2 gravityDirection = GameManager.Instance.SendGravityDirection();
+    private Vector2 gravityDirection;
     private Vector2 jumpDirection;
 
     public override void EnterState(JeanMichelTesteur jean)
     {
-
+        this.gravityDirection = GameManager.Instance.SendGravityDirection();
     }
 
     public override void OnCollisionEnter2D(JeanMichelTesteur jean)

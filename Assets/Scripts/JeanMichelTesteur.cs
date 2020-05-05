@@ -23,7 +23,6 @@ public class JeanMichelTesteur : MonoBehaviour
     {
         get { return jump; }
     }
-    private bool isJumping = true;
 
     private Rigidbody2D rb2d;
     public Rigidbody2D Rigidbody2D

@@ -52,9 +52,10 @@ public class GameManager : MonoBehaviour
         this.localGravity = Physics2D.gravity;//change la gravité
     }
 
-    public Vector2 SendGravity()
+    public Vector2 SendGravityDirection()
     {
-        return this.localGravity;
+        Vector2 gravityDirection = this.localGravity.normalized ;
+        return gravityDirection;
     }
 
 

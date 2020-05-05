@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class WalkingState : JeanBaseState
 {
+    private Vector2 gravityDirection = GameManager.Instance.SendGravityDirection();
     private Vector2 jumpDirection;
+
     public override void EnterState(JeanMichelTesteur jean)
     {
 
@@ -29,7 +31,7 @@ public class WalkingState : JeanBaseState
         }
         if (Input.GetButtonDown("Jump"))
         {
-            jumpDirection = -GameManager.Instance.SendGravityDirection();
+            jumpDirection = -gravityDirection;
 
             jean.Rigidbody2D.AddForce(jumpDirection * jean.Jump);
             jean.TransitionToState(jean.jumpingState);

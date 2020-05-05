@@ -11,7 +11,7 @@ public class GravityState : JeanBaseState
 
     public override void OnCollisionEnter2D(JeanMichelTesteur jean)
     {
-
+        jean.TransitionToState(jean.idleState);
     }
 
     public override void Update(JeanMichelTesteur jean)

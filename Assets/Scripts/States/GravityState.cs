@@ -15,6 +15,11 @@ public class GravityState : JeanBaseState
         Debug.Log("Atterri");
     }
 
+    public override void OnCollisionStay2D(JeanMichelTesteur jean)
+    {
+        jean.TransitionToState(jean.idleState);
+    }
+
     public override void Update(JeanMichelTesteur jean)
     {
         float horizontal = Input.GetAxis("Horizontal");

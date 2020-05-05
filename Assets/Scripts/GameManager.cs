@@ -5,9 +5,12 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private Vector2 localGravity;
-    private string gravityInputDirection = "";
+    [SerializeField]
+    private string gravityInputDirection = "down";
 
     private Vector2 direction;
+
+    
 
     private static GameManager instance;
     public static GameManager Instance
@@ -24,6 +27,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log(Physics2D.gravity.magnitude);
         instance = this;
         localGravity = Physics2D.gravity;
     }
@@ -35,17 +39,22 @@ public class GameManager : MonoBehaviour
         {
             case "up":
                 direction = Vector2.up;
+                Debug.Log("UP");
                 break;
             case "left":
                 direction = Vector2.left;
+                Debug.Log("LEFT");
                 break;
             case "right":
                 direction = Vector2.right;
+                Debug.Log("RIGHT");
                 break;
             case "down":
                 direction = Vector2.down;
+                Debug.Log("DOWN");
                 break;
             default:
+                direction = Vector2.down;
                 Debug.Log("No Gravity");
                 break;
         }

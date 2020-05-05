@@ -73,6 +73,11 @@ public class JeanMichelTesteur : MonoBehaviour
         currentState.OnCollisionEnter2D(this);
     }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        currentState.OnCollisionStay2D(this);
+    }
+
     public void TransitionToState(JeanBaseState state)
     {
         currentState = state;

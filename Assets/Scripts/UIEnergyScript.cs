@@ -6,39 +6,40 @@ using UnityEngine.UI;
 public class UIEnergyScript : MonoBehaviour
 {
     [SerializeField] private Image energyBar;
-    private List<Image> listEnergy = new List<Image> { };
-    private int energy = 2;
-    private Canvas parent;
+    [SerializeField] private List<Image> listEnergy = new List<Image> { };
+    private int energy = 0;
 
     private void Start()
     {
-        foreach (Image energy in listEnergy)
-        {
-            listEnergy.Add(energy);
-        }
-
+        ChangeEnergy(0);
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            energy++;
-            ChangeEnergy(energy);
+            ChangeEnergy(-1);
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            ChangeEnergy(1);
         }
     }
 
-    public void ChangeEnergy(int energy)
+    public void ChangeEnergy(int amount)
     {
-        for (int i = 0; i < energy; i++)
+        energy += amount;
+        energy = Mathf.Clamp(energy, 0, listEnergy.Count);
+        for (int i = 0; i < listEnergy.Count; i++)
         {
-            listEnergy.Add(energyBar);
-        }
-        for (int i = listEnergy.Count - energy; i < listEnergy.Count; i++)
-        {
-            Image battery = Instantiate(energyBar);
-            battery.transform.SetParent(transform);
-            battery.rectTransform.position = new Vector2(i * 40, this.transform.position.y - 12);
+            if (i < energy)
+            {
+                listEnergy[i].enabled = true;
+            }
+            else
+            {
+                listEnergy[i].enabled = false; ;
+            }
         }
     }
 }

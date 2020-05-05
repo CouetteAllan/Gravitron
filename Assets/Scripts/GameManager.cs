@@ -27,6 +27,13 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        switch ()
+        {
+
+        }
+
+        
+        /*
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             this.ChangeGravity(Vector2.down);
@@ -42,7 +49,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             this.ChangeGravity(Vector2.right);
-        }
+        } */
     }
 
 

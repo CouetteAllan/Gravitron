@@ -16,6 +16,12 @@ public class GravityState : JeanBaseState
 
     public override void Update(JeanMichelTesteur jean)
     {
+        float horizontal = Input.GetAxis("Horizontal");
+        Vector2 move = new Vector2(horizontal, 0);
+        Vector2 position = jean.Rigidbody2D.position;
+        position += move * jean.Speed * Time.deltaTime;
+        jean.Rigidbody2D.position = position;
 
+        Debug.Log("GRAVITY");
     }
 }

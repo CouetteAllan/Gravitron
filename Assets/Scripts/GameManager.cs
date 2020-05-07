@@ -10,8 +10,8 @@ public class GameManager : MonoBehaviour
 
     private Vector2 direction;
 
-    private Gravity gravity;
-    private GameState gameState;
+    
+    
     
 
     private static GameManager instance;
@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
             return instance;
         }
     }
+    private GameState gameState;
     enum GameState 
     {
         InGame,
@@ -33,6 +34,7 @@ public class GameManager : MonoBehaviour
         MainMenu,
     }
 
+    private Gravity gravity;
     public enum Gravity
     {
         Left,

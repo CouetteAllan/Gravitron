@@ -17,21 +17,15 @@ public class WalkingState : JeanBaseState
         
     }
 
-    public override void OnCollisionStay2D(JeanMichelTesteur jean)
-    {
-        
-    }
+    
 
     public override void Update(JeanMichelTesteur jean)
     {
-        float horizontal = Input.GetAxis("Horizontal");
-        Vector2 move = new Vector2(horizontal, 0);
         Vector2 position = jean.Rigidbody2D.position;
-
-        position += move * jean.Speed * Time.deltaTime;
+        position += jean.Move * jean.Speed * Time.deltaTime;
         jean.Rigidbody2D.position = position;
 
-        if (Input.GetButtonUp("Right")&&Input.GetButtonUp("Left"))
+        if ((Input.GetButtonUp("Right")&&Input.GetButtonUp("Left")) || Input.GetButtonUp("Horizontal"))
         {
             jean.TransitionToState(jean.idleState);
         }

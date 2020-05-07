@@ -15,14 +15,10 @@ public class IdleState : JeanBaseState
         
     }
 
-    public override void OnCollisionStay2D(JeanMichelTesteur jean)
-    {
-        
-    }
-
+    
     public override void Update(JeanMichelTesteur jean)
     {
-        if (Input.GetButtonDown("Horizontal"))
+        if (Input.GetButton("Horizontal"))
         {
             jean.TransitionToState(jean.walkingState);
         }
@@ -34,6 +30,7 @@ public class IdleState : JeanBaseState
             jean.Rigidbody2D.AddForce(jumpDirection * jean.Jump);
             jean.TransitionToState(jean.jumpingState);
         }
+        Debug.Log("JE NE BOUGE PAS");
 
     }
 }

@@ -8,6 +8,8 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
 
+    [SerializeField] private AudioClip energyUp;
+
     [SerializeField] private Text energyTxt;
     private int energy = 0;
     private int half = 0;
@@ -20,11 +22,6 @@ public class UIManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
         }
     }
 
@@ -44,11 +41,16 @@ public class UIManager : MonoBehaviour
             {
                 half -= 2;
                 energy++;
+                AudioManager.Instance.PlayClip(energyUp);
             }
         }
         else
         {
             energy += amount;
+            if (amount > 0)
+            {
+                AudioManager.Instance.PlayClip(energyUp);
+            }
             if (energy < 0)
             {
                 energy = 0;

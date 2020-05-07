@@ -6,25 +6,17 @@ public class GravityState : JeanBaseState
 {
     public override void EnterState(JeanMichelTesteur jean)
     {
-
+        
     }
 
     public override void OnCollisionEnter2D(JeanMichelTesteur jean)
     {
         jean.TransitionToState(jean.idleState);
-        Debug.Log("Atterri");
-    }
-
-    public override void OnCollisionStay2D(JeanMichelTesteur jean)
-    {
-        jean.TransitionToState(jean.idleState);
+        
     }
 
     public override void Update(JeanMichelTesteur jean)
     {
-        Vector2 position = jean.Rigidbody2D.position;
-        position += jean.Move * jean.Speed * Time.deltaTime;
-        jean.Rigidbody2D.position = position;
         
     }
 }

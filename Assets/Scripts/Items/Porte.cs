@@ -7,7 +7,7 @@ public class Porte : MonoBehaviour
     [SerializeField]
     private Button button = null;
 
-    float moveDistance = 5f;
+    float moveDistance = 10f;
 
     private Vector2 targetMovePosition;
     //Vector3 movDirVer = new Vector3(0, button.DirectionVectorPorte, 0);
@@ -37,10 +37,10 @@ public class Porte : MonoBehaviour
         {
             this.targetMovePosition = transform.position + (moveDistance * movDirHor);
             this.transform.position = Vector2.MoveTowards(this.transform.position, this.targetMovePosition, 50.0f * Time.deltaTime);
-            if (Vector3.Distance(this.transform.position, this.targetMovePosition) < 0.05f)
+            /*if (Vector3.Distance(this.transform.position, this.targetMovePosition) < 0.05f)
             {
                 this.transform.position = this.targetMovePosition;
-            }
+            }*/
             button.Active = false;
         }
     }

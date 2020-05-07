@@ -8,7 +8,7 @@ public class Porte : MonoBehaviour
     float moveDistance = 5f;
     private Vector2 targetMovePosition;
     Vector3 movDirHor = new Vector3(1, 0, 0);
-    Vector3 movDirVer;
+    Vector3 movDirVer = new Vector3(0, 1, 0);
 
     private 
     // Start is called before the first frame update

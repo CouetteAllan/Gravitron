@@ -6,17 +6,18 @@ public class GravityState : JeanBaseState
 {
     public override void EnterState(JeanMichelTesteur jean)
     {
-
+        
     }
 
     public override void OnCollisionEnter2D(JeanMichelTesteur jean)
     {
         jean.TransitionToState(jean.idleState);
-        Debug.Log("Atterri");
+        
     }
 
     public override void OnCollisionStay2D(JeanMichelTesteur jean)
     {
+        Debug.Log("coucou");
         jean.TransitionToState(jean.idleState);
     }
 

@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
         return gravityDirection;
     }
 
-    public void GetGravityInput(string input)
+    public void SetGravityInput(string input)
     {
         this.gravityInputDirection = input;
     }

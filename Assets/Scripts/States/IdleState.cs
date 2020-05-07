@@ -7,7 +7,7 @@ public class IdleState : JeanBaseState
     private Vector2 jumpDirection;
     public override void EnterState(JeanMichelTesteur jean)
     {
-        Debug.Log("JE NE BOUGE PAS");
+        
     }
 
     public override void OnCollisionEnter2D(JeanMichelTesteur jean)

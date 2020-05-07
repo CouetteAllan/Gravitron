@@ -48,28 +48,31 @@ public class JeanMichelTesteur : MonoBehaviour
     void Update()
     {
         MoveWithGravity();
+
+
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            GameManager.Instance.GetGravityInput("down");
+            GameManager.Instance.SetGravityInput("down");
             TransitionToState(gravityState);
         }
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            GameManager.Instance.GetGravityInput("up");
+            GameManager.Instance.SetGravityInput("up");
             TransitionToState(gravityState);
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            GameManager.Instance.GetGravityInput("left");
+            GameManager.Instance.SetGravityInput("left");
             TransitionToState(gravityState);
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            GameManager.Instance.GetGravityInput("right");
+            GameManager.Instance.SetGravityInput("right");
             TransitionToState(gravityState);
         }
 
         GameManager.Instance.ChangeGravity();
+        Debug.Log(currentState);
         currentState.Update(this);
         
         

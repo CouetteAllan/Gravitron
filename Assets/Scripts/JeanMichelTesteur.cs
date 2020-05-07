@@ -84,7 +84,6 @@ public class JeanMichelTesteur : MonoBehaviour
         }
 
         GameManager.Instance.ChangeGravity();
-        Debug.Log(currentState);
         currentState.Update(this);
         
         

@@ -34,12 +34,14 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
+        MenuPause.SetActive(false);
         ChangeEnergy(0);
     }
 
     private void Update()
     {
         Fgravity();
+
     }
 
     public void ChangeEnergy(int amount, bool semi = false)
@@ -73,6 +75,7 @@ public class UIManager : MonoBehaviour
     public void Resume()
     {
         MenuPause.SetActive(false);
+        GameManager.Instance.ChangeState(GameManager.GameState.InGame);
     }
 
 
@@ -101,5 +104,10 @@ public class UIManager : MonoBehaviour
         {
             P.sprite = right;
         }
+    }
+
+    public void AfficherMenuPause()
+    {
+        MenuPause.SetActive(true);
     }
 }

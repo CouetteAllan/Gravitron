@@ -48,8 +48,7 @@ public class JeanMichelTesteur : MonoBehaviour
     void Update()
     {
         MoveWithGravity();
-
-
+        
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             if(GameManager.Instance.SendGravityDirection() != Vector2.down)
@@ -84,6 +83,17 @@ public class JeanMichelTesteur : MonoBehaviour
         }
 
         GameManager.Instance.ChangeGravity();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (GameManager.Instance.SendGameState() == GameManager.GameState.InGame)
+            {
+                GameManager.Instance.ChangeState(GameManager.GameState.Pause);
+            }
+            else
+            {
+                GameManager.Instance.ChangeState(GameManager.GameState.InGame);
+            }
+        }
         currentState.Update(this);
         
         

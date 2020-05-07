@@ -10,13 +10,20 @@ public class Button : MonoBehaviour
         get { return active; }
         set { active = value; }
     }
-    // Start is called before the first frame update
+
+    private int directionVectorPorte = 1;
+    public int DirectionVectorPorte
+    {
+        get { return directionVectorPorte; }
+        private set { return; }
+    }
+   
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         
@@ -25,13 +32,10 @@ public class Button : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         JeanMichelTesteur jean = collision.GetComponent<JeanMichelTesteur>();
-        if (jean == null && active == true)
+        if(jean != null)
         {
-            active = false;
-        }
-        if (jean == null)
-        {
-            active = true;
+            active = !active;
+            directionVectorPorte = - directionVectorPorte;
         }
     }
 }

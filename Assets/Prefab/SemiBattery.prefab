@@ -87,5 +87,10 @@ PrefabInstance:
       propertyPath: semi
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8688076027489506678, guid: d5e7ff47a9b16414d8ab77e7b5f553e5,
+        type: 3}
+      propertyPath: collectible
+      value: 
+      objectReference: {fileID: 8300000, guid: 1be52a32fa96da24185e305aafcaba96, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5e7ff47a9b16414d8ab77e7b5f553e5, type: 3}

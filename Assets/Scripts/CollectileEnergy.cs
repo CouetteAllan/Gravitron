@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class CollectileEnergy : MonoBehaviour
 {
-    public bool semi;
+    [SerializeField] private AudioClip collectible;
+    [SerializeField] private bool semi;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         JeanMichelTesteur player = collision.GetComponent<JeanMichelTesteur>();
         if (player != null)
         {
-            UIEnergyScript.Instance.ChangeEnergy(1, semi);
+            UIManager.Instance.ChangeEnergy(1, semi);
+            AudioManager.Instance.PlayClip(collectible);
             Destroy(gameObject);
         }
     }

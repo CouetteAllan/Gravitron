@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 656c50594043adb47959aa28257cc52c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  energyUp: {fileID: 8300000, guid: 535d22dce4b0a3740a3846a9fc3eb808, type: 3}
   energyTxt: {fileID: 157887113829042947}
   MenuPause: {fileID: 157887113924759072}
 --- !u!1 &157887113415960127

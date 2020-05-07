@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CollectileEnergy : MonoBehaviour
 {
-    public bool semi;
+    [SerializeField] private AudioClip collectible;
+    [SerializeField] private bool semi;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -12,6 +13,7 @@ public class CollectileEnergy : MonoBehaviour
         if (player != null)
         {
             UIManager.Instance.ChangeEnergy(1, semi);
+            AudioManager.Instance.PlayClip(collectible);
             Destroy(gameObject);
         }
     }

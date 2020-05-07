@@ -28,7 +28,7 @@ public class WalkingState : JeanBaseState
         position += jean.Move * jean.Speed * Time.deltaTime;
         jean.Rigidbody2D.position = position;
 
-        if (Input.GetButtonUp("Right")&&Input.GetButtonUp("Left"))
+        if ((Input.GetButtonUp("Right")&&Input.GetButtonUp("Left")) || Input.GetButtonUp("Horizontal"))
         {
             jean.TransitionToState(jean.idleState);
         }

@@ -11,7 +11,7 @@ public class JumpingState : JeanBaseState
 
     public override void OnCollisionEnter2D(JeanMichelTesteur jean)
     {
-        jean.TransitionToState(jean.walkingState);
+        jean.TransitionToState(jean.idleState);
     }
 
     public override void OnCollisionStay2D(JeanMichelTesteur jean)

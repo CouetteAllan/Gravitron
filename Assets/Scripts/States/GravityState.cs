@@ -22,9 +22,6 @@ public class GravityState : JeanBaseState
 
     public override void Update(JeanMichelTesteur jean)
     {
-        Vector2 position = jean.Rigidbody2D.position;
-        position += jean.Move * jean.Speed * Time.deltaTime;
-        jean.Rigidbody2D.position = position;
         
     }
 }

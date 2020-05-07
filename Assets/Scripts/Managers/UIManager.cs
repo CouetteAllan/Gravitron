@@ -16,6 +16,12 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private GameObject MenuPause;
 
+    [SerializeField] private Image P;
+    [SerializeField] private Sprite up;
+    [SerializeField] private Sprite down;
+    [SerializeField] private Sprite left;
+    [SerializeField] private Sprite right;
+
 
     private void Awake()
     {
@@ -31,6 +37,10 @@ public class UIManager : MonoBehaviour
         ChangeEnergy(0);
     }
 
+    private void Update()
+    {
+        Fgravity();
+    }
 
     public void ChangeEnergy(int amount, bool semi = false)
     {
@@ -70,5 +80,26 @@ public class UIManager : MonoBehaviour
     {
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
+    }
+
+    public void Fgravity()
+    {
+        Vector2 actualGravity = GameManager.Instance.SendGravityDirection();
+        if (actualGravity == Vector2.up)
+        {
+            P.sprite = up;
+        }
+        if (actualGravity == Vector2.down)
+        {
+            P.sprite = down;
+        }
+        if (actualGravity == Vector2.left)
+        {
+            P.sprite = left;
+        }
+        if (actualGravity == Vector2.right)
+        {
+            P.sprite = right;
+        }
     }
 }

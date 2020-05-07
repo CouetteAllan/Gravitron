@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UIEnergyScript : MonoBehaviour
 {
     [SerializeField] private Image energyBar;
-    [SerializeField] private List<Image> listEnergy = new List<Image> { };
+    [SerializeField] private Text energyTxt;
     private int energy = 0;
 
     private void Start()
@@ -29,17 +29,10 @@ public class UIEnergyScript : MonoBehaviour
     public void ChangeEnergy(int amount)
     {
         energy += amount;
-        energy = Mathf.Clamp(energy, 0, listEnergy.Count);
-        for (int i = 0; i < listEnergy.Count; i++)
+        if (energy < 0)
         {
-            if (i < energy)
-            {
-                listEnergy[i].enabled = true;
-            }
-            else
-            {
-                listEnergy[i].enabled = false; ;
-            }
+            energy = 0;
         }
+        energyTxt.text = " X" + energy;
     }
 }

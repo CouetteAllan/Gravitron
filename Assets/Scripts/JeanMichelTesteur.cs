@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class JeanMichelTesteur : MonoBehaviour
 {
+    #region Variables Jean Michel
     [HideInInspector]
     public JeanBaseState currentState;
     public readonly IdleState idleState = new IdleState();
@@ -11,7 +12,11 @@ public class JeanMichelTesteur : MonoBehaviour
     public readonly JumpingState jumpingState = new JumpingState();
     public readonly GravityState gravityState = new GravityState();
 
-    
+    private Vector2 move;
+    public Vector2 Move
+    {
+        get { return move; }
+    }
 
     [SerializeField]
     private float speed;
@@ -20,7 +25,7 @@ public class JeanMichelTesteur : MonoBehaviour
         get { return speed; }
     }
     [SerializeField]
-    private float jump = 400;
+    private float jump = 3500;
     public float Jump
     {
         get { return jump; }
@@ -31,8 +36,8 @@ public class JeanMichelTesteur : MonoBehaviour
     {
         get { return rb2d; }
     }
+    #endregion 
 
-    
     void Start()
     {
         TransitionToState(idleState);
@@ -42,6 +47,7 @@ public class JeanMichelTesteur : MonoBehaviour
     
     void Update()
     {
+        MoveWithGravity();
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             GameManager.Instance.GetGravityInput("down");
@@ -66,6 +72,7 @@ public class JeanMichelTesteur : MonoBehaviour
         GameManager.Instance.ChangeGravity();
         currentState.Update(this);
         
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -82,6 +89,32 @@ public class JeanMichelTesteur : MonoBehaviour
     {
         currentState = state;
         currentState.EnterState(this);
+    }
+
+    public void MoveWithGravity()
+    {
+        float deplacement = Input.GetAxis("Horizontal");
+        if (Vector2.left == GameManager.Instance.SendGravityDirection())
+        {
+             move = new Vector2(0 , -deplacement);
+            this.transform.rotation = Quaternion.Euler(0, 0, -90);
+        }
+        if (Vector2.right == GameManager.Instance.SendGravityDirection())
+        {
+             move = new Vector2(0 , deplacement);
+            this.transform.rotation = Quaternion.Euler(0, 0, 90);
+        }
+        if (Vector2.up == GameManager.Instance.SendGravityDirection())
+        {
+             move = new Vector2(-deplacement, 0);
+            this.transform.rotation = Quaternion.Euler(0, 0, 180);
+        }
+        if (Vector2.down == GameManager.Instance.SendGravityDirection())
+        {
+             move = new Vector2(deplacement, 0);
+            this.transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        
     }
     
 

@@ -21,7 +21,7 @@ public class Zap : MonoBehaviour
         JeanMichelTesteur jean = collision.GetComponent <JeanMichelTesteur>();
         if (jean != null)
         {
-            
+            Destroy(jean.gameObject);
         }
             
     }

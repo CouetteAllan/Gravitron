@@ -15,12 +15,6 @@ public class GravityState : JeanBaseState
         
     }
 
-    public override void OnCollisionStay2D(JeanMichelTesteur jean)
-    {
-        Debug.Log("coucou");
-        jean.TransitionToState(jean.idleState);
-    }
-
     public override void Update(JeanMichelTesteur jean)
     {
         

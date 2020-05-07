@@ -52,23 +52,35 @@ public class JeanMichelTesteur : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            GameManager.Instance.SetGravityInput("down");
-            TransitionToState(gravityState);
+            if(GameManager.Instance.SendGravityDirection() != Vector2.down)
+            {
+                GameManager.Instance.SetGravityInput(GameManager.Gravity.Down);
+                TransitionToState(gravityState);
+            }
         }
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            GameManager.Instance.SetGravityInput("up");
-            TransitionToState(gravityState);
+            if (GameManager.Instance.SendGravityDirection() != Vector2.up)
+            {
+                GameManager.Instance.SetGravityInput(GameManager.Gravity.Up);
+                TransitionToState(gravityState);
+            }
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            GameManager.Instance.SetGravityInput("left");
-            TransitionToState(gravityState);
+            if (GameManager.Instance.SendGravityDirection() != Vector2.down)
+            {
+                GameManager.Instance.SetGravityInput(GameManager.Gravity.Left);
+                TransitionToState(gravityState);
+            }
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            GameManager.Instance.SetGravityInput("right");
-            TransitionToState(gravityState);
+            if (GameManager.Instance.SendGravityDirection() != Vector2.right)
+            {
+                GameManager.Instance.SetGravityInput(GameManager.Gravity.Right);
+                TransitionToState(gravityState);
+            }
         }
 
         GameManager.Instance.ChangeGravity();
@@ -83,10 +95,6 @@ public class JeanMichelTesteur : MonoBehaviour
         currentState.OnCollisionEnter2D(this);
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        currentState.OnCollisionStay2D(this);
-    }
     
 
     public void TransitionToState(JeanBaseState state)

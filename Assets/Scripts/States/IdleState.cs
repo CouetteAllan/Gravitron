@@ -15,11 +15,7 @@ public class IdleState : JeanBaseState
         
     }
 
-    public override void OnCollisionStay2D(JeanMichelTesteur jean)
-    {
-        
-    }
-
+    
     public override void Update(JeanMichelTesteur jean)
     {
         if (Input.GetButton("Horizontal"))

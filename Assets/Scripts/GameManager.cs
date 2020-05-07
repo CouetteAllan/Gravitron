@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
 
     private Vector2 direction;
 
+    private Gravity gravity;
+    private GameState gameState;
     
 
     private static GameManager instance;
@@ -24,6 +26,20 @@ public class GameManager : MonoBehaviour
             return instance;
         }
     }
+    enum GameState 
+    {
+        InGame,
+        Pause,
+        MainMenu,
+    }
+
+    public enum Gravity
+    {
+        Left,
+        Right,
+        Down,
+        Up
+    }
 
     private void Awake()
     {
@@ -35,18 +51,18 @@ public class GameManager : MonoBehaviour
     
     public void ChangeGravity()
     {
-        switch (gravityInputDirection)
+        switch (gravity)
         {
-            case "up":
+            case Gravity.Up:
                 direction = Vector2.up;
                 break;
-            case "left":
+            case Gravity.Left:
                 direction = Vector2.left;
                 break;
-            case "right":
+            case Gravity.Right:
                 direction = Vector2.right;
                 break;
-            case "down":
+            case Gravity.Down:
                 direction = Vector2.down;
                 break;
             default:
@@ -63,10 +79,9 @@ public class GameManager : MonoBehaviour
         return gravityDirection;
     }
 
-    public void SetGravityInput(string input)
+    public void SetGravityInput(Gravity input)
     {
-        this.gravityInputDirection = input;
+        gravity = input;
     }
-
-
+    
 }

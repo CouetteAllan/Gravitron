@@ -11,7 +11,7 @@ public class CollectileEnergy : MonoBehaviour
         JeanMichelTesteur player = collision.GetComponent<JeanMichelTesteur>();
         if (player != null)
         {
-            UIEnergyScript.Instance.ChangeEnergy(1, semi);
+            UIManager.Instance.ChangeEnergy(1, semi);
             Destroy(gameObject);
         }
     }

@@ -38,11 +38,35 @@ public class UIManager : MonoBehaviour
         ChangeEnergy(0);
     }
 
-    private void Update()
-    {
-        Fgravity();
 
+
+    //------------------------------------------------------------------------ MENU PAUSE ------------------------------------------------------------------------
+
+
+
+    public void Resume()
+    {
+        MenuPause.SetActive(false);
+        GameManager.Instance.ChangeState(GameManager.GameState.InGame);
     }
+
+
+    public void Restart()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
+    }
+
+    public void AfficherMenuPause()
+    {
+        MenuPause.SetActive(true);
+    }
+
+
+
+    //------------------------------------------------------------------------ INGAME ------------------------------------------------------------------------
+
+
 
     public void ChangeEnergy(int amount, bool semi = false)
     {
@@ -70,20 +94,7 @@ public class UIManager : MonoBehaviour
         }
         energyTxt.text = " X" + energy;
     }
-
-
-    public void Resume()
-    {
-        MenuPause.SetActive(false);
-        GameManager.Instance.ChangeState(GameManager.GameState.InGame);
-    }
-
-
-    public void Restart()
-    {
-        Scene scene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(scene.name);
-    }
+    
 
     public void Fgravity()
     {
@@ -106,8 +117,18 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void AfficherMenuPause()
+
+
+    //------------------------------------------------------------------------ MENU PRINCIPAL ------------------------------------------------------------------------
+
+
+    public void Play()
     {
-        MenuPause.SetActive(true);
+        SceneManager.LoadScene("Main");
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }

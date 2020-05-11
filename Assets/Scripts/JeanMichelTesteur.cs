@@ -83,6 +83,8 @@ public class JeanMichelTesteur : MonoBehaviour
         }
 
         GameManager.Instance.ChangeGravity();
+
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (GameManager.Instance.SendGameState() == GameManager.GameState.InGame)
@@ -94,6 +96,8 @@ public class JeanMichelTesteur : MonoBehaviour
                 GameManager.Instance.ChangeState(GameManager.GameState.InGame);
             }
         }
+
+
         currentState.Update(this);
         
         

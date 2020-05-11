@@ -133,9 +133,16 @@ public class UIManager : MonoBehaviour
     {
         SceneManager.LoadScene("Main");
     }
+    
 
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void ChangeScene(int scene)
+    {
+        SceneManager.LoadScene(scene);
+        GameManager.Instance.ChangeState(GameManager.GameState.InGame);
     }
 }

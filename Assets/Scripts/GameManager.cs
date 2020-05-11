@@ -59,6 +59,7 @@ public class GameManager : MonoBehaviour
                 UIManager.Instance.AfficherMenuPause(false);
                 break;
             case GameState.InGame:
+                UIManager.Instance.AfficherMenuPause(false);
                 Time.timeScale = 1;
                 break;
             case GameState.Pause:

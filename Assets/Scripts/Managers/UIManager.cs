@@ -55,11 +55,18 @@ public class UIManager : MonoBehaviour
     {
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
+        GameManager.Instance.ChangeState(GameManager.GameState.InGame);
     }
 
-    public void AfficherMenuPause()
+    public void Exit()
     {
-        MenuPause.SetActive(true);
+        SceneManager.LoadScene(1);
+        GameManager.Instance.ChangeState(GameManager.GameState.MainMenu);
+    }
+
+    public void AfficherMenuPause(bool setActive)
+    {
+        MenuPause.SetActive(setActive);
     }
 
 

@@ -55,12 +55,15 @@ public class GameManager : MonoBehaviour
     {
         switch (state)
         {
+            case GameState.MainMenu:
+                UIManager.Instance.AfficherMenuPause(false);
+                break;
             case GameState.InGame:
                 Time.timeScale = 1;
                 break;
             case GameState.Pause:
                 Time.timeScale = 0;
-                UIManager.Instance.AfficherMenuPause();
+                UIManager.Instance.AfficherMenuPause(true);
                 break;
             default:
                 state = GameState.InGame;

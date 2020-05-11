@@ -67,7 +67,7 @@ public class JeanMichelTesteur : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            if (GameManager.Instance.SendGravityDirection() != Vector2.down)
+            if (GameManager.Instance.SendGravityDirection() != Vector2.left)
             {
                 GameManager.Instance.SetGravityInput(GameManager.Gravity.Left);
                 TransitionToState(gravityState);

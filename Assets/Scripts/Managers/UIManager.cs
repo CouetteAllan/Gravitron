@@ -17,10 +17,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject MenuPause;
 
     [SerializeField] private Image P;
-    [SerializeField] private Sprite up;
-    [SerializeField] private Sprite down;
-    [SerializeField] private Sprite left;
-    [SerializeField] private Sprite right;
 
 
     private void Awake()
@@ -108,19 +104,19 @@ public class UIManager : MonoBehaviour
         Vector2 actualGravity = GameManager.Instance.SendGravityDirection();
         if (actualGravity == Vector2.up)
         {
-            P.sprite = up;
+            P.transform.rotation = Quaternion.Euler(0, 0, 180);
         }
         if (actualGravity == Vector2.down)
         {
-            P.sprite = down;
+            P.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         if (actualGravity == Vector2.left)
         {
-            P.sprite = left;
+            P.transform.rotation = Quaternion.Euler(0, 0, -90);
         }
         if (actualGravity == Vector2.right)
         {
-            P.sprite = right;
+            P.transform.rotation = Quaternion.Euler(0, 0, 90);
         }
     }
 

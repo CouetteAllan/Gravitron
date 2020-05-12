@@ -6,7 +6,10 @@ public class GravityState : JeanBaseState
 {
     public override void EnterState(JeanMichelTesteur jean)
     {
-        
+        if (UIManager.Instance.SendEnergy() == 0)
+        {
+            jean.TransitionToState(jean.idleState);
+        }
     }
 
     public override void OnCollisionEnter2D(JeanMichelTesteur jean)
@@ -17,6 +20,5 @@ public class GravityState : JeanBaseState
 
     public override void Update(JeanMichelTesteur jean)
     {
-        
     }
 }

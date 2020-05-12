@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
         Pause,
         MainMenu,
         GameOver,
+        Victory,
     }
 
     [SerializeField]
@@ -62,6 +63,8 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.InGame:
                 UIManager.Instance.AfficherMenuPause(false);
+                UIManager.Instance.AfficherMenuVictoire(false);
+                UIManager.Instance.AfficherGameOver(false);
                 Time.timeScale = 1;
                 break;
             case GameState.Pause:
@@ -70,7 +73,11 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.GameOver:
                 Time.timeScale = 0;
-                UIManager.Instance.AfficherGameOver();
+                UIManager.Instance.AfficherGameOver(true);
+                break;
+            case GameState.Victory:
+                UIManager.Instance.AfficherMenuVictoire(true);
+                Time.timeScale = 0;
                 break;
             default:
                 state = GameState.InGame;

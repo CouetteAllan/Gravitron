@@ -323,6 +323,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1207158281}
+    - target: {fileID: 7584916570233920019, guid: a2e7a11efe03fbb4ab898c9934b61c40,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7584916570233920028, guid: a2e7a11efe03fbb4ab898c9934b61c40,
         type: 3}
       propertyPath: m_Name
@@ -664,7 +669,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0.0043103695, y: 0, z: 0}
+  m_ChunkCullingBounds: {x: 0.08499998, y: 0.077499986, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -2981,7 +2986,7 @@ PrefabInstance:
     - target: {fileID: 6027545492714867345, guid: 536264d00a9d5eb439f58bcd4a7e7cca,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -104.47266
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6027545492714867345, guid: 536264d00a9d5eb439f58bcd4a7e7cca,
         type: 3}
@@ -3344,7 +3349,7 @@ PrefabInstance:
     - target: {fileID: 1025872468526481300, guid: 5a075d16cecf16f40b99943d257bd1e5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.51
+      value: 21.1
       objectReference: {fileID: 0}
     - target: {fileID: 1025872468526481300, guid: 5a075d16cecf16f40b99943d257bd1e5,
         type: 3}

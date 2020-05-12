@@ -10,7 +10,7 @@ public class Porte : MonoBehaviour
     float moveDistance = 10f;
 
     private Vector2 targetMovePosition;
-    //Vector3 movDirVer = new Vector3(0, button.DirectionVectorPorte, 0);
+    
 
 
 
@@ -23,8 +23,15 @@ public class Porte : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        /*if (transform.rotation.z >= 0)
+        {
+            MoveVertical();
+        }*/
+        
+        
         MoveHorizontal();
+        
+        
         
     }
 
@@ -37,10 +44,21 @@ public class Porte : MonoBehaviour
         {
             this.targetMovePosition = transform.position + (moveDistance * movDirHor);
             this.transform.position = Vector2.MoveTowards(this.transform.position, this.targetMovePosition, 50.0f * Time.deltaTime);
-            /*if (Vector3.Distance(this.transform.position, this.targetMovePosition) < 0.05f)
-            {
-                this.transform.position = this.targetMovePosition;
-            }*/
+            
+            button.Active = false;
+        }
+    }
+
+    private void MoveVertical()
+    {
+        Vector3 movDirVer = new Vector3(0, button.DirectionVectorPorte, 0);
+
+
+        if (button.Active == true)
+        {
+            this.targetMovePosition = transform.position + (moveDistance * movDirVer);
+            this.transform.position = Vector2.MoveTowards(this.transform.position, this.targetMovePosition, 50.0f * Time.deltaTime);
+            
             button.Active = false;
         }
     }

@@ -45,6 +45,7 @@ public class UIManager : MonoBehaviour
     {
         menuPause.SetActive(false);
         GameManager.Instance.ChangeState(GameManager.GameState.InGame);
+        Debug.Log("JE SUIS CLICKED");
     }
 
 

@@ -13,7 +13,7 @@ public class CollectileEnergy : MonoBehaviour
         if (player != null)
         {
             UIManager.Instance.ChangeEnergy(1, semi);
-            AudioManager.Instance.PlayClip(collectible, 0.1f);
+            AudioManager.Instance.PlayClip(collectible);
             Destroy(gameObject);
         }
     }

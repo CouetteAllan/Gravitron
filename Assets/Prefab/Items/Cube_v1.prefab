@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1950895178548813361}
   - component: {fileID: 4848104508710511659}
   - component: {fileID: 5760210381487665675}
+  - component: {fileID: -3515877500202105054}
   m_Layer: 0
   m_Name: Cube_v1
   m_TagString: Untagged
@@ -131,3 +132,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &-3515877500202105054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7815579936731094936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09172772da62c6b4aa7cf0a607873055, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  land: {fileID: 8300000, guid: e3018d91368f37a4d97d2381b99ec759, type: 3}
+  bigLand: {fileID: 8300000, guid: db16ca1c7031fb440a896367ba911178, type: 3}

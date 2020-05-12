@@ -36,6 +36,8 @@ public class JeanMichelTesteur : MonoBehaviour
     {
         get { return rb2d; }
     }
+
+    private bool isDead = false;
     #endregion 
 
     void Start()
@@ -49,7 +51,23 @@ public class JeanMichelTesteur : MonoBehaviour
     {
         MoveWithGravity();
 
-
+        if (GameManager.Instance.GetGameState() == GameManager.GameState.Pause 
+            || GameManager.Instance.GetGameState() == GameManager.GameState.GameOver)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (GameManager.Instance.GetGameState() == GameManager.GameState.InGame)
+                {
+                    GameManager.Instance.ChangeState(GameManager.GameState.Pause);
+                }
+                else
+                {
+                    GameManager.Instance.ChangeState(GameManager.GameState.InGame);
+                }
+            }
+            return;
+        }
+        
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             if(GameManager.Instance.SendGravityDirection() != Vector2.down)
@@ -68,7 +86,7 @@ public class JeanMichelTesteur : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            if (GameManager.Instance.SendGravityDirection() != Vector2.down)
+            if (GameManager.Instance.SendGravityDirection() != Vector2.left)
             {
                 GameManager.Instance.SetGravityInput(GameManager.Gravity.Left);
                 TransitionToState(gravityState);
@@ -84,8 +102,26 @@ public class JeanMichelTesteur : MonoBehaviour
         }
 
         GameManager.Instance.ChangeGravity();
-        Debug.Log(currentState);
+
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (GameManager.Instance.GetGameState() == GameManager.GameState.InGame)
+            {
+                GameManager.Instance.ChangeState(GameManager.GameState.Pause);
+            }
+            else
+            {
+                GameManager.Instance.ChangeState(GameManager.GameState.InGame);
+            }
+        }
+
+        Debug.Log(GameManager.Instance.GetGameState().ToString());
         currentState.Update(this);
+        if (isDead)
+        {
+            GameManager.Instance.GameIsOver();
+        }
         
         
     }
@@ -103,7 +139,7 @@ public class JeanMichelTesteur : MonoBehaviour
         currentState.EnterState(this);
     }
 
-    public void MoveWithGravity()
+    private void MoveWithGravity()
     {
         float deplacement = Input.GetAxis("Horizontal");
         if (Vector2.left == GameManager.Instance.SendGravityDirection())
@@ -127,6 +163,11 @@ public class JeanMichelTesteur : MonoBehaviour
             this.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         
+    }
+
+    public void Dead()
+    {
+        this.isDead = true;
     }
     
 

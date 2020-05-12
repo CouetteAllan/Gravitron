@@ -50,6 +50,23 @@ public class JeanMichelTesteur : MonoBehaviour
     void Update()
     {
         MoveWithGravity();
+
+        if (GameManager.Instance.GetGameState() == GameManager.GameState.Pause 
+            || GameManager.Instance.GetGameState() == GameManager.GameState.GameOver)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (GameManager.Instance.GetGameState() == GameManager.GameState.InGame)
+                {
+                    GameManager.Instance.ChangeState(GameManager.GameState.Pause);
+                }
+                else
+                {
+                    GameManager.Instance.ChangeState(GameManager.GameState.InGame);
+                }
+            }
+            return;
+        }
         
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
@@ -89,7 +106,7 @@ public class JeanMichelTesteur : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (GameManager.Instance.SendGameState() == GameManager.GameState.InGame)
+            if (GameManager.Instance.GetGameState() == GameManager.GameState.InGame)
             {
                 GameManager.Instance.ChangeState(GameManager.GameState.Pause);
             }
@@ -99,7 +116,7 @@ public class JeanMichelTesteur : MonoBehaviour
             }
         }
 
-        Debug.Log(GameManager.Instance.SendGameState().ToString());
+        Debug.Log(GameManager.Instance.GetGameState().ToString());
         currentState.Update(this);
         if (isDead)
         {

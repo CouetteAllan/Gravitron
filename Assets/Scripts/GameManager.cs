@@ -117,7 +117,7 @@ public class GameManager : MonoBehaviour
         gravity = input;
     }
 
-    public GameState SendGameState()
+    public GameState GetGameState()
     {
         return this.gameState;
     }

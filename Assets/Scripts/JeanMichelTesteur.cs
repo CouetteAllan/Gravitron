@@ -30,6 +30,7 @@ public class JeanMichelTesteur : MonoBehaviour
     {
         get { return jump; }
     }
+    
 
     private Rigidbody2D rb2d;
     public Rigidbody2D Rigidbody2D
@@ -70,38 +71,37 @@ public class JeanMichelTesteur : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            if(GameManager.Instance.SendGravityDirection() != Vector2.down)
+            if (GameManager.Instance.SendGravityDirection() != Vector2.down)
             {
-                GameManager.Instance.SetGravityInput(GameManager.Gravity.Down);
                 TransitionToState(gravityState);
+                GameManager.Instance.ChangeGravity(GameManager.Gravity.Down);
             }
         }
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             if (GameManager.Instance.SendGravityDirection() != Vector2.up)
             {
-                GameManager.Instance.SetGravityInput(GameManager.Gravity.Up);
                 TransitionToState(gravityState);
+                GameManager.Instance.ChangeGravity(GameManager.Gravity.Up);
             }
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             if (GameManager.Instance.SendGravityDirection() != Vector2.left)
             {
-                GameManager.Instance.SetGravityInput(GameManager.Gravity.Left);
                 TransitionToState(gravityState);
+                GameManager.Instance.ChangeGravity(GameManager.Gravity.Left);
             }
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             if (GameManager.Instance.SendGravityDirection() != Vector2.right)
             {
-                GameManager.Instance.SetGravityInput(GameManager.Gravity.Right);
                 TransitionToState(gravityState);
+                GameManager.Instance.ChangeGravity(GameManager.Gravity.Right);
             }
         }
-
-        GameManager.Instance.ChangeGravity();
+        
 
 
         if (Input.GetKeyDown(KeyCode.Escape))

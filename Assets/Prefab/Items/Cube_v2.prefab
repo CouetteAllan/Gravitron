@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8432684173317279681}
   - component: {fileID: -3854147618941114119}
   - component: {fileID: -8401965535082416741}
+  - component: {fileID: 6824467623452463106}
   m_Layer: 0
   m_Name: Cube_v2
   m_TagString: Untagged
@@ -130,3 +131,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.003015, y: 2.9124904}
   m_EdgeRadius: 0
+--- !u!114 &6824467623452463106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6266003499184313366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09172772da62c6b4aa7cf0a607873055, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  land: {fileID: 8300000, guid: e3018d91368f37a4d97d2381b99ec759, type: 3}
+  bigLand: {fileID: 8300000, guid: db16ca1c7031fb440a896367ba911178, type: 3}

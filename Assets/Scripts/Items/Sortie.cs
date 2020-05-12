@@ -9,8 +9,7 @@ public class Sortie : MonoBehaviour
         JeanMichelTesteur player = collision.GetComponent <JeanMichelTesteur>();
         if (player != null)
         {
-            Debug.Log("GameManager.GameState.Victory;");
-            Debug.Log("UIManager.EcranVictoire();");
+            GameManager.Instance.ChangeState(GameManager.GameState.Victory);
         }
     }
 }

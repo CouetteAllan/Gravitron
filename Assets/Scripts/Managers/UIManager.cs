@@ -11,11 +11,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] private AudioClip energyUp;
 
     [SerializeField] private Text energyTxt;
-    private int energy = 0;
+    private int energy = 4;
     private int half = 0;
 
     [SerializeField] private GameObject menuPause;
     [SerializeField] private GameObject menuGameOver;
+    [SerializeField] private GameObject menuVictoire;
 
     [SerializeField] private Image P;
 
@@ -67,9 +68,9 @@ public class UIManager : MonoBehaviour
         menuPause.SetActive(setActive);
     }
 
-    public void AfficherGameOver()
+    public void AfficherGameOver(bool setActive)
     {
-        menuGameOver.SetActive(true);
+        menuGameOver.SetActive(setActive);
     }
 
 
@@ -105,6 +106,10 @@ public class UIManager : MonoBehaviour
         energyTxt.text = " X" + energy;
     }
     
+    public int SendEnergy()
+    {
+        return energy;
+    }
 
     public void Fgravity()
     {
@@ -147,5 +152,14 @@ public class UIManager : MonoBehaviour
     {
         SceneManager.LoadScene(scene);
         GameManager.Instance.ChangeState(GameManager.GameState.InGame);
+    }
+
+
+    
+    //------------------------------------------------------------------------ MENU VICTOIRE ------------------------------------------------------------------------
+
+    public void AfficherMenuVictoire(bool setActive)
+    {
+        menuVictoire.SetActive(setActive);
     }
 }

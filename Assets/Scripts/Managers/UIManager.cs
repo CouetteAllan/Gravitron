@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private AudioClip energyUp;
 
     [SerializeField] private Text energyTxt;
-    private int energy = 4;
+    [SerializeField] private int energy = 4;
     private int half = 0;
 
     [SerializeField] private GameObject menuPause;

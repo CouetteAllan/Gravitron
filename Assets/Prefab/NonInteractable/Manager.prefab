@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e063eecfa5884b6429b54d4eb245c14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityInputDirection: down
+  gravity: 2
 --- !u!114 &6027545492714867347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,7 +171,3 @@ MonoBehaviour:
   energyTxt: {fileID: 0}
   MenuPause: {fileID: 0}
   P: {fileID: 0}
-  up: {fileID: 21300000, guid: 5a1fc9f6ed5dd504a92cf5dfbb1b6655, type: 3}
-  down: {fileID: 21300000, guid: 7b39a04f6df9cd34d8c502bae125cb8b, type: 3}
-  left: {fileID: 21300000, guid: 8119c57d9c73bdd42961d21eb236027c, type: 3}
-  right: {fileID: 21300000, guid: 09ef413c94ec5a34898fbbc8bb8daa0a, type: 3}

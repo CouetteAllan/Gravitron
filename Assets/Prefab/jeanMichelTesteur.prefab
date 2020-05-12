@@ -145,3 +145,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   jump: 3500
+  noEnergy: {fileID: 8300000, guid: b2a904f79b4cf424ea49ff83baa76acd, type: 3}

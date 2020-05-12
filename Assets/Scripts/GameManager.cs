@@ -9,9 +9,9 @@ public class GameManager : MonoBehaviour
 
     private Vector2 direction;
 
-    
-    
-    
+    [SerializeField] private AudioClip noEnergy;
+    [SerializeField] private AudioClip swosh;
+
 
     private static GameManager instance;
     public static GameManager Instance
@@ -86,29 +86,39 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void ChangeGravity()
+    public void ChangeGravity(Gravity g)
     {
-        switch (gravity)
+        if (UIManager.Instance.SendEnergy() > 0)
         {
-            case Gravity.Up:
-                direction = Vector2.up;
-                break;
-            case Gravity.Left:
-                direction = Vector2.left;
-                break;
-            case Gravity.Right:
-                direction = Vector2.right;
-                break;
-            case Gravity.Down:
-                direction = Vector2.down;
-                break;
-            default:
-                direction = Vector2.down;
-                break;
+            UIManager.Instance.ChangeEnergy(-1);
+            AudioManager.Instance.PlayClip(swosh);
+            gravity = g;
+            switch (gravity)
+            {
+                case Gravity.Up:
+                    direction = Vector2.up;
+                    break;
+                case Gravity.Left:
+                    direction = Vector2.left;
+                    break;
+                case Gravity.Right:
+                    direction = Vector2.right;
+                    break;
+                case Gravity.Down:
+                    direction = Vector2.down;
+                    break;
+                default:
+                    direction = Vector2.down;
+                    break;
+            }
+            UIManager.Instance.Fgravity();
+            Physics2D.gravity = direction * localGravity.magnitude;
+            this.localGravity = Physics2D.gravity;//change la gravité
         }
-        UIManager.Instance.Fgravity();
-        Physics2D.gravity = direction * localGravity.magnitude;
-        this.localGravity = Physics2D.gravity;//change la gravité
+        else
+        {
+            AudioManager.Instance.PlayClip(noEnergy);
+        }
     }
 
     
@@ -117,11 +127,6 @@ public class GameManager : MonoBehaviour
     {
         Vector2 gravityDirection = this.localGravity.normalized ;
         return gravityDirection;
-    }
-
-    public void SetGravityInput(Gravity input)
-    {
-        gravity = input;
     }
 
     public GameState GetGameState()

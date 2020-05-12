@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 09172772da62c6b4aa7cf0a607873055
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - land: {fileID: 8300000, guid: e3018d91368f37a4d97d2381b99ec759, type: 3}
+  - bigLand: {fileID: 8300000, guid: db16ca1c7031fb440a896367ba911178, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -5,8 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private Vector2 localGravity;
-    [SerializeField]
-    private string gravityInputDirection = "down";
+    
 
     private Vector2 direction;
 
@@ -34,6 +33,7 @@ public class GameManager : MonoBehaviour
         MainMenu,
     }
 
+    [SerializeField]
     private Gravity gravity;
     public enum Gravity
     {

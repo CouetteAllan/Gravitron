@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e063eecfa5884b6429b54d4eb245c14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityInputDirection: down
+  gravity: 2
 --- !u!114 &6027545492714867347
 MonoBehaviour:
   m_ObjectHideFlags: 0

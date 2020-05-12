@@ -99,7 +99,7 @@ public class JeanMichelTesteur : MonoBehaviour
             }
         }
 
-
+        Debug.Log(GameManager.Instance.SendGameState().ToString());
         currentState.Update(this);
         if (isDead)
         {

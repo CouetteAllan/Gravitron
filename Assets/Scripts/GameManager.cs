@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
 
     public void ChangeState(GameState state)
     {
+        gameState = state;
         switch (state)
         {
             case GameState.MainMenu:

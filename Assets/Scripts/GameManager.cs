@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
         InGame,
         Pause,
         MainMenu,
+        GameOver,
     }
 
     [SerializeField]
@@ -65,6 +66,10 @@ public class GameManager : MonoBehaviour
             case GameState.Pause:
                 Time.timeScale = 0;
                 UIManager.Instance.AfficherMenuPause(true);
+                break;
+            case GameState.GameOver:
+                Time.timeScale = 0;
+                UIManager.Instance.AfficherGameOver();
                 break;
             default:
                 state = GameState.InGame;
@@ -114,5 +119,10 @@ public class GameManager : MonoBehaviour
     public GameState SendGameState()
     {
         return this.gameState;
+    }
+
+    public void GameIsOver()
+    {
+        ChangeState(GameState.GameOver);
     }
 }

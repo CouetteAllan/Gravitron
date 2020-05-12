@@ -14,7 +14,8 @@ public class UIManager : MonoBehaviour
     private int energy = 0;
     private int half = 0;
 
-    [SerializeField] private GameObject MenuPause;
+    [SerializeField] private GameObject menuPause;
+    [SerializeField] private GameObject menuGameOver;
 
     [SerializeField] private Image P;
 
@@ -30,7 +31,7 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        MenuPause.SetActive(false);
+        menuPause.SetActive(false);
         ChangeEnergy(0);
     }
 
@@ -42,7 +43,7 @@ public class UIManager : MonoBehaviour
 
     public void Resume()
     {
-        MenuPause.SetActive(false);
+        menuPause.SetActive(false);
         GameManager.Instance.ChangeState(GameManager.GameState.InGame);
     }
 
@@ -62,7 +63,12 @@ public class UIManager : MonoBehaviour
 
     public void AfficherMenuPause(bool setActive)
     {
-        MenuPause.SetActive(setActive);
+        menuPause.SetActive(setActive);
+    }
+
+    public void AfficherGameOver()
+    {
+        menuGameOver.SetActive(true);
     }
 
 

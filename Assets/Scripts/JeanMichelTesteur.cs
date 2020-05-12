@@ -36,6 +36,8 @@ public class JeanMichelTesteur : MonoBehaviour
     {
         get { return rb2d; }
     }
+
+    private bool isDead = false;
     #endregion 
 
     void Start()
@@ -99,6 +101,10 @@ public class JeanMichelTesteur : MonoBehaviour
 
 
         currentState.Update(this);
+        if (isDead)
+        {
+            GameManager.Instance.GameIsOver();
+        }
         
         
     }
@@ -116,7 +122,7 @@ public class JeanMichelTesteur : MonoBehaviour
         currentState.EnterState(this);
     }
 
-    public void MoveWithGravity()
+    private void MoveWithGravity()
     {
         float deplacement = Input.GetAxis("Horizontal");
         if (Vector2.left == GameManager.Instance.SendGravityDirection())
@@ -140,6 +146,11 @@ public class JeanMichelTesteur : MonoBehaviour
             this.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         
+    }
+
+    public void Dead()
+    {
+        this.isDead = true;
     }
     
 

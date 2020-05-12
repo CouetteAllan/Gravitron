@@ -17,10 +17,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject MenuPause;
 
     [SerializeField] private Image P;
-    [SerializeField] private Sprite up;
-    [SerializeField] private Sprite down;
-    [SerializeField] private Sprite left;
-    [SerializeField] private Sprite right;
 
 
     private void Awake()
@@ -34,13 +30,46 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
+        MenuPause.SetActive(false);
         ChangeEnergy(0);
     }
 
-    private void Update()
+
+
+    //------------------------------------------------------------------------ MENU PAUSE ------------------------------------------------------------------------
+
+
+
+    public void Resume()
     {
-        Fgravity();
+        MenuPause.SetActive(false);
+        GameManager.Instance.ChangeState(GameManager.GameState.InGame);
     }
+
+
+    public void Restart()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
+        GameManager.Instance.ChangeState(GameManager.GameState.InGame);
+    }
+
+    public void Exit()
+    {
+        SceneManager.LoadScene(1);
+        GameManager.Instance.ChangeState(GameManager.GameState.MainMenu);
+    }
+
+    public void AfficherMenuPause(bool setActive)
+    {
+        MenuPause.SetActive(setActive);
+    }
+
+
+
+    //------------------------------------------------------------------------ INGAME ------------------------------------------------------------------------
+
+
 
     public void ChangeEnergy(int amount, bool semi = false)
     {
@@ -68,38 +97,48 @@ public class UIManager : MonoBehaviour
         }
         energyTxt.text = " X" + energy;
     }
-
-
-    public void Resume()
-    {
-        MenuPause.SetActive(false);
-    }
-
-
-    public void Restart()
-    {
-        Scene scene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(scene.name);
-    }
+    
 
     public void Fgravity()
     {
         Vector2 actualGravity = GameManager.Instance.SendGravityDirection();
         if (actualGravity == Vector2.up)
         {
-            P.sprite = up;
+            P.transform.rotation = Quaternion.Euler(0, 0, 180);
         }
         if (actualGravity == Vector2.down)
         {
-            P.sprite = down;
+            P.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         if (actualGravity == Vector2.left)
         {
-            P.sprite = left;
+            P.transform.rotation = Quaternion.Euler(0, 0, -90);
         }
         if (actualGravity == Vector2.right)
         {
-            P.sprite = right;
+            P.transform.rotation = Quaternion.Euler(0, 0, 90);
         }
+    }
+
+
+
+    //------------------------------------------------------------------------ MENU PRINCIPAL ------------------------------------------------------------------------
+
+
+    public void Play()
+    {
+        SceneManager.LoadScene("Main");
+    }
+    
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
+    public void ChangeScene(int scene)
+    {
+        SceneManager.LoadScene(scene);
+        GameManager.Instance.ChangeState(GameManager.GameState.InGame);
     }
 }

@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
         }
     }
     private GameState gameState;
-    enum GameState 
+    public enum GameState 
     {
         InGame,
         Pause,
@@ -50,7 +50,29 @@ public class GameManager : MonoBehaviour
         localGravity = Physics2D.gravity;
     }
 
-    
+
+    public void ChangeState(GameState state)
+    {
+        switch (state)
+        {
+            case GameState.MainMenu:
+                UIManager.Instance.AfficherMenuPause(false);
+                break;
+            case GameState.InGame:
+                UIManager.Instance.AfficherMenuPause(false);
+                Time.timeScale = 1;
+                break;
+            case GameState.Pause:
+                Time.timeScale = 0;
+                UIManager.Instance.AfficherMenuPause(true);
+                break;
+            default:
+                state = GameState.InGame;
+                break;
+        }
+    }
+
+
     public void ChangeGravity()
     {
         switch (gravity)
@@ -71,9 +93,12 @@ public class GameManager : MonoBehaviour
                 direction = Vector2.down;
                 break;
         }
+        UIManager.Instance.Fgravity();
         Physics2D.gravity = direction * localGravity.magnitude;
         this.localGravity = Physics2D.gravity;//change la gravité
     }
+
+    
 
     public Vector2 SendGravityDirection()
     {
@@ -85,5 +110,9 @@ public class GameManager : MonoBehaviour
     {
         gravity = input;
     }
-    
+
+    public GameState SendGameState()
+    {
+        return this.gameState;
+    }
 }

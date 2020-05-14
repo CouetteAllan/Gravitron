@@ -5,7 +5,10 @@ using UnityEngine;
 public class Sortie : MonoBehaviour
 {
     [SerializeField]
-    private Timer t;      
+    private Timer t;
+    
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         JeanMichelTesteur player = collision.GetComponent <JeanMichelTesteur>();
@@ -14,5 +17,6 @@ public class Sortie : MonoBehaviour
             t.Finish();
             GameManager.Instance.ChangeState(GameManager.GameState.Victory);
         }
+        
     }
 }

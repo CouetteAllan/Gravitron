@@ -2,22 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Porte : MonoBehaviour
+public class Porte : InteractableObjects
 {
-    [SerializeField]
-    private Button button = null;
-
     float moveDistance = 10f;
 
     private Vector2 targetMovePosition;
-    
 
+    [SerializeField] private float distance = 1;
+
+    [SerializeField] private bool verticalDoor = false;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -29,15 +28,40 @@ public class Porte : MonoBehaviour
         }*/
         
         
-        MoveHorizontal();
+        //MoveHorizontal();
         
         
         
     }
 
-    private void MoveHorizontal()
+    protected override void ActivateObject()
     {
-        Vector3 movDirHor = new Vector3(button.DirectionVectorPorte, 0, 0);
+        if (verticalDoor)
+        {
+            MoveVertical(distance);
+        }
+        else
+        {
+            MoveHorizontal(distance);
+        }
+    }
+
+    protected override void DisabledObject()
+    {
+        if (verticalDoor)
+        {
+            MoveVertical(-distance);
+        }
+        else
+        {
+            MoveHorizontal(-distance);
+        }
+    }
+
+
+    private void MoveHorizontal(float dist)
+    {
+        Vector3 movDirHor = new Vector3(dist, 0, 0);
         
 
         if (button.Active == true)
@@ -49,9 +73,9 @@ public class Porte : MonoBehaviour
         }
     }
 
-    private void MoveVertical()
+    private void MoveVertical(float dist)
     {
-        Vector3 movDirVer = new Vector3(0, button.DirectionVectorPorte, 0);
+        Vector3 movDirVer = new Vector3(0, dist, 0);
 
 
         if (button.Active == true)

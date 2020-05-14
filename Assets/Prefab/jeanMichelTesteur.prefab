@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2075848168}
   - component: {fileID: 2075848170}
+  - component: {fileID: 1071009851}
   m_Layer: 5
   m_Name: zswosh
   m_TagString: Untagged
@@ -81,6 +82,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1071009851
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075848167}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e167537a7e16bcb49a9e602eb216d040, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3195452604685385332
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,6 +114,8 @@ GameObject:
   - component: {fileID: 3195452604685385334}
   - component: {fileID: 3195452604685385335}
   - component: {fileID: 3195452604685385339}
+  - component: {fileID: 500508036}
+  - component: {fileID: 1564889749841177130}
   m_Layer: 0
   m_Name: jeanMichelTesteur
   m_TagString: Untagged
@@ -227,3 +249,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   jump: 3500
+  zwoshAnimator: {fileID: 1071009851}
+--- !u!95 &500508036
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3195452604685385332}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a2e656c8030150f40b8d337188726381, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1564889749841177130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3195452604685385332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc509ba9ecbb5df45ab24c534bfbeaa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 0}

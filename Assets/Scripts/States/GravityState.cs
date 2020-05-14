@@ -10,10 +10,19 @@ public class GravityState : JeanBaseState
         {
             jean.TransitionToState(jean.idleState);
         }
+
         jean.GetComponent<Animator>().SetBool("Walking", false);
         jean.GetComponent<Animator>().SetBool("Idling", false);
         jean.GetComponent<Animator>().SetBool("Falling", true);
         jean.GetComponent<Animator>().SetBool("Jumping", false);
+        jean.ZwoshAnim.SetTrigger("GravityChange");
+
+        float gravityValueX = Physics2D.gravity.x;
+        float gravityValueY = Physics2D.gravity.y;
+
+        jean.GetComponent<Animator>().SetFloat("GravityDirectionX", gravityValueX);
+        jean.GetComponent<Animator>().SetFloat("GravityDirectionY", gravityValueY);
+        
     }
 
     public override void OnCollisionEnter2D(JeanMichelTesteur jean)

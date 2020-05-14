@@ -12,7 +12,7 @@ public class JumpingState : JeanBaseState
         jean.GetComponent<Animator>().SetBool("Jumping", true);
     }
 
-    public override void OnCollisionEnter2D(JeanMichelTesteur jean)
+    public override void OnTriggerEnter2D(JeanMichelTesteur jean)
     {
         jean.TransitionToState(jean.idleState);
     }

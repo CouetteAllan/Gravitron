@@ -97,6 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 0}
+  distance: 1
+  verticalDoor: 0
 --- !u!50 &2776788313607761068
 Rigidbody2D:
   serializedVersion: 4

@@ -6,31 +6,28 @@ using UnityEngine.UI;
 public class Level : MonoBehaviour
 {
     [SerializeField] private Image level;
+    [SerializeField] private Button playLevel;
     [SerializeField] private List<Image> cartes = new List<Image>();
 
-    private bool isCleared = false;
+    private bool isCleared = true;
 
     private Color lockedColor = new Color(0.2f, 0.2f, 0.2f);
 
-    private void Start()
-    {
-        ButtonColor();
-    }
 
-    public void Clear()
-    {
-        isCleared = true;
-    }
+
+ 
 
     public void ButtonColor()
     {
         if (!isCleared)
         {
             this.level.color = lockedColor;
+            playLevel.enabled = false;
         }
         else
         {
             level.color = Color.white;
+            playLevel.enabled = true;
         }
     }
 

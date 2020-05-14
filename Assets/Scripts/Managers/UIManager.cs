@@ -12,7 +12,7 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private Text energyTxt;
     [SerializeField] private int energy = 4;
-    private int half = 0;
+    private float remplissage = 0;
 
     [SerializeField] private GameObject menuPause;
     [SerializeField] private GameObject menuGameOver;
@@ -79,30 +79,25 @@ public class UIManager : MonoBehaviour
 
 
 
-    public void ChangeEnergy(int amount, bool semi = false)
+    public void ChangeEnergy(float amount)
     {
-        if (semi)
+        remplissage += amount;
+        while (remplissage >= 1)
         {
-            half++;
-            if (half >= 2)
-            {
-                half -= 2;
-                energy++;
-                AudioManager.Instance.PlayClip(energyUp);
-            }
+            remplissage -= 1;
+            energy++;
+            AudioManager.Instance.PlayClip(energyUp);
         }
-        else
+        if (amount < 0)
         {
-            energy += amount;
-            if (amount > 0)
-            {
-                AudioManager.Instance.PlayClip(energyUp);
-            }
-            if (energy < 0)
-            {
-                energy = 0;
-            }
+            remplissage++;
         }
+        if (energy < 0)
+        {
+            energy = 0;
+        }
+        EnergyMask.Instance.ChangeMaskSize(remplissage / 1);
+        Debug.Log(remplissage / 3);
         energyTxt.text = " X" + energy;
     }
     

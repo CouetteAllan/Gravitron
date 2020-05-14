@@ -37,16 +37,16 @@ public class JeanMichelTesteur : MonoBehaviour
     {
         get { return rb2d; }
     }
+    [SerializeField]
+    private Animator zwoshAnimator;
 
+    public Animator ZwoshAnim
+    {
+        get { return zwoshAnimator; }
+    }
     private bool isDead = false;
     #endregion 
-
-    private Animator animator;
-
-    public Animator Animator
-    {
-        get{ return animator; }        
-    }
+    
 
     void Start()
     {

@@ -239,7 +239,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 496742855}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.8800001, y: -6, z: 0}
+  m_LocalPosition: {x: 1.72, y: -6.21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1026909628}
@@ -1445,6 +1445,12 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &554827228 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2527845401423828748, guid: ec780e84153479b4691258a266c67b27,
+    type: 3}
+  m_PrefabInstance: {fileID: 909148590}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &690879859 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 505180075159867483, guid: a2e7a11efe03fbb4ab898c9934b61c40,
@@ -1470,15 +1476,19 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1564889749841177130, guid: ec780e84153479b4691258a266c67b27,
-        type: 3}
-      propertyPath: timerText
+    - target: {fileID: 909148592, guid: ec780e84153479b4691258a266c67b27, type: 3}
+      propertyPath: zwoshAnimator
       value: 
-      objectReference: {fileID: 1016920459}
+      objectReference: {fileID: 554827228}
     - target: {fileID: 3195452604685385332, guid: ec780e84153479b4691258a266c67b27,
         type: 3}
       propertyPath: m_Name
       value: jeanMichelTesteur
+      objectReference: {fileID: 0}
+    - target: {fileID: 3195452604685385334, guid: ec780e84153479b4691258a266c67b27,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3195452604685385336, guid: ec780e84153479b4691258a266c67b27,
         type: 3}
@@ -1537,18 +1547,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec780e84153479b4691258a266c67b27, type: 3}
---- !u!114 &1016920459 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5306377186377185560, guid: 9daa40ce550c16a40a2746f474ccc8a4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1893115231}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1026909626
 GameObject:
   m_ObjectHideFlags: 0

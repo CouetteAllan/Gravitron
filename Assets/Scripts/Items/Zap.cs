@@ -26,7 +26,7 @@ public class Zap : MonoBehaviour
         if (jean != null)
         {
             t.Finish();
-            Destroy(jean.gameObject);
+            jean.Dead();
         }
             
     }

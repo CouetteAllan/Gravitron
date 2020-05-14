@@ -58,24 +58,8 @@ public class JeanMichelTesteur : MonoBehaviour
     void Update()
     {
         MoveWithGravity();
-
-        if (GameManager.Instance.GetGameState() == GameManager.GameState.Pause 
-            || GameManager.Instance.GetGameState() == GameManager.GameState.GameOver)
-        {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                if (GameManager.Instance.GetGameState() == GameManager.GameState.InGame)
-                {
-                    GameManager.Instance.ChangeState(GameManager.GameState.Pause);
-                }
-                else
-                {
-                    GameManager.Instance.ChangeState(GameManager.GameState.InGame);
-                }
-            }
-            return;
-        }
         
+        #region Input pour la Gravité
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             if (GameManager.Instance.SendGravityDirection() != Vector2.down)
@@ -108,10 +92,10 @@ public class JeanMichelTesteur : MonoBehaviour
                 GameManager.Instance.ChangeGravity(GameManager.Gravity.Right);
             }
         }
-        
+        #endregion
 
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape)) //Menu pause quand on appuie sur Echap
         {
             if (GameManager.Instance.GetGameState() == GameManager.GameState.InGame)
             {
@@ -133,10 +117,7 @@ public class JeanMichelTesteur : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        currentState.OnCollisionEnter2D(this);
-    }
+    
 
     
 
@@ -149,7 +130,7 @@ public class JeanMichelTesteur : MonoBehaviour
     private void MoveWithGravity()
     {
         float deplacement = Input.GetAxis("Horizontal");
-        if (Vector2.left == GameManager.Instance.SendGravityDirection())
+        if (Vector2.left == GameManager.Instance.SendGravityDirection())//déplacement sur le mur de gauche
         {
              move = new Vector2(0 , -deplacement);
             this.transform.rotation = Quaternion.Euler(0, 0, -90);

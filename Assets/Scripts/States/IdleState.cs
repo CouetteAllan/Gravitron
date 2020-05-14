@@ -13,7 +13,7 @@ public class IdleState : JeanBaseState
         jean.GetComponent<Animator>().SetBool("Jumping", false);
     }
 
-    public override void OnCollisionEnter2D(JeanMichelTesteur jean)
+    public override void OnTriggerEnter2D(JeanMichelTesteur jean)
     {
         
     }

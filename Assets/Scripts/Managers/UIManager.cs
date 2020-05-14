@@ -9,9 +9,11 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance;
 
     [SerializeField] private AudioClip energyUp;
-
+    [SerializeField] private Text chargesLeft;
     [SerializeField] private Text energyTxt;
     [SerializeField] private int energy = 4;
+    [SerializeField] private int expectedELeft;
+
     private float remplissage = 0;
 
     [SerializeField] private GameObject menuPause;
@@ -34,6 +36,7 @@ public class UIManager : MonoBehaviour
     {
         menuPause.SetActive(false);
         ChangeEnergy(0);
+        
     }
 
 
@@ -156,6 +159,13 @@ public class UIManager : MonoBehaviour
     public void AfficherMenuVictoire(bool setActive)
     {
         menuVictoire.SetActive(setActive);
+    }
+
+    public void ActualEnergy()
+    {
+        int actualEnergy = energy;
+        chargesLeft.text = actualEnergy.ToString() + "/" + expectedELeft;
+
     }
 
 

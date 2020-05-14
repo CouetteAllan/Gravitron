@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noEnergy: {fileID: 8300000, guid: b2a904f79b4cf424ea49ff83baa76acd, type: 3}
   swosh: {fileID: 8300000, guid: b316bc394a7216c4881d4f59872af83b, type: 3}
+  time: {fileID: 0}
   gravity: 2
 --- !u!114 &6027545492714867347
 MonoBehaviour:
@@ -170,8 +171,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   energyUp: {fileID: 8300000, guid: 535d22dce4b0a3740a3846a9fc3eb808, type: 3}
+  chargesLeft: {fileID: 0}
   energyTxt: {fileID: 0}
   energy: 4
+  expectedELeft: 3
   menuPause: {fileID: 0}
   menuGameOver: {fileID: 0}
   menuVictoire: {fileID: 0}

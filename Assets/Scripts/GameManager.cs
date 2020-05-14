@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AudioClip noEnergy;
     [SerializeField] private AudioClip swosh;
 
+    // rappeler à sky de faire ça plus propre en mettant le code de Timer dans UIManager
+    [SerializeField] private Timer time;
 
     private static GameManager instance;
     public static GameManager Instance
@@ -77,6 +79,8 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.Victory:
                 UIManager.Instance.AfficherMenuVictoire(true);
+                UIManager.Instance.ActualEnergy();
+                time.Finish();
                 Time.timeScale = 0;
                 break;
             default:
@@ -138,4 +142,5 @@ public class GameManager : MonoBehaviour
     {
         ChangeState(GameState.GameOver);
     }
+    
 }

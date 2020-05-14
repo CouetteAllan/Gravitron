@@ -180,8 +180,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc509ba9ecbb5df45ab24c534bfbeaa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerText: {fileID: 2213009684258471524, guid: 328b29d7110ff9a45ba44e90552d3e9b,
-    type: 3}
+  timerText: {fileID: 0}
+  timePassed: {fileID: 0}
+  expectedTPassed: 3.5
 --- !u!1 &3719749966021556179
 GameObject:
   m_ObjectHideFlags: 0

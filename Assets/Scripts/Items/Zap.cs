@@ -2,23 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Zap : MonoBehaviour
+public class Zap : InteractableObjects
 {
     [SerializeField]
     private CamShake shake;
     [SerializeField]
     private Timer t;
 
-    // Start is called before the first frame update
-    void Start()
+
+
+    protected override void ActivateObject()
     {
+        GetComponent<BoxCollider2D>().enabled = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void DisabledObject()
     {
-        
+        GetComponent<BoxCollider2D>().enabled = false;
     }
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         this.shake.Shake();
@@ -26,8 +29,13 @@ public class Zap : MonoBehaviour
         if (jean != null)
         {
             t.Finish();
+<<<<<<< HEAD
             Destroy(jean.gameObject);
+        }            
+=======
+            jean.Dead();
         }
             
+>>>>>>> 648211ff03748beb0ac42fda26bcbbf1f5cab48c
     }
 }

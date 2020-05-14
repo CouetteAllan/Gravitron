@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Button : MonoBehaviour
 {
+    [SerializeField] private InteractableObjects activableObject;
+
     private bool active = false;
     public bool Active
     {
@@ -11,12 +13,12 @@ public class Button : MonoBehaviour
         set { active = value; }
     }
 
-    private int directionVectorPorte = 1;
+    /*private int directionVectorPorte = 1;
     public int DirectionVectorPorte
     {
         get { return directionVectorPorte; }
         private set { return; }
-    }
+    }*/
    
     void Start()
     {
@@ -35,7 +37,13 @@ public class Button : MonoBehaviour
         if(jean != null)
         {
             active = !active;
-            directionVectorPorte = - directionVectorPorte;
+            //directionVectorPorte = - directionVectorPorte;
+            OnButtonClick();
         }
+    }
+
+    public void OnButtonClick()
+    {
+        activableObject.ChangeBehaviour();
     }
 }

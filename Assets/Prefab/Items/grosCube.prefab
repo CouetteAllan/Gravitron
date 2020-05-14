@@ -32,6 +32,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!255 &3201107114965182336
+FixedJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4626305402757739430}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 6648986034585374697}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: -3}
+  m_DampingRatio: 0
+  m_Frequency: 0
 --- !u!1001 &1641175840163522320
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -104,6 +122,12 @@ PrefabInstance:
 --- !u!4 &2386084565714105793 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4025008595648647889, guid: 8c8d112f054850f449e762c40ef129fe,
+    type: 3}
+  m_PrefabInstance: {fileID: 1641175840163522320}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &6648986034585374697 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: -3854147618941114119, guid: 8c8d112f054850f449e762c40ef129fe,
     type: 3}
   m_PrefabInstance: {fileID: 1641175840163522320}
   m_PrefabAsset: {fileID: 0}
@@ -181,6 +205,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c8d112f054850f449e762c40ef129fe, type: 3}
+--- !u!1 &4626305402757739430 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6266003499184313366, guid: 8c8d112f054850f449e762c40ef129fe,
+    type: 3}
+  m_PrefabInstance: {fileID: 1641175841186785200}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2386084566703813985 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4025008595648647889, guid: 8c8d112f054850f449e762c40ef129fe,

@@ -57,9 +57,9 @@ public class UIManager : MonoBehaviour
         GameManager.Instance.ChangeState(GameManager.GameState.InGame);
     }
 
-    public void Exit()
+    public void ReturnToMainMenu()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
         GameManager.Instance.ChangeState(GameManager.GameState.MainMenu);
     }
 

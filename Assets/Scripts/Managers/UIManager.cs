@@ -18,7 +18,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject menuGameOver;
     [SerializeField] private GameObject menuVictoire;
 
-    [SerializeField] private Image P;
+    [SerializeField] private Image Arrow;
 
 
     private void Awake()
@@ -111,19 +111,19 @@ public class UIManager : MonoBehaviour
         Vector2 actualGravity = GameManager.Instance.SendGravityDirection();
         if (actualGravity == Vector2.up)
         {
-            P.transform.rotation = Quaternion.Euler(0, 0, 180);
+            Arrow.transform.rotation = Quaternion.Euler(0, 0, 180);
         }
         if (actualGravity == Vector2.down)
         {
-            P.transform.rotation = Quaternion.Euler(0, 0, 0);
+            Arrow.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         if (actualGravity == Vector2.left)
         {
-            P.transform.rotation = Quaternion.Euler(0, 0, -90);
+            Arrow.transform.rotation = Quaternion.Euler(0, 0, -90);
         }
         if (actualGravity == Vector2.right)
         {
-            P.transform.rotation = Quaternion.Euler(0, 0, 90);
+            Arrow.transform.rotation = Quaternion.Euler(0, 0, 90);
         }
     }
 
@@ -157,4 +157,6 @@ public class UIManager : MonoBehaviour
     {
         menuVictoire.SetActive(setActive);
     }
+
+
 }

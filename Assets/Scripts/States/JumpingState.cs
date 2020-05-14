@@ -6,7 +6,10 @@ public class JumpingState : JeanBaseState
 {
     public override void EnterState(JeanMichelTesteur jean)
     {
-
+        jean.GetComponent<Animator>().SetBool("Walking", false);
+        jean.GetComponent<Animator>().SetBool("Idling", false);
+        jean.GetComponent<Animator>().SetBool("Falling", false);
+        jean.GetComponent<Animator>().SetBool("Jumping", true);
     }
 
     public override void OnCollisionEnter2D(JeanMichelTesteur jean)

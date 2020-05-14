@@ -6,6 +6,8 @@ public class Zap : MonoBehaviour
 {
     [SerializeField]
     private CamShake shake;
+    [SerializeField]
+    private Timer t;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +25,7 @@ public class Zap : MonoBehaviour
         JeanMichelTesteur jean = collision.GetComponent <JeanMichelTesteur>();
         if (jean != null)
         {
+            t.Finish();
             Destroy(jean.gameObject);
         }
             

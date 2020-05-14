@@ -8,6 +8,15 @@ public class Cube : MonoBehaviour
     [SerializeField] private AudioClip land;
     [SerializeField] private AudioClip bigLand;
 
+    [SerializeField]
+    private GameObject up;
+    [SerializeField]
+    private GameObject down;
+    [SerializeField]
+    private GameObject left;
+    [SerializeField]
+    private GameObject right;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.GetComponent<TilemapCollider2D>() != null)

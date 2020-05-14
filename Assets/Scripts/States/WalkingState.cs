@@ -10,6 +10,7 @@ public class WalkingState : JeanBaseState
     public override void EnterState(JeanMichelTesteur jean)
     {
         this.gravityDirection = GameManager.Instance.SendGravityDirection();
+        
     }
 
     public override void OnCollisionEnter2D(JeanMichelTesteur jean)

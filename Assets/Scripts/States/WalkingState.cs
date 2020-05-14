@@ -10,7 +10,10 @@ public class WalkingState : JeanBaseState
     public override void EnterState(JeanMichelTesteur jean)
     {
         this.gravityDirection = GameManager.Instance.SendGravityDirection();
-        
+        jean.GetComponent<Animator>().SetBool("Walking", true);
+        jean.GetComponent<Animator>().SetBool("Idling", false);
+        jean.GetComponent<Animator>().SetBool("Falling", false);
+        jean.GetComponent<Animator>().SetBool("Jumping", false);
     }
 
     public override void OnCollisionEnter2D(JeanMichelTesteur jean)
@@ -25,6 +28,8 @@ public class WalkingState : JeanBaseState
         Vector2 position = jean.Rigidbody2D.position;
         position += jean.Move * jean.Speed * Time.deltaTime;
         jean.Rigidbody2D.position = position;
+        float horizontal = Input.GetAxis("Horizontal");
+        jean.GetComponent<Animator>().SetFloat("Move",horizontal);
 
         if ((Input.GetButtonUp("Right")&&Input.GetButtonUp("Left")) || Input.GetButtonUp("Horizontal"))
         {

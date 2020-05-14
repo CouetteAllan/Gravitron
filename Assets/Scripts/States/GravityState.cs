@@ -10,6 +10,10 @@ public class GravityState : JeanBaseState
         {
             jean.TransitionToState(jean.idleState);
         }
+        jean.GetComponent<Animator>().SetBool("Walking", false);
+        jean.GetComponent<Animator>().SetBool("Idling", false);
+        jean.GetComponent<Animator>().SetBool("Falling", true);
+        jean.GetComponent<Animator>().SetBool("Jumping", false);
     }
 
     public override void OnCollisionEnter2D(JeanMichelTesteur jean)

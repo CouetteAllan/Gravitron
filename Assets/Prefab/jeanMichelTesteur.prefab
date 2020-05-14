@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3195452604685385334}
   - component: {fileID: 3195452604685385335}
   - component: {fileID: 3195452604685385339}
-  - component: {fileID: 1671762630}
+  - component: {fileID: 3490915951735969015}
   m_Layer: 0
   m_Name: jeanMichelTesteur
   m_TagString: Untagged
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   jump: 3500
---- !u!114 &1671762630
+--- !u!114 &3490915951735969015
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

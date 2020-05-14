@@ -1470,22 +1470,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2075848168, guid: ec780e84153479b4691258a266c67b27, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2075848168, guid: ec780e84153479b4691258a266c67b27, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2075848170, guid: ec780e84153479b4691258a266c67b27, type: 3}
-      propertyPath: m_Size.x
-      value: 1.9875
-      objectReference: {fileID: 0}
-    - target: {fileID: 2075848170, guid: ec780e84153479b4691258a266c67b27, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1564889749841177130, guid: ec780e84153479b4691258a266c67b27,
         type: 3}
       propertyPath: timerText

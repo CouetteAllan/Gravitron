@@ -41,6 +41,13 @@ public class JeanMichelTesteur : MonoBehaviour
     private bool isDead = false;
     #endregion 
 
+    private Animator animator;
+
+    public Animator Animator
+    {
+        get{ return animator; }        
+    }
+
     void Start()
     {
         TransitionToState(idleState);

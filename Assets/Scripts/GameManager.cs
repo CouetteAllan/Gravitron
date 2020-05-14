@@ -111,9 +111,9 @@ public class GameManager : MonoBehaviour
                     direction = Vector2.down;
                     break;
             }
-            UIManager.Instance.Fgravity();
             Physics2D.gravity = direction * localGravity.magnitude;
             this.localGravity = Physics2D.gravity;//change la gravité
+            UIManager.Instance.Fgravity();
         }
         else
         {

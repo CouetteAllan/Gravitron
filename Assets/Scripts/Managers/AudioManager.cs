@@ -6,7 +6,7 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance { get; private set; }
 
-    private AudioSource audio;
+    private AudioSource audioS;
 
     private void Awake()
     {
@@ -22,14 +22,14 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        audio = GetComponent<AudioSource>();
+        audioS = GetComponent<AudioSource>();
     }
 
 
     public void PlayClip(AudioClip clip, float volume = 1,bool stop = false, float duration = 1)
     {
-        audio.volume = volume;
-        audio.PlayOneShot(clip);
+        audioS.volume = volume;
+        audioS.PlayOneShot(clip);
         if (stop)
         {
             StartCoroutine(StopClip(duration));
@@ -39,6 +39,6 @@ public class AudioManager : MonoBehaviour
     IEnumerator StopClip(float countdown)
     {
         yield return new WaitForSeconds(countdown);
-        audio.Stop();
+        audioS.Stop();
     }
 }

@@ -33,13 +33,15 @@ public class JeanMichelTesteur : MonoBehaviour
     {
         get { return jump; }
     }
-    
+    float deplacement;
 
     private Rigidbody2D rb2d;
     public Rigidbody2D Rigidbody2D
     {
         get { return rb2d; }
     }
+
+    private bool facingRight = true;
     [SerializeField]
     private Animator zwoshAnimator;
 
@@ -116,8 +118,18 @@ public class JeanMichelTesteur : MonoBehaviour
         {
             GameManager.Instance.GameIsOver();
         }
+
+        if (deplacement > 0 && !facingRight)
+        {
+            // ... flip JMTS
+            Flip();
+        }
         
-        
+        else if (deplacement < 0 && facingRight)
+        {
+            
+            Flip();
+        }
     }
 
     
@@ -132,7 +144,7 @@ public class JeanMichelTesteur : MonoBehaviour
 
     private void MoveWithGravity()
     {
-        float deplacement = Input.GetAxis("Horizontal");
+        deplacement = Input.GetAxis("Horizontal");
         if (Vector2.left == GameManager.Instance.SendGravityDirection())//déplacement sur le mur de gauche
         {
              move = new Vector2(0 , -deplacement);
@@ -164,6 +176,16 @@ public class JeanMichelTesteur : MonoBehaviour
     public void PlayClipJMT(float duration )
     {
         AudioManager.Instance.PlayClip(step,0.01f,false, duration);
+    }
+    private void Flip()
+    {
+        
+        facingRight = !facingRight;
+
+        
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
     }
 
 

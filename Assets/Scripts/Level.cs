@@ -11,9 +11,9 @@ public class Level : MonoBehaviour
 
     private Color lockedColor = new Color(0.2f, 0.2f, 0.2f);
 
-    private void Start()
+    private void Awake()
     {
-        levelButton = GetComponent<Button>();
+        levelButton = GetComponentInChildren<Button>();
     }
 
 
@@ -21,11 +21,15 @@ public class Level : MonoBehaviour
     {
         if (clear)
         {
-            
+            this.levelButton.interactable = true;
+            Debug.Log("Bouton activé");
+            levelButton.GetComponent<Image>().color = Color.white;
         }
         else
         {
-
+            this.levelButton.interactable = false;
+            Debug.Log("Bouton désactivé");
+            levelButton.GetComponent<Image>().color = lockedColor;
         }
     }
 }

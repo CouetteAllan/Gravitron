@@ -138,7 +138,12 @@ public class GameManager : MonoBehaviour
         return this.gameState;
     }
 
-    public void GameIsOver()
+    public void LateGameOver()
+    {
+        Invoke(nameof(GameOver), 0.4f);
+    }
+
+    private void GameOver()
     {
         ChangeState(GameState.GameOver);
     }

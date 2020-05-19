@@ -8,14 +8,9 @@ public class Cube : MonoBehaviour
     [SerializeField] private AudioClip land;
     [SerializeField] private AudioClip bigLand;
 
-    [SerializeField]
-    private GameObject up;
-    [SerializeField]
-    private GameObject down;
-    [SerializeField]
-    private GameObject left;
-    [SerializeField]
-    private GameObject right;
+    [SerializeField] private AudioClip splosh;
+
+    private bool canKill = false;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -30,10 +25,27 @@ public class Cube : MonoBehaviour
                 AudioManager.Instance.PlayClip(land, 0.5f);
             }
         }
+
+        JeanMichelTesteur jean = collision.collider.GetComponent<JeanMichelTesteur>();
+        if(jean != null)
+        {
+            if (canKill)
+            {
+                AudioManager.Instance.PlayClip(splosh);
+                jean.Dead();
+            }
+        }
     }
 
     private void Update()
     {
-        
+        if (GetComponent<Rigidbody2D>().velocity.magnitude > 5)
+        {
+            canKill = true;
+        }
+        else
+        {
+            canKill = false;
+        }
     }
 }

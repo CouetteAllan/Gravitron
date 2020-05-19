@@ -11,8 +11,5 @@ public class Score : MonoBehaviour
 
     int count = 0;
 
-    public void StarDisplay()
-    {
-        
-    }
+    
 }

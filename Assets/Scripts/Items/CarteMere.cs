@@ -7,7 +7,7 @@ public class CarteMere : MonoBehaviour
 {
     [SerializeField]
     private Text cacahuete;
-    private bool collected = false;
+    public bool collected = false;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         bool collected = true;
@@ -17,4 +17,5 @@ public class CarteMere : MonoBehaviour
         }
         Destroy(gameObject);
     }
+
 }

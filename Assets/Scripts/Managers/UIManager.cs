@@ -20,16 +20,23 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject menuGameOver;
     [SerializeField] private GameObject menuVictoire;
     [SerializeField] private GameObject scoreBoard;
-
+    [SerializeField] private CarteMere carteMere;
     [SerializeField] private Image Arrow;
-
+    [SerializeField] private GameObject badge1;
+    [SerializeField] private GameObject badge2;
+    [SerializeField] private GameObject badge3;
     [SerializeField] private Text timerText;
-    //--------------------------------- Pour le ScoreBoard -------------
+
+
+    //--------------------------------- Pour le ScoreBoard ------------------------------------------------------
     [SerializeField] private Text timePassed;
     [SerializeField] private float expectedTPassed;
     float timeSinceStart;
     private float startTime;
     private bool finished = false;
+    bool condition1 = false;
+    bool condition2 = false;
+    bool condition3 = false;
 
 
     private void Awake()
@@ -176,6 +183,8 @@ public class UIManager : MonoBehaviour
         menuVictoire.SetActive(setActive);
     }
 
+    //-------------------------------------------------------- SCORE BOARD ---------------------------------------------------------
+
     public void AfficherScoreBoard(bool setActive)
     {
         scoreBoard.SetActive(setActive);
@@ -185,8 +194,12 @@ public class UIManager : MonoBehaviour
     {
         int actualEnergy = energy;
         chargesLeft.text = actualEnergy.ToString() + "/" + expectedELeft;
-
+        if(actualEnergy <= expectedELeft)
+        {
+            condition2 = true;
+        }
     }
+
     public void InGameTimer()
     {
         if (finished)
@@ -199,6 +212,7 @@ public class UIManager : MonoBehaviour
         float lastTime = timeSinceStart;
         timerText.text = minutes + ": " + seconds;
     }
+
     public void TimerAtTheEnd()
     {
         finished = true;
@@ -211,8 +225,46 @@ public class UIManager : MonoBehaviour
         }
         else if (timeSinceStart < expectedTPassed)
         {
-
+            condition3 = true;
         }
+    }
+
+    public void ScoreDisplay()
+    {
+        int starCount = 0;
+
+        if (carteMere.collected)
+        {
+            condition1 = true;
+            if (condition1)
+            {
+                starCount++;
+            }            
+        }
+
+        if (condition2)
+        {
+            starCount++;
+        }
+
+        if (condition3)
+        {
+            starCount++;
+        }
+        
+        if (starCount == 1)
+        {
+            badge1.SetActive(true);
+        }
+        else if (starCount == 2)
+        {
+            badge2.SetActive(true);
+        }
+        else if (starCount == 3)
+        {
+            badge3.SetActive(true);
+        }
+
     }
 
 }

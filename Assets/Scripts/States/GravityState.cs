@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GravityState : JeanBaseState
 {
+    private float rotation;
+
     public override void EnterState(JeanMichelTesteur jean)
     {
         if (UIManager.Instance.SendEnergy() == 0)
@@ -33,5 +35,16 @@ public class GravityState : JeanBaseState
 
     public override void Update(JeanMichelTesteur jean)
     {
+        float amountToRotate = 900 * Time.deltaTime;
+        rotation += amountToRotate;
+
+        if (rotation < jean.RotateGoal)
+        {
+            jean.transform.Rotate(Vector3.forward, amountToRotate);
+        }
+        else
+        {
+            jean.transform.rotation = Quaternion.identity;
+        }
     }
 }

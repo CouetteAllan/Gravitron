@@ -28,6 +28,7 @@ public class IdleState : JeanBaseState
 
         if (Input.GetButtonDown("Jump"))
         {
+            jean.Rigidbody2D.velocity = Vector2.zero;
             jumpDirection = -GameManager.Instance.SendGravityDirection();
 
             jean.Rigidbody2D.AddForce(jumpDirection * jean.Jump);

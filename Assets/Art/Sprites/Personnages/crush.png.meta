@@ -1,31 +1,16 @@
 fileFormatVersion: 2
-guid: 9941345aaf960d440b841149e0c426e8
+guid: 0662cfd6220db234f8fe914d9d5644a4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7746965393537691640
-    second: flip_0
+      213: -7654494564207864009
+    second: crush_0
   - first:
-      213: 8371215903730834654
-    second: flip_1
+      213: -5087191311158741250
+    second: crush_1
   - first:
-      213: -4645486537605584879
-    second: flip_2
-  - first:
-      213: 1515216502841827757
-    second: flip_3
-  - first:
-      213: -7166518993213096745
-    second: flip_4
-  - first:
-      213: 2000518749874990818
-    second: flip_5
-  - first:
-      213: -6309450470749891940
-    second: flip_6
-  - first:
-      213: -4925880233101825307
-    second: flip_7
+      213: 6783574702773326546
+    second: crush_2
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -122,7 +107,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: flip_0
+      name: crush_0
       rect:
         serializedVersion: 2
         x: 0
@@ -136,14 +121,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80011fe05004d7490800000000000000
-      internalID: -7746965393537691640
+      spriteID: 7375b35cfb5c5c590800000000000000
+      internalID: -7654494564207864009
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flip_1
+      name: crush_1
       rect:
         serializedVersion: 2
         x: 160
@@ -157,14 +142,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: edc1af703888c2470800000000000000
-      internalID: 8371215903730834654
+      spriteID: ef6fde1a47aa669b0800000000000000
+      internalID: -5087191311158741250
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flip_2
+      name: crush_2
       rect:
         serializedVersion: 2
         x: 320
@@ -178,113 +163,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 118e82d5b9ae78fb0800000000000000
-      internalID: -4645486537605584879
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: flip_3
-      rect:
-        serializedVersion: 2
-        x: 480
-        y: 0
-        width: 160
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: da162b1a161270510800000000000000
-      internalID: 1515216502841827757
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: flip_4
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 0
-        width: 160
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7dc717d02f86b8c90800000000000000
-      internalID: -7166518993213096745
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: flip_5
-      rect:
-        serializedVersion: 2
-        x: 800
-        y: 0
-        width: 160
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2eeaecc243543cb10800000000000000
-      internalID: 2000518749874990818
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: flip_6
-      rect:
-        serializedVersion: 2
-        x: 960
-        y: 0
-        width: 160
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c92180bc9345078a0800000000000000
-      internalID: -6309450470749891940
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: flip_7
-      rect:
-        serializedVersion: 2
-        x: 1120
-        y: 0
-        width: 160
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5eae8d3c602c3abb0800000000000000
-      internalID: -4925880233101825307
+      spriteID: 2d251225049142e50800000000000000
+      internalID: 6783574702773326546
       vertices: []
       indices: 
       edges: []

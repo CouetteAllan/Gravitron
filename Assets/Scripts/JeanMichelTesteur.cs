@@ -18,6 +18,11 @@ public class JeanMichelTesteur : MonoBehaviour
         get { return move; }
     }
 
+    private float rotateGoal;
+    public float RotateGoal
+    {
+        get { return rotateGoal; }
+    }
     [SerializeField]
     private AudioClip step;
 
@@ -49,6 +54,9 @@ public class JeanMichelTesteur : MonoBehaviour
     {
         get { return zwoshAnimator; }
     }
+
+    
+
     private bool isDead = false;
     #endregion
 
@@ -124,7 +132,7 @@ public class JeanMichelTesteur : MonoBehaviour
 
         if (deplacement > 0 && !facingRight)
         {
-            // ... flip JMTS
+            // ... flip JMT
             Flip();
         }
         
@@ -151,22 +159,22 @@ public class JeanMichelTesteur : MonoBehaviour
         if (Vector2.left == GameManager.Instance.SendGravityDirection())//déplacement sur le mur de gauche
         {
              move = new Vector2(0 , -deplacement);
-            this.transform.rotation = Quaternion.Euler(0, 0, -90);
+            rotateGoal = -90;
         }
         if (Vector2.right == GameManager.Instance.SendGravityDirection())
         {
              move = new Vector2(0 , deplacement);
-            this.transform.rotation = Quaternion.Euler(0, 0, 90);
+            rotateGoal = 90;
         }
         if (Vector2.up == GameManager.Instance.SendGravityDirection())
         {
              move = new Vector2(-deplacement, 0);
-            this.transform.rotation = Quaternion.Euler(0, 0, 180);
+            rotateGoal = 180;
         }
         if (Vector2.down == GameManager.Instance.SendGravityDirection())
         {
              move = new Vector2(deplacement, 0);
-            this.transform.rotation = Quaternion.Euler(0, 0, 0);
+            rotateGoal = 0;
         }
         
     }

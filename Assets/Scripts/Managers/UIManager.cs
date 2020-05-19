@@ -194,7 +194,13 @@ public class UIManager : MonoBehaviour
     {
         int actualEnergy = energy;
         chargesLeft.text = actualEnergy.ToString() + "/" + expectedELeft;
-        if(actualEnergy <= expectedELeft)
+
+        if(actualEnergy > expectedELeft)
+        {
+            chargesLeft.color = Color.red;
+        }
+
+        if(actualEnergy < expectedELeft)
         {
             condition2 = true;
         }
@@ -258,10 +264,13 @@ public class UIManager : MonoBehaviour
         }
         else if (starCount == 2)
         {
+            badge1.SetActive(true);
             badge2.SetActive(true);
         }
         else if (starCount == 3)
         {
+            badge1.SetActive(true);
+            badge2.SetActive(true);
             badge3.SetActive(true);
         }
 

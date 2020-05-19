@@ -9,6 +9,8 @@ public class Cube : MonoBehaviour
     [SerializeField] private AudioClip bigLand;
 
     [SerializeField] private AudioClip splosh;
+    [SerializeField] private CamShake shake;
+    [SerializeField] private UIManager t;
 
     private bool canKill = false;
 
@@ -31,6 +33,9 @@ public class Cube : MonoBehaviour
         {
             if (canKill)
             {
+                this.shake.Shake();
+                t.TimerAtTheEnd();
+                Destroy(jean.gameObject);
                 AudioManager.Instance.PlayClip(splosh);
                 jean.Dead();
             }

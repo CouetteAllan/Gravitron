@@ -22,6 +22,14 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private Image Arrow;
 
+    [SerializeField] private Text timerText;
+    //--------------------------------- Pour le ScoreBoard -------------
+    [SerializeField] private Text timePassed;
+    [SerializeField] private float expectedTPassed;
+    float timeSinceStart;
+    private float startTime;
+    private bool finished = false;
+
 
     private void Awake()
     {
@@ -36,7 +44,13 @@ public class UIManager : MonoBehaviour
     {
         menuPause.SetActive(false);
         ChangeEnergy(0);
-        
+        timerText.color = Color.blue;
+        startTime = Time.time;
+    }
+
+    private void Update()
+    {
+        InGameTimer();
     }
 
 
@@ -167,6 +181,27 @@ public class UIManager : MonoBehaviour
         chargesLeft.text = actualEnergy.ToString() + "/" + expectedELeft;
 
     }
+    public void InGameTimer()
+    {
+        if (finished)
+            return;
 
+        timeSinceStart = Time.time - startTime;
+
+        string minutes = ((int)timeSinceStart / 60).ToString();
+        string seconds = (timeSinceStart % 60).ToString("f2");
+        float lastTime = timeSinceStart;
+        timerText.text = minutes + ": " + seconds;
+    }
+    public void TimerAtTheEnd()
+    {
+        finished = true;
+        timerText.color = Color.red;
+        timePassed.text = timeSinceStart.ToString() + "/" + expectedTPassed.ToString();
+        if (timeSinceStart > expectedTPassed)
+        {
+            timePassed.color = Color.red;
+        }
+    }
 
 }

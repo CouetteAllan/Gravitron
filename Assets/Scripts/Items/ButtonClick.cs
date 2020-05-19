@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Button : MonoBehaviour
+public class ButtonClick : MonoBehaviour
 {
     [SerializeField] private InteractableObjects activableObject;
 

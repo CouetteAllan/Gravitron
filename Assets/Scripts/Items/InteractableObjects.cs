@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InteractableObjects : MonoBehaviour
 {
-    [SerializeField] protected Button button;
+    [SerializeField] protected ButtonClick button;
 
 
 

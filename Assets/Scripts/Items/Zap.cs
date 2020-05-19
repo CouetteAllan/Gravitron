@@ -7,7 +7,7 @@ public class Zap : InteractableObjects
     [SerializeField]
     private CamShake shake;
     [SerializeField]
-    private Timer t;
+    private UIManager t;
 
 
 
@@ -28,7 +28,7 @@ public class Zap : InteractableObjects
         JeanMichelTesteur jean = collision.GetComponent <JeanMichelTesteur>();
         if (jean != null)
         {
-            t.Finish();
+            t.TimerAtTheEnd();
             Destroy(jean.gameObject);
         }            
             jean.Dead();

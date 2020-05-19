@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Sortie : MonoBehaviour
 {
-    [SerializeField]
-    private Timer t;
     
 
 
@@ -14,7 +12,6 @@ public class Sortie : MonoBehaviour
         JeanMichelTesteur player = collision.GetComponent <JeanMichelTesteur>();
         if (player != null)
         {
-            t.Finish();
             GameManager.Instance.ChangeState(GameManager.GameState.Victory);
         }
         

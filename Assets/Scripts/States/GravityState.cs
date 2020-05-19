@@ -8,6 +8,7 @@ public class GravityState : JeanBaseState
 
     public override void EnterState(JeanMichelTesteur jean)
     {
+        rotation = 0;
         if (UIManager.Instance.SendEnergy() == 0)
         {
             jean.TransitionToState(jean.idleState);
@@ -36,15 +37,18 @@ public class GravityState : JeanBaseState
     public override void Update(JeanMichelTesteur jean)
     {
         float amountToRotate = 900 * Time.deltaTime;
+        /*
         rotation += amountToRotate;
 
         if (rotation < jean.RotateGoal)
         {
             jean.transform.Rotate(Vector3.forward, amountToRotate);
-        }
-        else
+        }*/
+
+
+        if (!Mathf.Approximately(jean.transform.rotation.z,jean.RotateGoal))
         {
-            jean.transform.rotation = Quaternion.identity;
+            jean.transform.Rotate(Vector3.forward, amountToRotate);
         }
     }
 }

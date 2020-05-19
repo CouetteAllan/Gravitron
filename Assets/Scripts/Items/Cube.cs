@@ -36,6 +36,7 @@ public class Cube : MonoBehaviour
                 this.shake.Shake();
                 t.TimerAtTheEnd();
                 Destroy(jean.gameObject);
+                jean.GetComponent<Animator>().SetTrigger("Crush");
                 AudioManager.Instance.PlayClip(splosh);
                 jean.Dead();
             }

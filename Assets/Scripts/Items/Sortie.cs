@@ -14,9 +14,10 @@ public class Sortie : MonoBehaviour
         JeanMichelTesteur player = collision.GetComponent <JeanMichelTesteur>();
         if (player != null)
         {
-            t.Finish();
+            LevelList.lastLevelUnlock++;
+            Debug.Log("Sortie atteinte, " + LevelList.lastLevelUnlock);
             GameManager.Instance.ChangeState(GameManager.GameState.Victory);
+            t.Finish();
         }
-        
     }
 }

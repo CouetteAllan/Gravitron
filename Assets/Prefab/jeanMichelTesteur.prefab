@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c35f6600282a3b347a01da825658cda3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  step: {fileID: 8300000, guid: 61f87eb9bcc1fb04cbe64deb5635824e, type: 3}
+  step: {fileID: 8300000, guid: 62e4f65aa1f680246b53ee90adb05d9e, type: 3}
   speed: 10
   jump: 3500
   zwoshAnimator: {fileID: 2527845401423828748}

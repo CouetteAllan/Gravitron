@@ -19,6 +19,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject menuPause;
     [SerializeField] private GameObject menuGameOver;
     [SerializeField] private GameObject menuVictoire;
+    [SerializeField] private GameObject scoreBoard;
 
     [SerializeField] private Image Arrow;
 
@@ -175,6 +176,11 @@ public class UIManager : MonoBehaviour
         menuVictoire.SetActive(setActive);
     }
 
+    public void AfficherScoreBoard(bool setActive)
+    {
+        scoreBoard.SetActive(setActive);
+    }
+
     public void ActualEnergy()
     {
         int actualEnergy = energy;
@@ -198,9 +204,14 @@ public class UIManager : MonoBehaviour
         finished = true;
         timerText.color = Color.red;
         timePassed.text = timeSinceStart.ToString() + "/" + expectedTPassed.ToString();
+
         if (timeSinceStart > expectedTPassed)
         {
             timePassed.color = Color.red;
+        }
+        else if (timeSinceStart < expectedTPassed)
+        {
+
         }
     }
 

@@ -27,8 +27,13 @@ public class Cube : MonoBehaviour
             }
             else
             {
-                AudioManager.Instance.PlayClip(land);
+                AudioManager.Instance.PlayClip(land, 0.5f);
             }
         }
+    }
+
+    private void Update()
+    {
+        
     }
 }

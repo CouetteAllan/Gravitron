@@ -359,6 +359,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   land: {fileID: 8300000, guid: e3018d91368f37a4d97d2381b99ec759, type: 3}
   bigLand: {fileID: 8300000, guid: db16ca1c7031fb440a896367ba911178, type: 3}
+  up: {fileID: 7483388079415091118}
+  down: {fileID: 4265656248764706729}
+  left: {fileID: 851084396654778014}
+  right: {fileID: 252775925986310277}
 --- !u!1 &7483388079415091118
 GameObject:
   m_ObjectHideFlags: 0

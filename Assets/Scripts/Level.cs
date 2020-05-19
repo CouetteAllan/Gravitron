@@ -5,44 +5,27 @@ using UnityEngine.UI;
 
 public class Level : MonoBehaviour
 {
-    [SerializeField] private Image level;
-    [SerializeField] private Button playLevel;
+    private Button levelButton;
     [SerializeField] private List<Image> cartes = new List<Image>();
-
-    private bool isCleared = true;
+    
 
     private Color lockedColor = new Color(0.2f, 0.2f, 0.2f);
 
-
-
- 
-
-    public void ButtonColor()
+    private void Start()
     {
-        if (!isCleared)
+        levelButton = GetComponent<Button>();
+    }
+
+
+    public void EnableButton(bool clear)
+    {
+        if (clear)
         {
-            this.level.color = lockedColor;
-            playLevel.enabled = false;
+            
         }
         else
         {
-            level.color = Color.white;
-            playLevel.enabled = true;
-        }
-    }
 
-    public void Cacahuetes(int reward)
-    {
-        for (int i = 0; i < cartes.Count; i++)
-        {
-            if (i > reward)
-            {
-                cartes[i].color = lockedColor;
-            }
-            else
-            {
-                cartes[i].color = Color.white;
-            }
         }
     }
 }

@@ -346,6 +346,7 @@ GameObject:
   - component: {fileID: 8961780444921358761}
   - component: {fileID: 8961780444921358806}
   - component: {fileID: 8961780444921358807}
+  - component: {fileID: 6740191468292835679}
   m_Layer: 5
   m_Name: ImageBoutonduNiveau
   m_TagString: Untagged
@@ -464,6 +465,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6740191468292835679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8961780444921358805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87ddcd890e00e1b45a63a3ec7356e3fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelButton: {fileID: 0}
+  cartes:
+  - {fileID: 1005475759181565592}
+  - {fileID: 7570964488629829703}
+  - {fileID: 2090720974430789772}
 --- !u!1 &8961780445624337014
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,7 +491,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8961780445624336969}
-  - component: {fileID: 7979282303828639068}
   m_Layer: 5
   m_Name: Niveau
   m_TagString: Untagged
@@ -501,20 +518,3 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &7979282303828639068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8961780445624337014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87ddcd890e00e1b45a63a3ec7356e3fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  level: {fileID: 8961780444921358806}
-  cartes:
-  - {fileID: 1005475759181565592}
-  - {fileID: 7570964488629829703}
-  - {fileID: 2090720974430789772}

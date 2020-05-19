@@ -201,7 +201,7 @@ PrefabInstance:
     - target: {fileID: 3833482854792636050, guid: a2e7a11efe03fbb4ab898c9934b61c40,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4928055781815738309, guid: a2e7a11efe03fbb4ab898c9934b61c40,
         type: 3}
@@ -550,6 +550,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7844707970629087168, guid: ec780e84153479b4691258a266c67b27,
+        type: 3}
+      propertyPath: timerText
+      value: 
+      objectReference: {fileID: 1818972936}
+    - target: {fileID: 7844707970629087168, guid: ec780e84153479b4691258a266c67b27,
+        type: 3}
+      propertyPath: timePassed
+      value: 
+      objectReference: {fileID: 1818972936}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec780e84153479b4691258a266c67b27, type: 3}
 --- !u!1001 &556720369
@@ -3273,6 +3283,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 1818972936}
+  timePassed: {fileID: 0}
+  expectedTPassed: 0
 --- !u!1001 &1891362240
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3764,15 +3776,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: carteMere
       objectReference: {fileID: 0}
+    - target: {fileID: 853753445511408955, guid: 9c7444ca55e95524b83774d4af8844e8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2265320191665709928, guid: 9c7444ca55e95524b83774d4af8844e8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 11.68
       objectReference: {fileID: 0}
     - target: {fileID: 2265320191665709928, guid: 9c7444ca55e95524b83774d4af8844e8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -3.74
       objectReference: {fileID: 0}
     - target: {fileID: 2265320191665709928, guid: 9c7444ca55e95524b83774d4af8844e8,
         type: 3}

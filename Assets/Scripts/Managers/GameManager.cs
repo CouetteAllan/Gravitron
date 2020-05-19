@@ -81,6 +81,7 @@ public class GameManager : MonoBehaviour
                 UIManager.Instance.ActualEnergy();
                 UIManager.Instance.TimerAtTheEnd();
                 UIManager.Instance.AfficherScoreBoard(true);
+                UIManager.Instance.ScoreDisplay();
                 Time.timeScale = 0;
                 break;
             default:

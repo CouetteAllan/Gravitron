@@ -23,5 +23,6 @@ public class JumpingState : JeanBaseState
         Vector2 position = jean.Rigidbody2D.position;
         position += jean.Move * jean.Speed * Time.deltaTime;
         jean.Rigidbody2D.position = position;
+        jean.GetComponent<Animator>().SetFloat("FloatVelocityY", jean.Rigidbody2D.velocity.y);
     }
 }

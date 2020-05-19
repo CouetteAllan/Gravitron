@@ -19,6 +19,9 @@ public class JeanMichelTesteur : MonoBehaviour
     }
 
     [SerializeField]
+    private AudioClip step;
+
+    [SerializeField]
     private float speed;
     public float Speed
     {
@@ -157,8 +160,12 @@ public class JeanMichelTesteur : MonoBehaviour
     {
         this.isDead = true;
     }
-    
 
-    
-    
+    public void PlayClipJMT(float duration )
+    {
+        AudioManager.Instance.PlayClip(step,0.01f,false, duration);
+    }
+
+
+
 }

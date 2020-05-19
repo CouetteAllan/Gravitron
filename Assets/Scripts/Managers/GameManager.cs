@@ -66,6 +66,7 @@ public class GameManager : MonoBehaviour
                 UIManager.Instance.AfficherScoreBoard(false);
                 UIManager.Instance.AfficherGameOver(false);
                 UIManager.Instance.InGameTimer();
+                UIManager.Instance.ActualEnergy();
                 Time.timeScale = 1;
                 break;
             case GameState.Pause:
@@ -81,6 +82,7 @@ public class GameManager : MonoBehaviour
                 UIManager.Instance.ActualEnergy();
                 UIManager.Instance.TimerAtTheEnd();
                 UIManager.Instance.AfficherScoreBoard(true);
+                UIManager.Instance.ScoreDisplay();
                 Time.timeScale = 0;
                 break;
             default:

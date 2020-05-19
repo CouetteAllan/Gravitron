@@ -50,9 +50,10 @@ public class JeanMichelTesteur : MonoBehaviour
         get { return zwoshAnimator; }
     }
     private bool isDead = false;
-    #endregion 
-    
+    #endregion
 
+    
+    
     void Start()
     {
         TransitionToState(idleState);
@@ -62,6 +63,11 @@ public class JeanMichelTesteur : MonoBehaviour
     
     void Update()
     {
+        if (isDead)
+        {
+            GameManager.Instance.LateGameOver();
+            return;
+        }
         MoveWithGravity();
         
         #region Input pour la Gravité
@@ -114,10 +120,7 @@ public class JeanMichelTesteur : MonoBehaviour
 
         Debug.Log(GameManager.Instance.GetGameState().ToString());
         currentState.Update(this);
-        if (isDead)
-        {
-            GameManager.Instance.GameIsOver();
-        }
+        
 
         if (deplacement > 0 && !facingRight)
         {

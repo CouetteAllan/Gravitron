@@ -102,7 +102,7 @@ Rigidbody2D:
   m_GravityScale: 4
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &-8401965535082416741
@@ -145,4 +145,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   land: {fileID: 8300000, guid: e3018d91368f37a4d97d2381b99ec759, type: 3}
   bigLand: {fileID: 8300000, guid: db16ca1c7031fb440a896367ba911178, type: 3}
-  splosh: {fileID: 0}
+  splosh: {fileID: 8300000, guid: e23d6f1bfc16faf42951e797c16455cb, type: 3}

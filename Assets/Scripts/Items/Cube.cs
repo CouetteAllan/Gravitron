@@ -39,7 +39,7 @@ public class Cube : MonoBehaviour
 
     private void Update()
     {
-        if (GetComponent<Rigidbody2D>().velocity.magnitude > 5)
+        if (GetComponent<Rigidbody2D>().velocity.magnitude > 8)
         {
             canKill = true;
         }

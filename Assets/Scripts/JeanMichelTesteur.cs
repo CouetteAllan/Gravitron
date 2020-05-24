@@ -159,22 +159,22 @@ public class JeanMichelTesteur : MonoBehaviour
         if (Vector2.left == GameManager.Instance.SendGravityDirection())//déplacement sur le mur de gauche
         {
              move = new Vector2(0 , -deplacement);
-            rotateGoal = -90;
+            this.transform.rotation = Quaternion.Euler(0, 0, -90);
         }
         if (Vector2.right == GameManager.Instance.SendGravityDirection())
         {
              move = new Vector2(0 , deplacement);
-            rotateGoal = 90;
+            this.transform.rotation = Quaternion.Euler(0, 0, 90);
         }
         if (Vector2.up == GameManager.Instance.SendGravityDirection())
         {
              move = new Vector2(-deplacement, 0);
-            rotateGoal = 180;
+            this.transform.rotation = Quaternion.Euler(0, 0, 180);
         }
         if (Vector2.down == GameManager.Instance.SendGravityDirection())
         {
              move = new Vector2(deplacement, 0);
-            rotateGoal = 0;
+            this.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         
     }

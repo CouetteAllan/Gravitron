@@ -36,19 +36,6 @@ public class GravityState : JeanBaseState
 
     public override void Update(JeanMichelTesteur jean)
     {
-        float amountToRotate = 900 * Time.deltaTime;
-        /*
-        rotation += amountToRotate;
 
-        if (rotation < jean.RotateGoal)
-        {
-            jean.transform.Rotate(Vector3.forward, amountToRotate);
-        }*/
-
-
-        if (!Mathf.Approximately(jean.transform.rotation.z,jean.RotateGoal))
-        {
-            jean.transform.Rotate(Vector3.forward, amountToRotate);
-        }
     }
 }

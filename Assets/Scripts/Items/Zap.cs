@@ -6,7 +6,7 @@ public class Zap : InteractableObjects
 {
     [SerializeField]
     private CamShake shake;
-
+    
 
 
 
@@ -28,6 +28,12 @@ public class Zap : InteractableObjects
         if (jean != null)
         {            
             jean.Dead(0.2f);
+            Invoke("StopSound", 0.2f);
         }
+    }
+
+    private void StopSound()
+    {
+        GetComponent<AudioSource>().mute = true;
     }
 }

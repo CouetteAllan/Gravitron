@@ -146,9 +146,9 @@ public class GameManager : MonoBehaviour
         return this.gameState;
     }
 
-    public void LateGameOver()
+    public void LateGameOver(float time)
     {
-        Invoke(nameof(GameOver), 0.4f);
+        Invoke(nameof(GameOver), time);
     }
 
     private void GameOver()

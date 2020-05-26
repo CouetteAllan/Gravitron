@@ -71,7 +71,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5167a08164dd506418430baa3a43ce8b, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.66
   m_Pitch: 1
@@ -172,7 +172,7 @@ MonoBehaviour:
   energyUp: {fileID: 8300000, guid: 535d22dce4b0a3740a3846a9fc3eb808, type: 3}
   chargesLeft: {fileID: 0}
   energyTxt: {fileID: 0}
-  energy: 2
+  energy: 30
   expectedELeft: 3
   menuPause: {fileID: 0}
   menuGameOver: {fileID: 0}

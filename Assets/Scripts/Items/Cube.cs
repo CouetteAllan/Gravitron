@@ -9,8 +9,6 @@ public class Cube : MonoBehaviour
     [SerializeField] private AudioClip bigLand;
 
     [SerializeField] private AudioClip splosh;
-    [SerializeField] private CamShake shake;
-    [SerializeField] private UIManager t;
 
     private float vitesse;
 
@@ -35,7 +33,7 @@ public class Cube : MonoBehaviour
         {
             if (canKill)
             {
-                this.shake.Shake();
+               
                 jean.GetComponent<Animator>().SetTrigger("Crush");
                 AudioManager.Instance.PlayClip(splosh);
                 jean.Dead(0.4f);

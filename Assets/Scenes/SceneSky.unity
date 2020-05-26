@@ -1830,18 +1830,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7844707970629087168, guid: ec780e84153479b4691258a266c67b27,
+    - target: {fileID: 3195452604685385339, guid: ec780e84153479b4691258a266c67b27,
         type: 3}
-      propertyPath: timerText
+      propertyPath: shake
       value: 
-      objectReference: {fileID: 1727984231}
-    - target: {fileID: 7844707970629087168, guid: ec780e84153479b4691258a266c67b27,
-        type: 3}
-      propertyPath: timePassed
-      value: 
-      objectReference: {fileID: 1134136052}
-    m_RemovedComponents:
-    - {fileID: 7844707970629087168, guid: ec780e84153479b4691258a266c67b27, type: 3}
+      objectReference: {fileID: 1570494593}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec780e84153479b4691258a266c67b27, type: 3}
 --- !u!114 &1470870037 stripped
 MonoBehaviour:

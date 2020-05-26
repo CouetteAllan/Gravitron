@@ -9,7 +9,6 @@ public class Cube : MonoBehaviour
     [SerializeField] private AudioClip bigLand;
 
     [SerializeField] private AudioClip splosh;
-    [SerializeField] private UIManager t;
 
     private float vitesse;
 

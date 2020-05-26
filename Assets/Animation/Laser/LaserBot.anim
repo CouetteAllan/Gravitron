@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Laser milieu
+  m_Name: LaserBot
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,13 +20,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -8430007596381533557, guid: 5cb3666adf9fcdb4690fd38c448263f8,
+      value: {fileID: 1734527965088734551, guid: 7ead03ef8a14aff49b64f5c5d817df8a,
         type: 3}
     - time: 0.083333336
-      value: {fileID: 3295771378250126185, guid: 5cb3666adf9fcdb4690fd38c448263f8,
+      value: {fileID: -9189267649615638727, guid: 7ead03ef8a14aff49b64f5c5d817df8a,
         type: 3}
     - time: 0.16666667
-      value: {fileID: -8430007596381533557, guid: 5cb3666adf9fcdb4690fd38c448263f8,
+      value: {fileID: -2186002312841739251, guid: 7ead03ef8a14aff49b64f5c5d817df8a,
         type: 3}
     attribute: m_Sprite
     path: 
@@ -47,9 +47,9 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -8430007596381533557, guid: 5cb3666adf9fcdb4690fd38c448263f8, type: 3}
-    - {fileID: 3295771378250126185, guid: 5cb3666adf9fcdb4690fd38c448263f8, type: 3}
-    - {fileID: -8430007596381533557, guid: 5cb3666adf9fcdb4690fd38c448263f8, type: 3}
+    - {fileID: 1734527965088734551, guid: 7ead03ef8a14aff49b64f5c5d817df8a, type: 3}
+    - {fileID: -9189267649615638727, guid: 7ead03ef8a14aff49b64f5c5d817df8a, type: 3}
+    - {fileID: -2186002312841739251, guid: 7ead03ef8a14aff49b64f5c5d817df8a, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

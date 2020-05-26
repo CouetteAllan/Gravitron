@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class GravityState : JeanBaseState
 {
-    private float rotation;
+    private float rotationSpeed = 5;
 
     public override void EnterState(JeanMichelTesteur jean)
     {
-        rotation = 0;
+        rotationSpeed = 0;
         if (UIManager.Instance.SendEnergy() == 0)
         {
             jean.TransitionToState(jean.idleState);
@@ -19,13 +19,8 @@ public class GravityState : JeanBaseState
         jean.GetComponent<Animator>().SetBool("Falling", true);
         jean.GetComponent<Animator>().SetBool("Jumping", false);
         jean.ZwoshAnim.SetTrigger("GravityChange");
+        jean.GetComponent<Animator>().SetTrigger("GravityChange");
 
-        float gravityValueX = Physics2D.gravity.x;
-        float gravityValueY = Physics2D.gravity.y;
-
-        jean.GetComponent<Animator>().SetFloat("GravityDirectionX", gravityValueX);
-        jean.GetComponent<Animator>().SetFloat("GravityDirectionY", gravityValueY);
-        
     }
 
     public override void OnTriggerEnter2D(JeanMichelTesteur jean)
@@ -36,6 +31,6 @@ public class GravityState : JeanBaseState
 
     public override void Update(JeanMichelTesteur jean)
     {
-
+        jean.Rigidbody2D.MoveRotation(90);
     }
 }

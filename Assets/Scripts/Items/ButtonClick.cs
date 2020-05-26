@@ -20,29 +20,25 @@ public class ButtonClick : MonoBehaviour
         private set { return; }
     }*/
    
-    void Start()
-    {
-        
-    }
 
 
-    void Update()
-    {
-        
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         JeanMichelTesteur jean = collision.GetComponent<JeanMichelTesteur>();
         if(jean != null)
         {
-            active = !active;
-            //directionVectorPorte = - directionVectorPorte;
-            OnButtonClick();
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Debug.Log("Avant pression : active = " + active);
+                active = !active;
+                Debug.Log("Avant pression : active = " + active);
+                //directionVectorPorte = - directionVectorPorte;
+                OnButtonClick(ref active);
+            }
         }
     }
 
-    public void OnButtonClick()
+    public void OnButtonClick(ref bool active)
     {
         activableObject.ChangeBehaviour();
     }

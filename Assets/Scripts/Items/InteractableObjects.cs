@@ -10,13 +10,16 @@ public class InteractableObjects : MonoBehaviour
 
     public void ChangeBehaviour()
     {
+        // Debug.Log("Bouton.Active = " + button.Active);
         if (button.Active)
         {
             ActivateObject();
+            // Debug.Log("Objet Activé");
         }
         else
         {
             DisabledObject();
+            // Debug.Log("Objet Désactivé");
         }
     }
 

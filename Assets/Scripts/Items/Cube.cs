@@ -12,6 +12,8 @@ public class Cube : MonoBehaviour
     [SerializeField] private CamShake shake;
     [SerializeField] private UIManager t;
 
+    private float vitesse;
+
     private bool canKill = false;
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -45,7 +47,8 @@ public class Cube : MonoBehaviour
 
     private void Update()
     {
-        if (GetComponent<Rigidbody2D>().velocity.magnitude > 8)
+        vitesse = GetComponent<Rigidbody2D>().velocity.magnitude;
+        if (GetComponent<Rigidbody2D>().velocity.magnitude > 20)
         {
             canKill = true;
         }

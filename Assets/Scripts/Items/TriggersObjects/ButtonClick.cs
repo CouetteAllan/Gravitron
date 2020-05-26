@@ -21,6 +21,7 @@ public class ButtonClick : TriggerObjects
             if (Input.GetKeyDown(KeyCode.E))
             {
                 active = !active;
+                Debug.Log("Bouton préssé, " + Active);
                 //directionVectorPorte = - directionVectorPorte;
                 Snap();
             }

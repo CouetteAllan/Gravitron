@@ -555,7 +555,7 @@ PrefabInstance:
     - target: {fileID: 8961780445624336969, guid: bfa1c4e471aed0c4aad234983d7cbca3,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 300
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8961780445624336969, guid: bfa1c4e471aed0c4aad234983d7cbca3,
         type: 3}
@@ -1774,6 +1774,11 @@ PrefabInstance:
         type: 3}
       propertyPath: cartes.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8961780444921358804, guid: bfa1c4e471aed0c4aad234983d7cbca3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -100
       objectReference: {fileID: 0}
     - target: {fileID: 8961780444921358805, guid: bfa1c4e471aed0c4aad234983d7cbca3,
         type: 3}

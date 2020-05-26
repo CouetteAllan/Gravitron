@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Laser : MonoBehaviour
+public class Laser : InteractableObjects
 {
     [SerializeField]
     private AudioClip deadlyLaser;
+    
 
-    private void Update()
-    {
-        
-    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         JeanMichelTesteur jean = collision.GetComponent<JeanMichelTesteur>();

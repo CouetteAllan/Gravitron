@@ -8,7 +8,7 @@ public class Porte : InteractableObjects
 
     private Vector2 targetMovePosition;
 
-    [SerializeField] private float distance = 1;
+    [SerializeField] private float distance;
 
     [SerializeField] private bool verticalDoor = false;
 

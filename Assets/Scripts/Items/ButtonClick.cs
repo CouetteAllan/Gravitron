@@ -2,17 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ButtonClick : MonoBehaviour
-{
-    [SerializeField] private InteractableObjects activableObject;
-
-    private bool active = false;
-    public bool Active
-    {
-        get { return active; }
-        set { active = value; }
-    }
-
+public class ButtonClick : TriggerObjects
+{ 
     /*private int directionVectorPorte = 1;
     public int DirectionVectorPorte
     {
@@ -29,17 +20,10 @@ public class ButtonClick : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log("Avant pression : active = " + active);
                 active = !active;
-                Debug.Log("Avant pression : active = " + active);
                 //directionVectorPorte = - directionVectorPorte;
-                OnButtonClick(ref active);
+                Snap();
             }
         }
-    }
-
-    public void OnButtonClick(ref bool active)
-    {
-        activableObject.ChangeBehaviour();
     }
 }

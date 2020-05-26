@@ -60,9 +60,9 @@ public class JeanMichelTesteur : MonoBehaviour
 
     private bool isDead = false;
     #endregion
+    [SerializeField] private CamShake shake;
 
-    
-    
+
     void Start()
     {
         TransitionToState(idleState);
@@ -182,6 +182,7 @@ public class JeanMichelTesteur : MonoBehaviour
     public void Dead(float time)
     {
         this.isDead = true;
+        this.shake.Shake();
         deathLateTimer = time;
     }
 

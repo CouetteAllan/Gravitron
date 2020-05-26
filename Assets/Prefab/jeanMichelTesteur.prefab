@@ -220,6 +220,7 @@ MonoBehaviour:
   speed: 10
   jump: 3500
   zwoshAnimator: {fileID: 2527845401423828748}
+  shake: {fileID: 0}
 --- !u!95 &1671762636
 Animator:
   serializedVersion: 3

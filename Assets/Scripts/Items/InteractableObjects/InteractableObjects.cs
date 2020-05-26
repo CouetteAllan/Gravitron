@@ -21,7 +21,7 @@ public class InteractableObjects : MonoBehaviour
             ActivateObject();
             // Debug.Log("Objet Activé");
         }
-        else
+        else if (!trigger.Active)
         {
             DisabledObject();
             // Debug.Log("Objet Désactivé");

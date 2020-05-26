@@ -104,6 +104,7 @@ public class Levier : TriggerObjects
 
     public void ActivateLever()
     {
+        Debug.Log("Levier enclenché, " + Active);
         CancelInvoke("TrainLever");
         InvokeRepeating("TrainLever", 0, Time.deltaTime);
         Active = !Active;
@@ -127,7 +128,6 @@ public class Levier : TriggerObjects
     IEnumerator StopTrain()
     {
         Snap();
-        active = Active;
         yield return new WaitForSeconds(1);
         CancelInvoke();
     }

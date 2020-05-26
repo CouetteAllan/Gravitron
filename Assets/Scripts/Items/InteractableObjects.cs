@@ -7,6 +7,11 @@ public class InteractableObjects : MonoBehaviour
     [SerializeField] protected TriggerObjects trigger;
 
 
+    private void Start()
+    {
+        ChangeBehaviour();
+    }
+
 
     public void ChangeBehaviour()
     {
@@ -25,11 +30,13 @@ public class InteractableObjects : MonoBehaviour
 
     protected virtual void ActivateObject()
     {
-
+        GetComponent<SpriteRenderer>().enabled = true;
+        GetComponent<BoxCollider2D>().enabled = true;
     } 
 
     protected virtual void DisabledObject()
     {
-
+        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<BoxCollider2D>().enabled = false;
     }
 }

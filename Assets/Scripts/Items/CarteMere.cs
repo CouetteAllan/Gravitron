@@ -10,13 +10,17 @@ public class CarteMere : MonoBehaviour
     public bool collected = false;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        collected = true;
-        if (collected == true)
+        JeanMichelTesteur jean = collision.GetComponent<JeanMichelTesteur>();
+        if (jean != null)
         {
-            cacahuete.text = "Oui!";
-            
+            collected = true;
+            if (collected == true)
+            {
+                cacahuete.text = "Oui!";
+
+            }
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
     }
 
 }

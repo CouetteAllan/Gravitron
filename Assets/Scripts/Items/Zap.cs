@@ -29,8 +29,7 @@ public class Zap : InteractableObjects
         if (jean != null)
         {
             t.TimerAtTheEnd();
-            Destroy(jean.gameObject);
-        }            
-            jean.Dead();
+            jean.Dead(0.2f);
         }
     }
+}

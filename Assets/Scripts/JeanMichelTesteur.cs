@@ -55,7 +55,8 @@ public class JeanMichelTesteur : MonoBehaviour
         get { return zwoshAnimator; }
     }
 
-    
+
+    private float deathLateTimer;
 
     private bool isDead = false;
     #endregion
@@ -73,8 +74,7 @@ public class JeanMichelTesteur : MonoBehaviour
     {
         if (isDead)
         {
-            GameManager.Instance.LateGameOver();
-            return;
+            GameManager.Instance.LateGameOver(deathLateTimer);
         }
         MoveWithGravity();
         
@@ -179,9 +179,10 @@ public class JeanMichelTesteur : MonoBehaviour
         
     }
 
-    public void Dead()
+    public void Dead(float time)
     {
         this.isDead = true;
+        deathLateTimer = time;
     }
 
     public void PlayClipJMT(float duration )

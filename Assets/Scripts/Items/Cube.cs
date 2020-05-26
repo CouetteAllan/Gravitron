@@ -39,7 +39,7 @@ public class Cube : MonoBehaviour
                 t.TimerAtTheEnd();
                 jean.GetComponent<Animator>().SetTrigger("Crush");
                 AudioManager.Instance.PlayClip(splosh);
-                jean.Dead();
+                jean.Dead(0.4f);
                 
             }
         }

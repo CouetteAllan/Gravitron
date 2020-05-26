@@ -19,7 +19,7 @@ public class Laser : MonoBehaviour
         {
 
             AudioManager.Instance.PlayClip(deadlyLaser);
-            jean.Dead();
+            jean.Dead(1);
             jean.GetComponent<Animator>().SetTrigger("Desintegrated");
         }
     }

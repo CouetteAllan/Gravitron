@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TriggerObjects : MonoBehaviour
 {
+    [SerializeField] private InteractableObjects[] activableObjects;
 
-    [SerializeField] private InteractableObjects activableObject;
 
     [SerializeField] protected bool active = false;
     public bool Active
@@ -17,6 +17,9 @@ public class TriggerObjects : MonoBehaviour
 
     protected virtual void Snap()
     {
-        activableObject.ChangeBehaviour();
+        foreach (InteractableObjects activableObject in activableObjects)
+        {
+            activableObject.ChangeBehaviour();
+        }
     }
 }

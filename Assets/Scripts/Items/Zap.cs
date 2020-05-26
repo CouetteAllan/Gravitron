@@ -6,8 +6,7 @@ public class Zap : InteractableObjects
 {
     [SerializeField]
     private CamShake shake;
-    [SerializeField]
-    private UIManager t;
+
 
 
 
@@ -27,8 +26,7 @@ public class Zap : InteractableObjects
         this.shake.Shake();
         JeanMichelTesteur jean = collision.GetComponent <JeanMichelTesteur>();
         if (jean != null)
-        {
-            t.TimerAtTheEnd();
+        {            
             jean.Dead(0.2f);
         }
     }

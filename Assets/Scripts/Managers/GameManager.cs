@@ -62,7 +62,6 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.InGame:
                 UIManager.Instance.AfficherMenuPause(false);
-                UIManager.Instance.AfficherMenuVictoire(false);
                 UIManager.Instance.AfficherScoreBoard(false);
                 UIManager.Instance.AfficherGameOver(false);
                 UIManager.Instance.InGameTimer();
@@ -76,9 +75,9 @@ public class GameManager : MonoBehaviour
             case GameState.GameOver:
                 Time.timeScale = 0;
                 UIManager.Instance.AfficherGameOver(true);
+                UIManager.Instance.TimerAtTheEnd();
                 break;
             case GameState.Victory:
-                UIManager.Instance.AfficherMenuVictoire(true);
                 UIManager.Instance.ActualEnergy();
                 UIManager.Instance.TimerAtTheEnd();
                 UIManager.Instance.AfficherScoreBoard(true);

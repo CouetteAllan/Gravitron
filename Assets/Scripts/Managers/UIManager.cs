@@ -178,10 +178,6 @@ public class UIManager : MonoBehaviour
     
     //------------------------------------------------------------------------ MENU VICTOIRE ------------------------------------------------------------------------
 
-    public void AfficherMenuVictoire(bool setActive)
-    {
-        menuVictoire.SetActive(setActive);
-    }
 
     //-------------------------------------------------------- SCORE BOARD ---------------------------------------------------------
 

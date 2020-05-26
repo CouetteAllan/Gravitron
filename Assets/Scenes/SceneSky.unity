@@ -266,7 +266,7 @@ PrefabInstance:
         type: 3}
       propertyPath: menuGameOver
       value: 
-      objectReference: {fileID: 791345615}
+      objectReference: {fileID: 445137670}
     - target: {fileID: 6027545492714867343, guid: 536264d00a9d5eb439f58bcd4a7e7cca,
         type: 3}
       propertyPath: menuVictoire
@@ -407,6 +407,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &445137670 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3058251030167006018, guid: a2e7a11efe03fbb4ab898c9934b61c40,
+    type: 3}
+  m_PrefabInstance: {fileID: 80260642}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &544146787
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -494,12 +500,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &791345615 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 505180075159867483, guid: a2e7a11efe03fbb4ab898c9934b61c40,
-    type: 3}
-  m_PrefabInstance: {fileID: 80260642}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &857216219 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 857216219, guid: 0960f25274032274f88d874873f19492,

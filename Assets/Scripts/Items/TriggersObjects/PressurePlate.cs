@@ -15,6 +15,8 @@ public class PressurePlate : TriggerObjects
             Active = true;
             Snap();
             GetComponent<SpriteRenderer>().sprite = PlaquePressee;
+            GetComponent<BoxCollider2D>().size = new Vector2(7.6f, 0.5f);
+            
         }
     }
 
@@ -25,7 +27,9 @@ public class PressurePlate : TriggerObjects
         {
             Active = false;
             Snap();
-            GetComponent<SpriteRenderer>().sprite = PlaquePression; 
+            GetComponent<SpriteRenderer>().sprite = PlaquePression;
+            GetComponent<BoxCollider2D>().size = new Vector2(7.6f, 2f);
+            
         }
     }
 }

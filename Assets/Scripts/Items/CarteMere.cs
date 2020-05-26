@@ -10,10 +10,11 @@ public class CarteMere : MonoBehaviour
     public bool collected = false;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        bool collected = true;
+        collected = true;
         if (collected == true)
         {
             cacahuete.text = "Oui!";
+            
         }
         Destroy(gameObject);
     }

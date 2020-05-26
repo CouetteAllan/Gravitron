@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4311dc766da5134459c7d5ff118cd0ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  button: {fileID: 0}
   shake: {fileID: 0}
   t: {fileID: 0}
 --- !u!61 &7055418521843802584

@@ -203,6 +203,7 @@ public class UIManager : MonoBehaviour
         if(actualEnergy < expectedELeft)
         {
             condition2 = true;
+            
         }
     }
 
@@ -232,6 +233,7 @@ public class UIManager : MonoBehaviour
         else if (timeSinceStart < expectedTPassed)
         {
             condition3 = true;
+            
         }
     }
 

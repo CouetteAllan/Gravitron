@@ -172,7 +172,7 @@ MonoBehaviour:
   energyUp: {fileID: 8300000, guid: 535d22dce4b0a3740a3846a9fc3eb808, type: 3}
   chargesLeft: {fileID: 0}
   energyTxt: {fileID: 0}
-  energy: 4
+  energy: 2
   expectedELeft: 3
   menuPause: {fileID: 0}
   menuGameOver: {fileID: 0}
@@ -185,4 +185,4 @@ MonoBehaviour:
   badge3: {fileID: 0}
   timerText: {fileID: 0}
   timePassed: {fileID: 0}
-  expectedTPassed: 3.5
+  expectedTPassed: 10

@@ -10,7 +10,8 @@ public class Levier : MonoBehaviour
     private Quaternion trainedRotation;
     private Quaternion bentRotation;
 
-    [SerializeField] private bool trained = false;
+
+    [SerializeField] private bool trained = true;
     private Orientation lastTrain;
 
 
@@ -24,50 +25,40 @@ public class Levier : MonoBehaviour
     }
 
     private void Start()
-    {
-        Levier[] leviers = FindObjectsOfType<Levier>();
-        foreach (Levier l in leviers)
-        {
-            Debug.Log(l + " est dans le sens " + l.sens);
-        }
-        
+    {        
         switch (sens)
         {
             case Orientation.right:
                 trainedRotation = Quaternion.Euler(0, 0, 45);
                 bentRotation = Quaternion.Euler(0, 0, 135);
+                lastTrain = Orientation.right;
                 break;
             case Orientation.left:
                 trainedRotation = Quaternion.Euler(0, 0, -45);
                 bentRotation = Quaternion.Euler(0, 0, -135);
+                lastTrain = Orientation.left;
                 break;
             case Orientation.down:
                 trainedRotation = Quaternion.Euler(0, 0, 45);
                 bentRotation = Quaternion.Euler(0, 0, -45);
+                lastTrain = Orientation.down;
                 break;
             case Orientation.up:
                 trainedRotation = Quaternion.Euler(0, 0, 135);
                 bentRotation = Quaternion.Euler(0, 0, -135);
+                lastTrain = Orientation.up;
                 break;
         }
     }
 
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            trained = !trained;
-            CancelInvoke("ActivateLever");
-            InvokeRepeating("ActivateLever", 0, Time.deltaTime);
-            StopAllCoroutines();
-            StartCoroutine(StopTrain());
-        }
-    }
+
 
 
     public void Train(GameManager.Gravity gravity)
     {
+        Debug.Log(gameObject + ".trained = " + trained);
+
         switch (gravity)
         {
             case GameManager.Gravity.Down:
@@ -76,7 +67,11 @@ public class Levier : MonoBehaviour
                     if (sens == Orientation.right || sens == Orientation.left)
                     {
                         lastTrain = Orientation.down;
-                        ActivateLever();
+                        trained = !trained;
+                        CancelInvoke("ActivateLever");
+                        InvokeRepeating("ActivateLever", 0, Time.deltaTime);
+                        StopAllCoroutines();
+                        StartCoroutine(StopTrain());
                     }
                 }
                 break;
@@ -86,7 +81,11 @@ public class Levier : MonoBehaviour
                     if (sens == Orientation.right || sens == Orientation.left)
                     {
                         lastTrain = Orientation.up;
-                        ActivateLever();
+                        trained = !trained;
+                        CancelInvoke("ActivateLever");
+                        InvokeRepeating("ActivateLever", 0, Time.deltaTime);
+                        StopAllCoroutines();
+                        StartCoroutine(StopTrain());
                     }
                 }
                 break;
@@ -96,7 +95,11 @@ public class Levier : MonoBehaviour
                     if (sens == Orientation.up || sens == Orientation.down)
                     {
                         lastTrain = Orientation.left;
-                        ActivateLever();
+                        trained = !trained;
+                        CancelInvoke("ActivateLever");
+                        InvokeRepeating("ActivateLever", 0, Time.deltaTime);
+                        StopAllCoroutines();
+                        StartCoroutine(StopTrain());
                     }
                 }
                 break;
@@ -106,7 +109,11 @@ public class Levier : MonoBehaviour
                     if (sens == Orientation.up || sens == Orientation.down)
                     {
                         lastTrain = Orientation.right;
-                        ActivateLever();
+                        trained = !trained;
+                        CancelInvoke("ActivateLever");
+                        InvokeRepeating("ActivateLever", 0, Time.deltaTime);
+                        StopAllCoroutines();
+                        StartCoroutine(StopTrain());
                     }
                 }
                 break;
@@ -117,8 +124,7 @@ public class Levier : MonoBehaviour
     public void ActivateLever()
     {
         Vector3 move = transform.position;
-
-        Debug.Log("Invokating");
+        
         transform.rotation = trained ?
             Quaternion.Lerp(transform.rotation, bentRotation, rotationSpeed * Time.deltaTime):
             Quaternion.Lerp(transform.rotation, trainedRotation, rotationSpeed * Time.deltaTime);
@@ -132,7 +138,6 @@ public class Levier : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         CancelInvoke();
-        Debug.Log("InInvokating");
     }
 
 

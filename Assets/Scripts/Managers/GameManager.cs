@@ -120,6 +120,12 @@ public class GameManager : MonoBehaviour
             Physics2D.gravity = direction * localGravity.magnitude;
             this.localGravity = Physics2D.gravity;//change la gravité
             UIManager.Instance.Fgravity();
+
+            Levier[] leviers = FindObjectsOfType<Levier>();
+            foreach (Levier l in leviers)
+            {
+                l.Train(gravity);
+            }
         }
         else
         {

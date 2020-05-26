@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class InteractableObjects : MonoBehaviour
 {
-    [SerializeField] protected ButtonClick button;
+    [SerializeField] protected TriggerObjects trigger;
 
 
 
     public void ChangeBehaviour()
     {
         // Debug.Log("Bouton.Active = " + button.Active);
-        if (button.Active)
+        if (trigger.Active)
         {
             ActivateObject();
             // Debug.Log("Objet Activé");

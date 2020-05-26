@@ -62,15 +62,10 @@ public class Porte : InteractableObjects
     private void MoveHorizontal(float dist)
     {
         Vector3 movDirHor = new Vector3(dist, 0, 0);
-        
 
-        if (button.Active == true)
-        {
-            this.targetMovePosition = transform.position + (moveDistance * movDirHor);
-            this.transform.position = Vector2.MoveTowards(this.transform.position, this.targetMovePosition, 50.0f * Time.deltaTime);
-            
-            button.Active = false;
-        }
+
+        this.targetMovePosition = transform.position + (moveDistance * movDirHor);
+        this.transform.position = Vector2.MoveTowards(this.transform.position, this.targetMovePosition, 50.0f * Time.deltaTime);
     }
 
     private void MoveVertical(float dist)
@@ -78,12 +73,7 @@ public class Porte : InteractableObjects
         Vector3 movDirVer = new Vector3(0, dist, 0);
 
 
-        if (button.Active == true)
-        {
-            this.targetMovePosition = transform.position + (moveDistance * movDirVer);
-            this.transform.position = Vector2.MoveTowards(this.transform.position, this.targetMovePosition, 50.0f * Time.deltaTime);
-            
-            button.Active = false;
-        }
+        this.targetMovePosition = transform.position + (moveDistance * movDirVer);
+        this.transform.position = Vector2.MoveTowards(this.transform.position, this.targetMovePosition, 50.0f * Time.deltaTime);
     }
 }

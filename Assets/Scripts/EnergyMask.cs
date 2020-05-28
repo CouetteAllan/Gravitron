@@ -5,17 +5,25 @@ using UnityEngine.UI;
 
 public class EnergyMask : MonoBehaviour
 {
-    public static EnergyMask Instance { get; private set; }
+    private static EnergyMask instance;
+    public static EnergyMask Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                Debug.Log("energyMask null");
+            }
+            return instance;
+        }
+    }
 
     [SerializeField] private Image mask;
     private float originalWidth;
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
+        instance = this;
     }
 
     private void Start()

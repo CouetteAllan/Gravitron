@@ -20,11 +20,11 @@ public class Cube : MonoBehaviour
         {
             if (GetComponent<Rigidbody2D>().velocity.magnitude > 30)
             {
-                AudioManager.Instance.PlayClip(bigLand);
+                AudioManager.Instance.Play("bigLand");
             }
             else
             {
-                AudioManager.Instance.PlayClip(land, 0.5f);
+                AudioManager.Instance.Play("land");
             }
         }
 
@@ -35,7 +35,7 @@ public class Cube : MonoBehaviour
             {
                
                 jean.GetComponent<Animator>().SetTrigger("Crush");
-                AudioManager.Instance.PlayClip(splosh);
+                AudioManager.Instance.Play("splosh");
                 jean.Dead(0.4f);
                 
             }

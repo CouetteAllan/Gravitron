@@ -121,7 +121,7 @@ public class UIManager : MonoBehaviour
             energy = 0;
         }
         EnergyMask.Instance.ChangeMaskSize(remplissage / 1);
-        Debug.Log(remplissage / 3);
+        Debug.Log("remplissage de l'énergie : " + remplissage / 3);
         energyTxt.text = " X" + energy;
     }
     

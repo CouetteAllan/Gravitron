@@ -478,6 +478,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 996903089}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &469583637 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3405675801671019903, guid: 0960f25274032274f88d874873f19492,
+    type: 3}
+  m_PrefabInstance: {fileID: 1025699096}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &528647278 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5467500818679490794, guid: 35181d746b5b0df4a85f25137f2bfd9f,
@@ -4690,6 +4696,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 857216219, guid: 0960f25274032274f88d874873f19492, type: 3}
+      propertyPath: carteMere
+      value: 
+      objectReference: {fileID: 469583637}
     - target: {fileID: 2903534972030311768, guid: 0960f25274032274f88d874873f19492,
         type: 3}
       propertyPath: m_LocalPosition.x

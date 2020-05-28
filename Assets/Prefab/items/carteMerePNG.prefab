@@ -100,6 +100,7 @@ MonoBehaviour:
   halo: {fileID: 3405675801671019903}
   aura: 1.5
   amplitude: 0.3
+  carteMere: {fileID: 0}
   cacahuete: {fileID: 0}
   collected: 0
 --- !u!61 &857216222
@@ -172,7 +173,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3405675801671019903}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1.5, y: 1.5, z: 0}
   m_Children: []
   m_Father: {fileID: 2903534972030311768}

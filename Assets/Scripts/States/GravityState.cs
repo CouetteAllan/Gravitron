@@ -8,6 +8,12 @@ public class GravityState : JeanBaseState
 
     public override void EnterState(JeanMichelTesteur jean)
     {
+        if (UIManager.Instance.SendEnergy() <= 1)
+        {
+            jean.TransitionToState(jean.idleState);
+        }
+        return;
+
         rotationSpeed = 0;
         if (UIManager.Instance.SendEnergy() == 0)
         {

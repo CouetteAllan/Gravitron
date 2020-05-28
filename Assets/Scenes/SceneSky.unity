@@ -128,6 +128,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 815206467, guid: a2e7a11efe03fbb4ab898c9934b61c40, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 815206467, guid: a2e7a11efe03fbb4ab898c9934b61c40, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 815206467, guid: a2e7a11efe03fbb4ab898c9934b61c40, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 815206467, guid: a2e7a11efe03fbb4ab898c9934b61c40, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 936548569, guid: a2e7a11efe03fbb4ab898c9934b61c40, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1773952828, guid: a2e7a11efe03fbb4ab898c9934b61c40, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7584916570233920016, guid: a2e7a11efe03fbb4ab898c9934b61c40,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -396,6 +420,11 @@ PrefabInstance:
       propertyPath: shake
       value: 
       objectReference: {fileID: 1570494593}
+    - target: {fileID: 2649627516235432058, guid: 018b3c558bffb564f9e12ededd2d0524,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 15.726032
+      objectReference: {fileID: 0}
     - target: {fileID: 3408120236989293009, guid: 018b3c558bffb564f9e12ededd2d0524,
         type: 3}
       propertyPath: m_LocalPosition.y

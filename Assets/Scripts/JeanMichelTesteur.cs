@@ -188,7 +188,7 @@ public class JeanMichelTesteur : MonoBehaviour
 
     public void PlayClipJMT(float duration )
     {
-        AudioManager.Instance.PlayClip(step,0.01f,false, duration);
+        AudioManager.Instance.Play("step");
     }
     private void Flip()
     {

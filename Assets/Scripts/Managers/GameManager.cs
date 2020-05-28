@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour
         if (UIManager.Instance.SendEnergy() > 0)
         {
             UIManager.Instance.ChangeEnergy(-1);
-            AudioManager.Instance.PlayClip(swosh);
+            AudioManager.Instance.Play("swosh");
             gravity = g;
             switch (gravity)
             {
@@ -137,7 +137,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            AudioManager.Instance.PlayClip(noEnergy);
+            AudioManager.Instance.Play("noEnergy");
         }
     }
 

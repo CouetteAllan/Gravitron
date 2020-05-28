@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private Vector2 localGravity;
+    private Vector2 firstGravity;
     
 
     private Vector2 direction;
@@ -49,6 +50,13 @@ public class GameManager : MonoBehaviour
         Debug.Log(Physics2D.gravity.magnitude);
         instance = this;
         localGravity = Physics2D.gravity;
+    }
+
+    private void Start()
+    {
+        FirstGravity(gravity);
+        Physics2D.gravity = firstGravity;
+        ChangeGravity(gravity);
     }
 
 
@@ -155,4 +163,25 @@ public class GameManager : MonoBehaviour
         ChangeState(GameState.GameOver);
     }
     
+    private void FirstGravity(Gravity gravity)
+    {
+        switch (gravity)
+        {
+            case Gravity.Down:
+                firstGravity = Vector2.down;
+                break;
+            case Gravity.Left:
+                firstGravity = Vector2.left;
+                break;
+            case Gravity.Up:
+                firstGravity = Vector2.up;
+                break;
+            case Gravity.Right:
+                firstGravity = Vector2.right;
+                break;
+            default:
+                firstGravity = Vector2.down;
+                break;
+        }
+    }
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -3854147618941114119}
   - component: {fileID: -8401965535082416741}
   - component: {fileID: 6824467623452463106}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube_v2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,5 +146,3 @@ MonoBehaviour:
   land: {fileID: 8300000, guid: e3018d91368f37a4d97d2381b99ec759, type: 3}
   bigLand: {fileID: 8300000, guid: db16ca1c7031fb440a896367ba911178, type: 3}
   splosh: {fileID: 8300000, guid: e23d6f1bfc16faf42951e797c16455cb, type: 3}
-  shake: {fileID: 0}
-  t: {fileID: 0}

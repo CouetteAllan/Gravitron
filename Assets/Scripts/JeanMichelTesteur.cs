@@ -186,7 +186,7 @@ public class JeanMichelTesteur : MonoBehaviour
         deathLateTimer = time;
     }
 
-    public void PlayClipJMT(float duration )
+    public void PlayClipJMT()
     {
         AudioManager.Instance.Play("step");
     }

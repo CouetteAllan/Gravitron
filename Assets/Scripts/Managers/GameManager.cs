@@ -50,13 +50,14 @@ public class GameManager : MonoBehaviour
         Debug.Log(Physics2D.gravity.magnitude);
         instance = this;
         localGravity = Physics2D.gravity;
+        firstGravity = localGravity;
     }
 
     private void Start()
     {
         FirstGravity(gravity);
-        Physics2D.gravity = firstGravity;
         ChangeGravity(gravity);
+        Physics2D.gravity = firstGravity;
     }
 
 
@@ -168,19 +169,19 @@ public class GameManager : MonoBehaviour
         switch (gravity)
         {
             case Gravity.Down:
-                firstGravity = Vector2.down;
+                firstGravity = Vector2.down * localGravity.magnitude;
                 break;
             case Gravity.Left:
-                firstGravity = Vector2.left;
+                firstGravity = Vector2.left * localGravity.magnitude;
                 break;
             case Gravity.Up:
-                firstGravity = Vector2.up;
+                firstGravity = Vector2.up * localGravity.magnitude;
                 break;
             case Gravity.Right:
-                firstGravity = Vector2.right;
+                firstGravity = Vector2.right * localGravity.magnitude;
                 break;
             default:
-                firstGravity = Vector2.down;
+                firstGravity = Vector2.down * localGravity.magnitude;
                 break;
         }
     }

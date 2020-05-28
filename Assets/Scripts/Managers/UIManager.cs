@@ -191,15 +191,15 @@ public class UIManager : MonoBehaviour
         int actualEnergy = energy;
         chargesLeft.text = actualEnergy.ToString() + "/" + expectedELeft;
 
-        if(actualEnergy > expectedELeft)
+        if(actualEnergy >= expectedELeft)
         {
-            chargesLeft.color = Color.red;
+            chargesLeft.color = Color.yellow; 
+            condition2 = true;
         }
 
-        if(actualEnergy < expectedELeft)
+        if (actualEnergy < expectedELeft)
         {
-            condition2 = true;
-            
+            chargesLeft.color = Color.red;    
         }
     }
 

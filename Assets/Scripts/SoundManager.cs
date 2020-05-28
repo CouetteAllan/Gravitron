@@ -2,9 +2,9 @@
 using System;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+public class SoundManager : MonoBehaviour
 {
-    public static AudioManager Instance { get; private set; }
+    public static SoundManager Instance { get; private set; }
 
     public Sound[] sounds;
 

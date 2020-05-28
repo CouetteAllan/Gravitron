@@ -16,7 +16,7 @@ public class Laser : InteractableObjects
         if (jean != null)
         {
 
-            AudioManager.Instance.PlayClip(deadlyLaser);
+            AudioManager.Instance.Play("deadlyLaser");
             jean.Dead(1);
             jean.GetComponent<Animator>().SetTrigger("Desintegrated");
         }

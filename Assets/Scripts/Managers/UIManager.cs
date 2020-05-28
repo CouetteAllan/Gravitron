@@ -110,7 +110,7 @@ public class UIManager : MonoBehaviour
         {
             remplissage -= 1;
             energy++;
-            AudioManager.Instance.PlayClip(energyUp);
+            AudioManager.Instance.Play("energyUp");
         }
         if (amount < 0)
         {

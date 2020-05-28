@@ -35,6 +35,10 @@ public class Cube : MonoBehaviour
             {
                
                 jean.GetComponent<Animator>().SetTrigger("Crush");
+                jean.GetComponent<Animator>().SetBool("Walking", false);
+                jean.GetComponent<Animator>().SetBool("Idling", false);
+                jean.GetComponent<Animator>().SetBool("Falling", false);
+                jean.GetComponent<Animator>().SetBool("Jumping", false);
                 AudioManager.Instance.Play("splosh");
                 jean.Dead(0.4f);
                 

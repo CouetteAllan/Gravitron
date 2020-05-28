@@ -19,6 +19,10 @@ public class Laser : InteractableObjects
             AudioManager.Instance.Play("deadlyLaser");
             jean.Dead(1);
             jean.GetComponent<Animator>().SetTrigger("Desintegrated");
+            jean.GetComponent<Animator>().SetBool("Walking", false);
+            jean.GetComponent<Animator>().SetBool("Idling", false);
+            jean.GetComponent<Animator>().SetBool("Falling", false);
+            jean.GetComponent<Animator>().SetBool("Jumping", false);
         }
     }
 }

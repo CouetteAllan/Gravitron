@@ -65,7 +65,7 @@ public class Porte : InteractableObjects
 
 
         this.targetMovePosition = transform.position + (moveDistance * movDirHor);
-        this.transform.position = Vector2.MoveTowards(this.transform.position, this.targetMovePosition, 50.0f * Time.deltaTime);
+        this.transform.position = Vector2.MoveTowards(this.transform.position, this.targetMovePosition, 50.0f);
     }
 
     private void MoveVertical(float dist)
@@ -74,6 +74,6 @@ public class Porte : InteractableObjects
 
 
         this.targetMovePosition = transform.position + (moveDistance * movDirVer);
-        this.transform.position = Vector2.MoveTowards(this.transform.position, this.targetMovePosition, 50.0f * Time.deltaTime);
+        this.transform.position = Vector2.MoveTowards(this.transform.position, this.targetMovePosition, 50.0f);
     }
 }

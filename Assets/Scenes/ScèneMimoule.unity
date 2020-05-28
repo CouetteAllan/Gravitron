@@ -766,6 +766,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7584916570807079722}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &933214543 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 362729646, guid: a2e7a11efe03fbb4ab898c9934b61c40,
+    type: 3}
+  m_PrefabInstance: {fileID: 7584916570807079722}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &948291037
 GameObject:
   m_ObjectHideFlags: 0
@@ -4689,6 +4701,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35181d746b5b0df4a85f25137f2bfd9f, type: 3}
+--- !u!1 &997253923 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1506321521549517806, guid: a2e7a11efe03fbb4ab898c9934b61c40,
+    type: 3}
+  m_PrefabInstance: {fileID: 7584916570807079722}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1025699096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4698,6 +4716,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 857216219, guid: 0960f25274032274f88d874873f19492, type: 3}
       propertyPath: carteMere
+      value: 
+      objectReference: {fileID: 997253923}
+    - target: {fileID: 857216219, guid: 0960f25274032274f88d874873f19492, type: 3}
+      propertyPath: cacahuete
+      value: 
+      objectReference: {fileID: 933214543}
+    - target: {fileID: 857216219, guid: 0960f25274032274f88d874873f19492, type: 3}
+      propertyPath: halo
       value: 
       objectReference: {fileID: 469583637}
     - target: {fileID: 2903534972030311768, guid: 0960f25274032274f88d874873f19492,
@@ -6875,13 +6901,13 @@ PrefabInstance:
     - target: {fileID: 6027545492714867347, guid: 536264d00a9d5eb439f58bcd4a7e7cca,
         type: 3}
       propertyPath: sounds.Array.data[0].name
-      value: Theme
+      value: noEnergy
       objectReference: {fileID: 0}
     - target: {fileID: 6027545492714867347, guid: 536264d00a9d5eb439f58bcd4a7e7cca,
         type: 3}
       propertyPath: sounds.Array.data[0].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 5167a08164dd506418430baa3a43ce8b, type: 3}
+      objectReference: {fileID: 8300000, guid: b2a904f79b4cf424ea49ff83baa76acd, type: 3}
     - target: {fileID: 6027545492714867347, guid: 536264d00a9d5eb439f58bcd4a7e7cca,
         type: 3}
       propertyPath: sounds.Array.data[0].volume

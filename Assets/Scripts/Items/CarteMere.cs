@@ -9,7 +9,7 @@ public class CarteMere : MonoBehaviour
     public float aura;
     public float amplitude;
 
-
+    [SerializeField] private GameObject carteMere;
     [SerializeField]
     private Text cacahuete;
     public bool collected = false;
@@ -30,6 +30,7 @@ public class CarteMere : MonoBehaviour
             if (collected == true)
             {
                 cacahuete.text = "Oui!";
+                carteMere.SetActive(true);
 
             }
             Destroy(gameObject);

@@ -22,7 +22,13 @@ public class Zap : InteractableObjects
         JeanMichelTesteur jean = collision.GetComponent <JeanMichelTesteur>();
         if (jean != null)
         {
-            jean.Dead(0.2f);
+            jean.Dead(1f);
+
+            jean.GetComponent<Animator>().SetTrigger("Electrified");
+            jean.GetComponent<Animator>().SetBool("Walking", false);
+            jean.GetComponent<Animator>().SetBool("Idling", false);
+            jean.GetComponent<Animator>().SetBool("Falling", false);
+            jean.GetComponent<Animator>().SetBool("Jumping", false);
             GetComponent<AudioSource>().mute = true;
         }
     }

@@ -243,20 +243,20 @@ public class UIManager : MonoBehaviour
             if (condition1)
             {
                 starCount++;
-                PlayerPrefs.SetInt("Score", starCount);
+                
             }            
         }
 
         if (condition2)
         {
             starCount++;
-            PlayerPrefs.SetInt("Score", starCount);
+
         }
 
         if (condition3)
         {
             starCount++;
-            PlayerPrefs.SetInt("Score", starCount);
+
         }
         
         if (starCount == 1)

@@ -134,6 +134,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5315528595285150151, guid: 9a3b3b8d1a7fc1243a7c0e37eed73932,
+        type: 3}
+      propertyPath: trigger
+      value: 
+      objectReference: {fileID: 4668097295947198734, guid: 2c8c28c0aa22c0541bcdafc8a546d1dd,
+        type: 3}
     - target: {fileID: 6497254074846992537, guid: 9a3b3b8d1a7fc1243a7c0e37eed73932,
         type: 3}
       propertyPath: m_Offset.y
@@ -263,7 +269,7 @@ GameObject:
   - component: {fileID: 496742857}
   - component: {fileID: 496742861}
   - component: {fileID: 496742860}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5836,6 +5842,12 @@ PrefabInstance:
       propertyPath: shake
       value: 
       objectReference: {fileID: 265181000}
+    - target: {fileID: 2224196924377600625, guid: 018b3c558bffb564f9e12ededd2d0524,
+        type: 3}
+      propertyPath: trigger
+      value: 
+      objectReference: {fileID: 4668097295947198734, guid: 2c8c28c0aa22c0541bcdafc8a546d1dd,
+        type: 3}
     - target: {fileID: 3408120237090554170, guid: 018b3c558bffb564f9e12ededd2d0524,
         type: 3}
       propertyPath: m_Name
@@ -5999,6 +6011,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3195452604685385339, guid: ec780e84153479b4691258a266c67b27,
+        type: 3}
+      propertyPath: shake
+      value: 
+      objectReference: {fileID: 265181000}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec780e84153479b4691258a266c67b27, type: 3}
 --- !u!1 &1026909626
@@ -6011,7 +6028,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1026909628}
   - component: {fileID: 1026909627}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6114,7 +6131,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 936548569, guid: a2e7a11efe03fbb4ab898c9934b61c40, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1448282821, guid: a2e7a11efe03fbb4ab898c9934b61c40, type: 3}
       propertyPath: m_IsActive

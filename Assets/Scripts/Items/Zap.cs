@@ -5,8 +5,6 @@ using UnityEngine;
 public class Zap : InteractableObjects
 {
 
-
-
     protected override void ActivateObject()
     {
         GetComponent<BoxCollider2D>().enabled = true;
@@ -25,6 +23,7 @@ public class Zap : InteractableObjects
         if (jean != null)
         {
             jean.Dead(0.2f);
+            GetComponent<AudioSource>().mute = true;
         }
     }
 }

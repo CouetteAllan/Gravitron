@@ -18,7 +18,6 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private GameObject menuPause;
     [SerializeField] private GameObject menuGameOver;
-    [SerializeField] private GameObject menuVictoire;
     [SerializeField] private GameObject scoreBoard;
     [SerializeField] private CarteMere carteMere;
     [SerializeField] private Image Arrow;

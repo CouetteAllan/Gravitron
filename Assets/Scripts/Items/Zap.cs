@@ -21,6 +21,7 @@ public class Zap : InteractableObjects
             jean.GetComponent<Animator>().SetBool("Falling", false);
             jean.GetComponent<Animator>().SetBool("Jumping", false);
             GetComponent<AudioSource>().mute = true;
+            AudioManager.Instance.Play("Bzzt");
         }
     }
 }

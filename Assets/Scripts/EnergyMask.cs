@@ -19,7 +19,6 @@ public class EnergyMask : MonoBehaviour
     }
 
     [SerializeField] private Image mask;
-    private float originalWidth;
 
     private void Awake()
     {
@@ -28,11 +27,10 @@ public class EnergyMask : MonoBehaviour
 
     private void Start()
     {
-        originalWidth = this.mask.rectTransform.rect.width;
     }
 
     public void ChangeMaskSize(float value)
     {
-        mask.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, originalWidth * value);
+        mask.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 720 * value);
     }
 }

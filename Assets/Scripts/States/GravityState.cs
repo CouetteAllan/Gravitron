@@ -11,10 +11,9 @@ public class GravityState : JeanBaseState
         if (UIManager.Instance.SendEnergy() <= 1)
         {
             jean.TransitionToState(jean.idleState);
-        }
-        return;
 
-        rotationSpeed = 0;
+            return;
+        }
         if (UIManager.Instance.SendEnergy() == 0)
         {
             jean.TransitionToState(jean.idleState);
@@ -37,6 +36,6 @@ public class GravityState : JeanBaseState
 
     public override void Update(JeanMichelTesteur jean)
     {
-        jean.Rigidbody2D.MoveRotation(90);
+
     }
 }

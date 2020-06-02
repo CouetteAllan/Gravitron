@@ -6,36 +6,37 @@ public class Porte : InteractableObjects
 {
     float moveDistance = 10f;
 
-    private Vector2 targetMovePosition;
+    private Vector3 targetMovePosition;
+    private Vector3 movDir;
 
     [SerializeField] private float distance;
 
     [SerializeField] private bool verticalDoor = false;
 
-
-    // Start is called before the first frame update
+    [SerializeField] private GameObject pillier;
+    
     void Start()
     {
 
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
-        /*if (transform.rotation.z >= 0)
+        if (activated)
         {
-            MoveVertical();
-        }*/
-        
-        
-        //MoveHorizontal();
-        
-        
-        
+            while (pillier.transform.position != targetMovePosition)
+            {
+                pillier.transform.position = Vector2.MoveTowards(this.transform.position, this.targetMovePosition, 5 * Time.deltaTime);
+            }
+        }
+
+
+
     }
 
     protected override void ActivateObject()
     {
+        activated = true;
         if (verticalDoor)
         {
             MoveVertical(distance);
@@ -48,6 +49,7 @@ public class Porte : InteractableObjects
 
     protected override void DisabledObject()
     {
+        activated = false;
         if (verticalDoor)
         {
             MoveVertical(-distance);
@@ -61,19 +63,18 @@ public class Porte : InteractableObjects
 
     private void MoveHorizontal(float dist)
     {
-        Vector3 movDirHor = new Vector3(dist, 0, 0);
+        Vector3 movDir = new Vector3(dist, 0, 0);
 
 
-        this.targetMovePosition = transform.position + (moveDistance * movDirHor);
-        this.transform.position = Vector2.MoveTowards(this.transform.position, this.targetMovePosition, 50.0f);
+        this.targetMovePosition = pillier.transform.position + (moveDistance * movDir);
+        pillier.transform.position = Vector2.MoveTowards(this.transform.position, this.targetMovePosition, 5 * Time.deltaTime);
     }
 
     private void MoveVertical(float dist)
     {
-        Vector3 movDirVer = new Vector3(0, dist, 0);
-
-
-        this.targetMovePosition = transform.position + (moveDistance * movDirVer);
-        this.transform.position = Vector2.MoveTowards(this.transform.position, this.targetMovePosition, 50.0f);
+        Vector3 movDir = new Vector3(0, dist, 0);
+        
+        this.targetMovePosition = pillier.transform.position + (moveDistance * movDir);
+        pillier.transform.position = Vector2.MoveTowards(this.transform.position, this.targetMovePosition, 5 * Time.deltaTime);
     }
 }

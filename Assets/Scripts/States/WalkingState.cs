@@ -31,7 +31,7 @@ public class WalkingState : JeanBaseState
         float horizontal = Input.GetAxis("Horizontal");
         jean.GetComponent<Animator>().SetFloat("Move",horizontal);
 
-        if ((Input.GetButtonUp("Right")&&Input.GetButtonUp("Left")) || Input.GetButtonUp("Horizontal"))
+        if (Input.GetButtonUp("Horizontal"))
         {
             jean.TransitionToState(jean.idleState);
         }

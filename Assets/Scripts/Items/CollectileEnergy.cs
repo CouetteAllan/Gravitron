@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CollectileEnergy : MonoBehaviour
 {
-    [SerializeField] private AudioClip collectible;
     [SerializeField] private float energyLevel;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -13,7 +12,15 @@ public class CollectileEnergy : MonoBehaviour
         if (player != null)
         {
             UIManager.Instance.ChangeEnergy(energyLevel);
-            AudioManager.Instance.Play("CollectibleEnergy");
+            if (energyLevel > 0.5f)
+            {
+                AudioManager.Instance.Play("CollectibleEnergy");
+            }
+            else
+            {
+                AudioManager.Instance.Play("SemiCollectibleEnergy");
+
+            }
             Destroy(gameObject);
         }
     }

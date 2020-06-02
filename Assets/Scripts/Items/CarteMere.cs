@@ -31,6 +31,7 @@ public class CarteMere : MonoBehaviour
             {
                 cacahuete.text = "Oui!";
                 carteMere.SetActive(true);
+                AudioManager.Instance.Play("CarteMere");
 
             }
             Destroy(gameObject);

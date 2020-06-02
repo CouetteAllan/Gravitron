@@ -293,6 +293,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2e7a11efe03fbb4ab898c9934b61c40, type: 3}
+--- !u!1 &56332459 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1506321521549517806, guid: a2e7a11efe03fbb4ab898c9934b61c40,
+    type: 3}
+  m_PrefabInstance: {fileID: 56332458}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &56332460 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7584916571782636250, guid: a2e7a11efe03fbb4ab898c9934b61c40,
@@ -4185,6 +4191,10 @@ PrefabInstance:
       propertyPath: cacahuete
       value: 
       objectReference: {fileID: 322648116}
+    - target: {fileID: 857216219, guid: 0960f25274032274f88d874873f19492, type: 3}
+      propertyPath: carteMere
+      value: 
+      objectReference: {fileID: 56332459}
     - target: {fileID: 2903534972030311768, guid: 0960f25274032274f88d874873f19492,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6057,6 +6067,11 @@ PrefabInstance:
         type: 3}
       propertyPath: t
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1025872468526481301, guid: 5a075d16cecf16f40b99943d257bd1e5,
+        type: 3}
+      propertyPath: levelIndex
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1025872468526481321, guid: 5a075d16cecf16f40b99943d257bd1e5,
         type: 3}

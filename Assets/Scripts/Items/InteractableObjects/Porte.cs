@@ -24,10 +24,9 @@ public class Porte : InteractableObjects
     {
         if (activated)
         {
-            while (pillier.transform.position != targetMovePosition)
-            {
-                pillier.transform.position = Vector2.MoveTowards(this.transform.position, this.targetMovePosition, 5 * Time.deltaTime);
-            }
+            Vector2 position = pillier.transform.position;
+            position += Vector2.MoveTowards(this.transform.position, this.targetMovePosition, 5 * Time.deltaTime) * 2 * Time.deltaTime;
+            pillier.transform.position = position;
         }
 
 
@@ -67,7 +66,6 @@ public class Porte : InteractableObjects
 
 
         this.targetMovePosition = pillier.transform.position + (moveDistance * movDir);
-        pillier.transform.position = Vector2.MoveTowards(this.transform.position, this.targetMovePosition, 5 * Time.deltaTime);
     }
 
     private void MoveVertical(float dist)
@@ -75,6 +73,5 @@ public class Porte : InteractableObjects
         Vector3 movDir = new Vector3(0, dist, 0);
         
         this.targetMovePosition = pillier.transform.position + (moveDistance * movDir);
-        pillier.transform.position = Vector2.MoveTowards(this.transform.position, this.targetMovePosition, 5 * Time.deltaTime);
     }
 }

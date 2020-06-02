@@ -105,6 +105,7 @@ public class UIManager : MonoBehaviour
 
     public void ChangeEnergy(float amount)
     {
+        Debug.Log("Remplissage initial : " + remplissage);
         remplissage += amount;
         if (remplissage >= 1)
         {
@@ -112,7 +113,7 @@ public class UIManager : MonoBehaviour
             energy++;
             AudioManager.Instance.Play("energyUp");
         }
-        if (amount < 1)
+        if (amount == -1)
         {
             remplissage++;
             energy--;
@@ -121,8 +122,8 @@ public class UIManager : MonoBehaviour
         {
             energy = 0;
         }
-        EnergyMask.Instance.ChangeMaskSize(remplissage / 1);
-        Debug.Log("remplissage de l'énergie : " + remplissage / 3);
+        EnergyMask.Instance.ChangeMaskSize(remplissage);
+        Debug.Log("remplissage de l'énergie : " + remplissage);
         energyTxt.text = " X" + energy;
     }
     

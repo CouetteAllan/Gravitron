@@ -48,6 +48,23 @@ public class Levier : TriggerObjects
                 lastTrain = Orientation.up;
                 break;
         }
+
+        if (sens == Orientation.right || sens == Orientation.left)
+        {
+            if (GameManager.Instance.SendGravityDirection() == Vector2.up
+                || GameManager.Instance.SendGravityDirection() == Vector2.down)
+            {
+                ActivateLever();
+            }
+        }
+        else if (sens == Orientation.up || sens == Orientation.down)
+        {
+            if (GameManager.Instance.SendGravityDirection() == Vector2.right
+                || GameManager.Instance.SendGravityDirection() == Vector2.left)
+            {
+                ActivateLever();
+            }
+        }
     }
 
 

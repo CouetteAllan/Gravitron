@@ -184,6 +184,7 @@ public class JeanMichelTesteur : MonoBehaviour
         this.isDead = true;
         this.shake.Shake();
         deathLateTimer = time;
+        rb2d.isKinematic = true;
     }
 
     public void PlayClipJMT()

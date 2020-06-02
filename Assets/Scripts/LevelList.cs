@@ -15,7 +15,6 @@ public class LevelList : MonoBehaviour
         Debug.Log("Checking Levels, " + listLevel.Count);
         for (int i = 0; i < listLevel.Count; i++)
         {
-            Debug.Log(i + ", " + listLevel[i].gameObject);
             if (i < lastLevelUnlock)
             {
                 listLevel[i].EnableButton(true);

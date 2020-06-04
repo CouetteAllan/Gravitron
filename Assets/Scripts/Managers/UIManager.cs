@@ -112,7 +112,7 @@ public class UIManager : MonoBehaviour
         {
             remplissage -= 1;
             energy++;
-            totalBattery.color = Color.white;
+            //totalBattery.color = Color.white;
             AudioManager.Instance.Play("energyUp");
         }
         if (amount == -1)

@@ -12,6 +12,8 @@ public class Porte : InteractableObjects
     private bool isMovingBack;
     Transform pillierTransform;
 
+    [SerializeField] private bool reversed = false;
+
     [SerializeField] private float distance;
 
     [SerializeField] private bool verticalDoor = false;
@@ -22,13 +24,17 @@ public class Porte : InteractableObjects
     {
         pillierTransform = this.GetComponent<Transform>();
         firstPosition = pillierTransform.localPosition;
+        if (reversed)
+        {
+            pillierTransform.localPosition = new Vector3(0, distance, 0);
+        }
     }
     
     void Update()
     {
+        direction = Vector3.MoveTowards(this.transform.localPosition, targetMovePosition, distance);
         if (isMoving)
         {
-            direction = Vector3.MoveTowards(this.transform.localPosition, targetMovePosition, distance);
             Vector3 position = pillierTransform.localPosition;
             position +=  direction * Time.deltaTime;
             pillierTransform.localPosition = position;
@@ -55,22 +61,40 @@ public class Porte : InteractableObjects
 
     protected override void ActivateObject()
     {
-        isMoving = true;
-        isMovingBack = false;
-        
+        if (!reversed)
+        {
+            isMoving = true;
+            isMovingBack = false;
+            this.GetComponent<Collider2D>().enabled = false;
+        }
+        else
+        {
+            isMovingBack = true;
+            isMoving = false;
+            this.GetComponent<Collider2D>().enabled = true;
+        }
+
         MoveVertical(true);
         
-        this.GetComponent<Collider2D>().enabled = false;
     }
 
     protected override void DisabledObject()
     {
-        isMovingBack = true;
-        isMoving = false;
-        
+        if (!reversed)
+        {
+            isMoving = false;
+            isMovingBack = true;
+            this.GetComponent<Collider2D>().enabled = true;
+        }
+        else
+        {
+            isMovingBack = false;
+            isMoving = true;
+            this.GetComponent<Collider2D>().enabled = false;
+        }
         MoveVertical(false);
         
-        this.GetComponent<Collider2D>().enabled = true;
+        
     }
 
     

@@ -7,9 +7,9 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
-
-    [SerializeField] private AudioClip energyUp;
+    
     [SerializeField] private Text chargesLeft;
+    [SerializeField] private Image totalBattery;
     [SerializeField] private Text energyTxt;
     [SerializeField] private int energy = 4;
     [SerializeField] private int expectedELeft;
@@ -111,6 +111,7 @@ public class UIManager : MonoBehaviour
         {
             remplissage -= 1;
             energy++;
+            totalBattery.color = Color.white;
             AudioManager.Instance.Play("energyUp");
         }
         if (amount == -1)
@@ -118,9 +119,10 @@ public class UIManager : MonoBehaviour
             remplissage++;
             energy--;
         }
-        if (energy < 0)
+        if (energy <= 0)
         {
             energy = 0;
+            totalBattery.color = Color.red;
         }
         EnergyMask.Instance.ChangeMaskSize(remplissage);
         Debug.Log("remplissage de l'énergie : " + remplissage);

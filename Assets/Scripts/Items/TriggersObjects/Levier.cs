@@ -10,6 +10,8 @@ public class Levier : TriggerObjects
     private Quaternion ActiveRotation;
     private Quaternion bentRotation;
 
+    [SerializeField] private bool reverseRotation;  // Inverse l'inclinaison du levier ( ne change rien au gamePlay )
+    // bool Active définit si l'objet que le levier active sera activé ou desactivé au début du niveau
 
     private Orientation lastTrain;
 
@@ -47,6 +49,13 @@ public class Levier : TriggerObjects
                 bentRotation = Quaternion.Euler(0, 0, -135);
                 lastTrain = Orientation.up;
                 break;
+        }
+
+        if (reverseRotation)
+        {
+            Quaternion permutation = ActiveRotation;
+            ActiveRotation = bentRotation;
+            bentRotation = permutation;
         }
 
         if (sens == Orientation.right || sens == Orientation.left)

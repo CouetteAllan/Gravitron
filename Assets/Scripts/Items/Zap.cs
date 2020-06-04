@@ -4,7 +4,18 @@ using UnityEngine;
 
 public class Zap : InteractableObjects
 {
+    protected override void ActivateObject()
+    {
+        base.ActivateObject();
+        AudioManager.Instance.Stop("Tesla");
 
+    }
+
+    protected override void DisabledObject()
+    {
+        base.DisabledObject();
+        AudioManager.Instance.Play("Tesla");
+    }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -20,7 +31,7 @@ public class Zap : InteractableObjects
             jean.GetComponent<Animator>().SetBool("Idling", false);
             jean.GetComponent<Animator>().SetBool("Falling", false);
             jean.GetComponent<Animator>().SetBool("Jumping", false);
-            GetComponent<AudioSource>().mute = true;
+            AudioManager.Instance.Stop("Tesla");
             AudioManager.Instance.Play("Bzzt");
         }
     }

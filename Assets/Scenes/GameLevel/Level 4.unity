@@ -521,11 +521,6 @@ PrefabInstance:
       propertyPath: activableObjects.Array.data[0]
       value: 
       objectReference: {fileID: 1664290059}
-    - target: {fileID: 3922717465172510767, guid: ed22933ae7f9bdc418c59b4c8bdd654e,
-        type: 3}
-      propertyPath: active
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5443160236510282701, guid: ed22933ae7f9bdc418c59b4c8bdd654e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2273,6 +2268,16 @@ PrefabInstance:
         type: 3}
       propertyPath: distance
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782194523038325476, guid: 3df74e552ddb08843971202997e51c34,
+        type: 3}
+      propertyPath: closed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782194523038325476, guid: 3df74e552ddb08843971202997e51c34,
+        type: 3}
+      propertyPath: reversed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2801726693341355447, guid: 3df74e552ddb08843971202997e51c34,
         type: 3}

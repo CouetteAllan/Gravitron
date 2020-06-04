@@ -25,7 +25,6 @@ public class ButtonClick : TriggerObjects
             {
                 active = !active;
                 Debug.Log("Bouton préssé, " + Active);
-                //directionVectorPorte = - directionVectorPorte;
                 Snap();
 
                 if (active == true)

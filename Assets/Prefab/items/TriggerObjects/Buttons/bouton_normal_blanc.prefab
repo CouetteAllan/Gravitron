@@ -69,9 +69,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 2353dbc95d8d18d4aa18d61b9140aea9, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 7983738642820256572}
   - component: {fileID: 3922717465172510767}
   - component: {fileID: -5920233108487615665}
+  - component: {fileID: 2943861961345084684}
   m_Layer: 0
   m_Name: bouton_normal_blanc
   m_TagString: Untagged
@@ -109,7 +110,7 @@ Transform:
   m_GameObject: {fileID: 787968657328260937}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.03, y: -3.93, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 5446868766945468648}
   m_Father: {fileID: 0}
@@ -153,7 +154,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: c65e26da0e3edda4289c6514c2799cbb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -177,7 +178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0c18593ae69b0c409165a7274d4f0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activableObjects: []
+  activableObjects:
+  - {fileID: 0}
   active: 0
   pressed: {fileID: 21300000, guid: bd4cf288bed053a478d79de5289ff91d, type: 3}
   nopressed: {fileID: 21300000, guid: c65e26da0e3edda4289c6514c2799cbb, type: 3}
@@ -194,7 +196,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.00000011920929}
   m_SpriteTilingProperty:
     border: {x: 0.16, y: 0.099999994, z: 0.16, w: 0.099999994}
     pivot: {x: 0.5, y: 0.5}
@@ -205,5 +207,26 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 0.8603474, y: 0.8603474}
   m_EdgeRadius: 0
+--- !u!50 &2943861961345084684
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787968657328260937}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
+  m_Constraints: 7

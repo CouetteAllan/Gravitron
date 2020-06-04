@@ -9,9 +9,7 @@ public class GameManager : MonoBehaviour
     
 
     private Vector2 direction;
-
-    [SerializeField] private AudioClip noEnergy;
-    [SerializeField] private AudioClip swosh;
+    
 
     private static GameManager instance;
     public static GameManager Instance

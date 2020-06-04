@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8442956826872406482}
   - component: {fileID: 5881100581043713236}
   m_Layer: 9
-  m_Name: MaskPort
+  m_Name: MaskPorte
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,8 +25,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 54286638093956800}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.356, z: 0}
-  m_LocalScale: {x: 1, y: 1.244456, z: 1}
+  m_LocalPosition: {x: 0, y: -0.204, z: 0}
+  m_LocalScale: {x: 1, y: 1.3390347, z: 1}
   m_Children: []
   m_Father: {fileID: 5125971787081003718}
   m_RootOrder: 3
@@ -105,7 +105,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2801726693341355447}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.054, y: -2.36, z: 0}
+  m_LocalPosition: {x: -0.054, y: -2.19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5125971787081003718}
@@ -186,7 +186,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3865970158230315092}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.05, y: 1.679, z: 0}
+  m_LocalPosition: {x: -0.1, y: 2.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5125971787081003718}
@@ -252,7 +252,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6846691772586883520}
   - component: {fileID: 6203244896944216042}
-  - component: {fileID: 3418993433072055389}
+  - component: {fileID: 1782194523038325476}
+  - component: {fileID: 7799693865963834490}
   m_Layer: 9
   m_Name: pillier
   m_TagString: Untagged
@@ -268,7 +269,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8254381707836914597}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: -0.25, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5125971787081003718}
@@ -318,25 +319,53 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 1
   m_DrawMode: 1
-  m_Size: {x: 1.5255462, y: 4.2541504}
+  m_Size: {x: 1.5255462, y: 4.234789}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 1
   m_SpriteSortPoint: 0
---- !u!65 &3418993433072055389
-BoxCollider:
+--- !u!114 &1782194523038325476
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8254381707836914597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e7c85bf71fe484bad870a7a2e36be8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: {fileID: 0}
+  distance: 0
+  verticalDoor: 1
+--- !u!61 &7799693865963834490
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8254381707836914597}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 1.38, z: 0, w: 1.56}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.54, y: 3.2}
+    newSize: {x: 1.5255462, y: 4.234789}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 1
+    adaptiveTiling: 0
+  m_AutoTiling: 1
   serializedVersion: 2
-  m_Size: {x: 1.5255462, y: 4.2541504, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.54, y: 3.2}
+  m_EdgeRadius: 0
 --- !u!1 &8413272339837198189
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,7 +375,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5125971787081003718}
-  - component: {fileID: 1578782158933678785}
   m_Layer: 9
   m_Name: Porte
   m_TagString: Untagged
@@ -372,19 +400,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1578782158933678785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8413272339837198189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11e7c85bf71fe484bad870a7a2e36be8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trigger: {fileID: 0}
-  distance: 0
-  verticalDoor: 1
-  pillier: {fileID: 8254381707836914597}

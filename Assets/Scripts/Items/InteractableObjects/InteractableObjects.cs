@@ -5,6 +5,7 @@ using UnityEngine;
 public class InteractableObjects : MonoBehaviour
 {
     [SerializeField] protected TriggerObjects trigger;
+    protected bool activated;
 
 
     private void Start()
@@ -31,12 +32,12 @@ public class InteractableObjects : MonoBehaviour
     protected virtual void ActivateObject()
     {
         GetComponent<SpriteRenderer>().enabled = false;
-        GetComponent<BoxCollider2D>().enabled = false;
+        GetComponent<Collider2D>().enabled = false;
     } 
 
     protected virtual void DisabledObject()
     {
         GetComponent<SpriteRenderer>().enabled = true;
-        GetComponent<BoxCollider2D>().enabled = true;
+        GetComponent<Collider2D>().enabled = true;
     }
 }

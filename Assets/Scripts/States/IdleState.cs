@@ -7,6 +7,8 @@ public class IdleState : JeanBaseState
     private Vector2 jumpDirection;
     public override void EnterState(JeanMichelTesteur jean)
     {
+        jean.isFalling = false;
+
         jean.GetComponent<Animator>().SetBool("Walking", false);
         jean.GetComponent<Animator>().SetBool("Idling", true);
         jean.GetComponent<Animator>().SetBool("Falling", false);

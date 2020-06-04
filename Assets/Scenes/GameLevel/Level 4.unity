@@ -4171,6 +4171,11 @@ PrefabInstance:
       propertyPath: totalBattery
       value: 
       objectReference: {fileID: 7462598}
+    - target: {fileID: 6027545492714867343, guid: 536264d00a9d5eb439f58bcd4a7e7cca,
+        type: 3}
+      propertyPath: tuto
+      value: 
+      objectReference: {fileID: 134921371}
     - target: {fileID: 6027545492714867345, guid: 536264d00a9d5eb439f58bcd4a7e7cca,
         type: 3}
       propertyPath: m_LocalPosition.x

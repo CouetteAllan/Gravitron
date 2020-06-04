@@ -26,6 +26,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject badge3;
     [SerializeField] private Text timerText;
 
+    [SerializeField] private Canvas tuto;
 
     //--------------------------------- Pour le ScoreBoard ------------------------------------------------------
     [SerializeField] private Text timePassed;
@@ -186,6 +187,10 @@ public class UIManager : MonoBehaviour
 
     public void AfficherScoreBoard(bool setActive)
     {
+        if (tuto != null)
+        {
+            tuto.enabled = false;
+        }
         scoreBoard.SetActive(setActive);
     }
 

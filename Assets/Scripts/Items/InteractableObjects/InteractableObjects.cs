@@ -5,7 +5,7 @@ using UnityEngine;
 public class InteractableObjects : MonoBehaviour
 {
     [SerializeField] protected TriggerObjects trigger;
-    protected bool activated;
+    protected bool isMoving;
 
 
     private void Start()

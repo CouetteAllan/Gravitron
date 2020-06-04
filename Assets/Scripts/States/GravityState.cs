@@ -7,6 +7,8 @@ public class GravityState : JeanBaseState
 
     public override void EnterState(JeanMichelTesteur jean)
     {
+        jean.isFalling = true;
+
         if (UIManager.Instance.SendEnergy() <= 0)
         {
             jean.TransitionToState(jean.idleState);

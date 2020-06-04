@@ -57,7 +57,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0042722225, y: 0}
+  m_Offset: {x: 0.0088329315, y: 0.0009727478}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -68,7 +68,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.07317114, y: 0.1258812}
+  m_Size: {x: 0.021486282, y: 0.1239357}
   m_EdgeRadius: 0
 --- !u!1 &3195452604685385332
 GameObject:
@@ -219,6 +219,7 @@ MonoBehaviour:
   step: {fileID: 8300000, guid: 62e4f65aa1f680246b53ee90adb05d9e, type: 3}
   speed: 10
   jump: 3500
+  isFalling: 0
   zwoshAnimator: {fileID: 2527845401423828748}
   shake: {fileID: 0}
 --- !u!95 &1671762636

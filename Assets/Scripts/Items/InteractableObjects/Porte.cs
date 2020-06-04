@@ -43,7 +43,7 @@ public class Porte : InteractableObjects
             Vector3 position = pillierTransform.localPosition;
             position +=  -direction * Time.deltaTime;
             pillierTransform.localPosition = position;
-            if (transform.localPosition.y <= 0)
+            if (transform.localPosition.y <= 0.7)
             {
                 pillierTransform.localPosition = firstPosition;
                 isMovingBack = false;

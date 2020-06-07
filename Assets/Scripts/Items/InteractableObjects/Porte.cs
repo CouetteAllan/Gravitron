@@ -75,6 +75,7 @@ public class Porte : InteractableObjects
         }
 
         MoveVertical(true);
+        AudioManager.Instance.Play("door");
         
     }
 
@@ -93,8 +94,9 @@ public class Porte : InteractableObjects
             this.GetComponent<Collider2D>().enabled = false;
         }
         MoveVertical(false);
-        
-        
+        AudioManager.Instance.Play("door");
+
+
     }
 
     

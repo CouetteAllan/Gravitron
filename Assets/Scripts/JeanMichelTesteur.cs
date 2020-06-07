@@ -194,9 +194,18 @@ public class JeanMichelTesteur : MonoBehaviour
         
     }
 
-    public void PlayClipJMT()
+    public void PlayClipJMT(string sound)
     {
-        AudioManager.Instance.Play("step");
+        switch (sound)
+        {
+            case "step":
+                AudioManager.Instance.Play(sound);
+                break;
+            case "jump":
+                AudioManager.Instance.Play(sound);
+                break;
+        }
+        
     }
     private void Flip()
     {

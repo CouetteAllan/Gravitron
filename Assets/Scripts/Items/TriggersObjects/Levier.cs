@@ -9,11 +9,11 @@ public class Levier : TriggerObjects
 
     private Quaternion ActiveRotation;
     private Quaternion bentRotation;
-
-    [SerializeField] private bool reverseRotation;  // Inverse l'inclinaison du levier ( ne change rien au gamePlay )
-    // bool Active définit si l'objet que le levier active sera activé ou desactivé au début du niveau
-
+    
+    
     private Orientation lastTrain;
+
+    [SerializeField] private bool bented;           // Change la première rotation du levier en début de partie
 
 
     [SerializeField] private Orientation sens;
@@ -51,12 +51,6 @@ public class Levier : TriggerObjects
                 break;
         }
 
-        if (reverseRotation)
-        {
-            Quaternion permutation = ActiveRotation;
-            ActiveRotation = bentRotation;
-            bentRotation = permutation;
-        }
 
         if (sens == Orientation.right || sens == Orientation.left)
         {
@@ -130,10 +124,9 @@ public class Levier : TriggerObjects
 
     public void ActivateLever()
     {
-        Debug.Log("Levier enclenché, " + Active);
         CancelInvoke("TrainLever");
         InvokeRepeating("TrainLever", 0, Time.deltaTime);
-        Active = !Active;
+        bented = !bented;
         StopAllCoroutines();
         StartCoroutine(StopTrain());
     }
@@ -142,7 +135,7 @@ public class Levier : TriggerObjects
     {
         Vector3 move = transform.position;
 
-        transform.rotation = Active ?
+        transform.rotation = bented ?
             Quaternion.Lerp(transform.rotation, bentRotation, rotationSpeed * Time.deltaTime) :
             Quaternion.Lerp(transform.rotation, ActiveRotation, rotationSpeed * Time.deltaTime);
 

@@ -1,11 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class InteractableObjects : MonoBehaviour
 {
-    [SerializeField] protected TriggerObjects trigger;
     protected bool isMoving;
+
+    [SerializeField] protected bool active = false;     // Change le premier comportement de l'objet (en début de partie)
+    public bool Active
+    {
+        get { return active; }
+        set { active = value; }
+    }
 
 
     private void Start()
@@ -16,17 +20,15 @@ public class InteractableObjects : MonoBehaviour
 
     public void ChangeBehaviour()
     {
-        // Debug.Log("Bouton.Active = " + button.Active);
-        if (trigger.Active)
+        if (Active)
         {
             ActivateObject();
-            // Debug.Log("Objet Activé");
         }
-        else if (!trigger.Active)
+        else if (!Active)
         {
             DisabledObject();
-            // Debug.Log("Objet Désactivé");
         }
+        Active = !Active;
     }
 
     protected virtual void ActivateObject()

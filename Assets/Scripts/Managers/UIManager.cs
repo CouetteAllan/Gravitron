@@ -25,7 +25,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject badge1;
     [SerializeField] private GameObject badge2;
     [SerializeField] private GameObject badge3;
-    [SerializeField] private TextMeshPro timerText;
+    [SerializeField] private TMP_Text timerText;
 
     [SerializeField] private Canvas tuto;
 

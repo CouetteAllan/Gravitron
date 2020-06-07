@@ -15,6 +15,14 @@ public class ButtonClick : TriggerObjects
     [SerializeField]
     private Sprite nopressed;
 
+    private SpriteRenderer sRenderer;
+
+
+    private void Start()
+    {
+        sRenderer = GetComponent<SpriteRenderer>();
+    }
+
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -23,15 +31,13 @@ public class ButtonClick : TriggerObjects
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                active = !active;
-                Debug.Log("Bouton préssé, " + Active);
                 Snap();
 
-                if (active == true)
+                if (sRenderer.sprite != pressed)
                 {
                     this.GetComponent<SpriteRenderer>().sprite = pressed;
                 }
-                else if (active == false)
+                else
                 {
                     this.GetComponent<SpriteRenderer>().sprite = nopressed;
                 }

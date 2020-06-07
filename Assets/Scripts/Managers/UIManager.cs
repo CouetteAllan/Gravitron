@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
@@ -24,7 +25,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject badge1;
     [SerializeField] private GameObject badge2;
     [SerializeField] private GameObject badge3;
-    [SerializeField] private Text timerText;
+    [SerializeField] private TextMeshPro timerText;
 
     [SerializeField] private Canvas tuto;
 
@@ -52,7 +53,6 @@ public class UIManager : MonoBehaviour
     {
         menuPause.SetActive(false);
         ChangeEnergy(0);
-        timerText.color = Color.blue;
         startTime = Time.time;
     }
 

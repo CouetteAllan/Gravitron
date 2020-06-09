@@ -137,7 +137,7 @@ public class GameManager : MonoBehaviour
         {
             AudioManager.Instance.Play("noEnergy");
         }
-    }
+    }  
 
     
 

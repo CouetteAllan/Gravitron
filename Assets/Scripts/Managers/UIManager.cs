@@ -200,8 +200,7 @@ public class UIManager : MonoBehaviour
         chargesLeft.text = actualEnergy.ToString() + "/" + expectedELeft;
 
         if(actualEnergy >= expectedELeft)
-        {
-            chargesLeft.color = Color.yellow; 
+        { 
             condition2 = true;
         }
 
@@ -228,7 +227,7 @@ public class UIManager : MonoBehaviour
     {
         finished = true;
         timerText.color = Color.red;
-        timePassed.text = timeSinceStart.ToString() + "/" + expectedTPassed.ToString();
+        timePassed.text = timeSinceStart.ToString("f2") + "/" + expectedTPassed.ToString();
 
         if (timeSinceStart > expectedTPassed)
         {

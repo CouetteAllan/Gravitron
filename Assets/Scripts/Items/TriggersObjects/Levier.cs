@@ -26,28 +26,30 @@ public class Levier : TriggerObjects
     }
 
     private void Start()
-    {        
+    {
+        lastTrain = sens;
+
         switch (sens)
         {
             case Orientation.right:
                 ActiveRotation = Quaternion.Euler(0, 0, 45);
                 bentRotation = Quaternion.Euler(0, 0, 135);
-                lastTrain = Orientation.right;
+
                 break;
             case Orientation.left:
                 ActiveRotation = Quaternion.Euler(0, 0, -45);
                 bentRotation = Quaternion.Euler(0, 0, -135);
-                lastTrain = Orientation.left;
+
                 break;
             case Orientation.down:
                 ActiveRotation = Quaternion.Euler(0, 0, 45);
                 bentRotation = Quaternion.Euler(0, 0, -45);
-                lastTrain = Orientation.down;
+
                 break;
             case Orientation.up:
                 ActiveRotation = Quaternion.Euler(0, 0, 135);
                 bentRotation = Quaternion.Euler(0, 0, -135);
-                lastTrain = Orientation.up;
+
                 break;
         }
 
@@ -58,6 +60,7 @@ public class Levier : TriggerObjects
                 || GameManager.Instance.SendGravityDirection() == Vector2.down)
             {
                 ActivateLever();
+                lastTrain = bented ? Orientation.down : Orientation.up;
             }
         }
         else if (sens == Orientation.up || sens == Orientation.down)
@@ -66,6 +69,7 @@ public class Levier : TriggerObjects
                 || GameManager.Instance.SendGravityDirection() == Vector2.left)
             {
                 ActivateLever();
+                lastTrain = bented ? Orientation.right : Orientation.left;
             }
         }
     }
@@ -126,6 +130,7 @@ public class Levier : TriggerObjects
     {
         CancelInvoke("TrainLever");
         InvokeRepeating("TrainLever", 0, Time.deltaTime);
+        AudioManager.Instance.Play("lever");
         bented = !bented;
         StopAllCoroutines();
         StartCoroutine(StopTrain());

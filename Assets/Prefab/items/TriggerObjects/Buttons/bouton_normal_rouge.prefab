@@ -155,7 +155,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c65e26da0e3edda4289c6514c2799cbb, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9433962, g: 0.5812802, b: 0.56514776, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -179,7 +179,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activableObjects:
   - {fileID: 0}
-  active: 0
   pressed: {fileID: 21300000, guid: bd4cf288bed053a478d79de5289ff91d, type: 3}
   nopressed: {fileID: 21300000, guid: c65e26da0e3edda4289c6514c2799cbb, type: 3}
 --- !u!61 &8251076380682617464

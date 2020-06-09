@@ -29,7 +29,7 @@ public class ButtonClick : TriggerObjects
         JeanMichelTesteur jean = collision.GetComponent<JeanMichelTesteur>();
         if(jean != null)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetButtonDown("Interact"))
             {
                 Snap();
 
@@ -41,7 +41,32 @@ public class ButtonClick : TriggerObjects
                 {
                     this.GetComponent<SpriteRenderer>().sprite = nopressed;
                 }
+
+                AudioManager.Instance.Play("click");
             }
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        JeanMichelTesteur jean = collision.GetComponent<JeanMichelTesteur>();
+        if(jean != null)
+        {
+            if (Input.GetButton("Interact"))
+            {
+                Snap();
+
+                if (sRenderer.sprite != pressed)
+                {
+                    this.GetComponent<SpriteRenderer>().sprite = pressed;
+                }
+                else
+                {
+                    this.GetComponent<SpriteRenderer>().sprite = nopressed;
+                }
+
+                AudioManager.Instance.Play("click");
+            }
+        }
+    }
+
 }

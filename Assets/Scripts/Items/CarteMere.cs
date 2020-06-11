@@ -10,8 +10,7 @@ public class CarteMere : MonoBehaviour
     public float amplitude;
 
     [SerializeField] private GameObject carteMere;
-    [SerializeField]
-    private Text cacahuete;
+    [SerializeField] private GameObject carteNoire;
     public bool collected = false;
 
     private void Update()
@@ -25,11 +24,11 @@ public class CarteMere : MonoBehaviour
     {
         JeanMichelTesteur jean = collision.GetComponent<JeanMichelTesteur>();
         if (jean != null)
-        {
+        {            
             collected = true;
             if (collected == true)
             {
-                cacahuete.text = "Oui!";
+                carteNoire.SetActive(false);
                 carteMere.SetActive(true);
                 AudioManager.Instance.Play("CarteMere");
 

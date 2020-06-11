@@ -3589,6 +3589,10 @@ PrefabInstance:
       propertyPath: carteMere
       value: 
       objectReference: {fileID: 1916814657}
+    - target: {fileID: 857216219, guid: 0960f25274032274f88d874873f19492, type: 3}
+      propertyPath: carteNoire
+      value: 
+      objectReference: {fileID: 1830231230}
     - target: {fileID: 2903534972030311768, guid: 0960f25274032274f88d874873f19492,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4013,6 +4017,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e417998909e434c4fb7548fecd48729c, type: 3}
+--- !u!1 &1830231230 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8687765805360778203, guid: ca8c00becd9dbae45a8ca025dad19e55,
+    type: 3}
+  m_PrefabInstance: {fileID: 632650356}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1863749819 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3922717465172510767, guid: ed22933ae7f9bdc418c59b4c8bdd654e,

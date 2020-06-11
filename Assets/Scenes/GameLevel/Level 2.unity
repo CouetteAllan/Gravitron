@@ -5441,6 +5441,11 @@ PrefabInstance:
       propertyPath: dot3
       value: 
       objectReference: {fileID: 1792134043}
+    - target: {fileID: 6027545492714867343, guid: 536264d00a9d5eb439f58bcd4a7e7cca,
+        type: 3}
+      propertyPath: expectedSecPassed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 6027545492714867344, guid: 536264d00a9d5eb439f58bcd4a7e7cca,
         type: 3}
       propertyPath: gravity

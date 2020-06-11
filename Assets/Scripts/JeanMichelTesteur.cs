@@ -17,7 +17,7 @@ public class JeanMichelTesteur : MonoBehaviour
     {
         get { return move; }
     }
-
+    [HideInInspector] public bool won = false;
     [HideInInspector] public bool triedWithoutEnergy = false;
 
     private float rotateGoal;
@@ -76,6 +76,11 @@ public class JeanMichelTesteur : MonoBehaviour
     
     void Update()
     {
+        if (won)
+        {
+            return; //permet de ne plus avoir accès aux inputs lorsqu'on gagne
+        }
+
         if (isDead)
         {
             GameManager.Instance.LateGameOver(deathLateTimer); //Change le GameState en GameOver après un certains temps pour laisser quelques temps aux anims de se jouer

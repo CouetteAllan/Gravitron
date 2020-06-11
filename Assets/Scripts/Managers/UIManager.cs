@@ -114,7 +114,7 @@ public class UIManager : MonoBehaviour
     {
         Debug.Log("Remplissage initial : " + remplissage);
         remplissage += amount;
-        if (remplissage >= 1)
+        while (remplissage >= 1)
         {
             remplissage -= 1;
             energy++;
@@ -194,6 +194,7 @@ public class UIManager : MonoBehaviour
     public void AfficherScoreBoard(bool setActive)
     {
         AudioManager.Instance.Play("PopUp");
+        AudioManager.Instance.Stop("Theme");
         if (tuto != null)
         {
             tuto.enabled = false;

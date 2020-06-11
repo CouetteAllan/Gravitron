@@ -161,6 +161,16 @@ public class GameManager : MonoBehaviour
     {
         ChangeState(GameState.GameOver);
     }
+
+    public void LateVictory(float time)
+    {
+        Invoke(nameof(Victory), time);
+    }
+
+    private void Victory()
+    {
+        ChangeState(GameState.Victory);
+    }
     
     private void FirstGravity(Gravity gravity)
     {

@@ -94,11 +94,13 @@ public class UIManager : MonoBehaviour
 
     public void AfficherMenuPause(bool setActive)
     {
+        AudioManager.Instance.Play("PopUp");
         menuPause.SetActive(setActive);
     }
 
     public void AfficherGameOver(bool setActive)
     {
+        AudioManager.Instance.Play("PopUp");
         menuGameOver.SetActive(setActive);
     }
 
@@ -191,6 +193,7 @@ public class UIManager : MonoBehaviour
 
     public void AfficherScoreBoard(bool setActive)
     {
+        AudioManager.Instance.Play("PopUp");
         if (tuto != null)
         {
             tuto.enabled = false;

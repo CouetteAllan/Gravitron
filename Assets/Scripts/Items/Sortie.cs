@@ -6,7 +6,7 @@ public class Sortie : MonoBehaviour
 {
 
     [SerializeField] private int levelIndex = 0;
-    private float winLateTimer = 1f;
+    private float winLateTimer = 6.5f;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

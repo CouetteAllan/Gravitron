@@ -194,6 +194,7 @@ public class UIManager : MonoBehaviour
     public void AfficherScoreBoard(bool setActive)
     {
         AudioManager.Instance.Play("PopUp");
+        AudioManager.Instance.Stop("Theme");
         if (tuto != null)
         {
             tuto.enabled = false;

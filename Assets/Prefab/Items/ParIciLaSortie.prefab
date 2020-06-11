@@ -10,8 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1025872468526481300}
   - component: {fileID: 1025872468526481323}
-  - component: {fileID: 1025872468526481322}
-  - component: {fileID: 1025872468526481301}
   m_Layer: 0
   m_Name: ParIciLaSortie
   m_TagString: Untagged
@@ -29,7 +27,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 19.51, y: 5.05, z: 0}
   m_LocalScale: {x: 0.40017, y: 0.40017, z: 0.40017}
-  m_Children: []
+  m_Children:
+  - {fileID: 6161245050923910085}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -83,32 +82,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &1025872468526481322
-CircleCollider2D:
+--- !u!1 &7975603289343684406
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1025872468526481321}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 3.8449998
---- !u!114 &1025872468526481301
-MonoBehaviour:
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6161245050923910085}
+  m_Layer: 0
+  m_Name: TriggerExit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6161245050923910085
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1025872468526481321}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a31a14161c4cb224d82969097a793bbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  t: {fileID: 0}
+  m_GameObject: {fileID: 7975603289343684406}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.3102922, y: 0.077180244, z: -0.16499065}
+  m_LocalScale: {x: 2.4989378, y: 2.4989378, z: 2.4989378}
+  m_Children: []
+  m_Father: {fileID: 1025872468526481300}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

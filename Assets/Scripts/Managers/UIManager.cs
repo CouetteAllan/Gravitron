@@ -25,6 +25,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject badge1;
     [SerializeField] private GameObject badge2;
     [SerializeField] private GameObject badge3;
+    [SerializeField] private GameObject dot1;
+    [SerializeField] private GameObject dot2;
+    [SerializeField] private GameObject dot3;
     [SerializeField] private TMP_Text timerText;
 
     [SerializeField] private Canvas tuto;
@@ -244,6 +247,7 @@ public class UIManager : MonoBehaviour
     {
         int starCount = 0;
 
+
         if (carteMere.collected)
         {
             condition1 = true;
@@ -269,17 +273,23 @@ public class UIManager : MonoBehaviour
         if (starCount == 1)
         {
             badge1.SetActive(true);
+            dot1.SetActive(false);
         }
         else if (starCount == 2)
         {
             badge1.SetActive(true);
             badge2.SetActive(true);
+            dot1.SetActive(false);
+            dot2.SetActive(false);
         }
         else if (starCount == 3)
         {
             badge1.SetActive(true);
             badge2.SetActive(true);
             badge3.SetActive(true);
+            dot1.SetActive(false);
+            dot2.SetActive(false);
+            dot3.SetActive(false);
         }
 
     }

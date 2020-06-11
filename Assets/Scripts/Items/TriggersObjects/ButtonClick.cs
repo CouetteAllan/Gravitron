@@ -51,7 +51,7 @@ public class ButtonClick : TriggerObjects
         JeanMichelTesteur jean = collision.GetComponent<JeanMichelTesteur>();
         if(jean != null)
         {
-            if (Input.GetButton("Interact"))
+            if (Input.GetButtonDown("Interact"))
             {
                 Snap();
 

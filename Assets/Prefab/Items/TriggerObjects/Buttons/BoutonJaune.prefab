@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &5983821484037044305
+--- !u!1001 &3304935028400159020
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 787968657328260937, guid: ed22933ae7f9bdc418c59b4c8bdd654e,
         type: 3}
       propertyPath: m_Name
-      value: BoutonBleu
+      value: BoutonJaune
       objectReference: {fileID: 0}
     - target: {fileID: 5443160236510282701, guid: ed22933ae7f9bdc418c59b4c8bdd654e,
         type: 3}
@@ -70,18 +70,17 @@ PrefabInstance:
     - target: {fileID: 7983738642820256572, guid: ed22933ae7f9bdc418c59b4c8bdd654e,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.5242524
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7983738642820256572, guid: ed22933ae7f9bdc418c59b4c8bdd654e,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.67964643
+      value: 0.94210696
       objectReference: {fileID: 0}
     - target: {fileID: 7983738642820256572, guid: ed22933ae7f9bdc418c59b4c8bdd654e,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.9339623
+      value: 0.2688679
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2943861961345084684, guid: ed22933ae7f9bdc418c59b4c8bdd654e, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed22933ae7f9bdc418c59b4c8bdd654e, type: 3}

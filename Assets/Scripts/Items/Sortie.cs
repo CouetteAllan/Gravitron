@@ -13,8 +13,9 @@ public class Sortie : MonoBehaviour
         JeanMichelTesteur player = collision.GetComponent <JeanMichelTesteur>();
         if (player != null)
         {
-            Time.timeScale = 0;
+            player.won = true;
             AudioManager.Instance.Play("Victory");
+            AudioManager.Instance.Stop("Theme");
             if (levelIndex == LevelList.lastLevelUnlock)
             {
                 LevelList.lastLevelUnlock++;

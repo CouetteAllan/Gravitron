@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LevelList : MonoBehaviour
 {
-    public static int lastLevelUnlock = 1;
+    public static int lastLevelUnlock = 10;
 
     [SerializeField] private List<Level> listLevel;
 

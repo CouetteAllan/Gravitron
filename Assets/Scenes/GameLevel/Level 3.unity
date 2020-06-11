@@ -5555,12 +5555,12 @@ PrefabInstance:
     - target: {fileID: 1025872468526481300, guid: 5a075d16cecf16f40b99943d257bd1e5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.687141
+      value: 15.82
       objectReference: {fileID: 0}
     - target: {fileID: 1025872468526481300, guid: 5a075d16cecf16f40b99943d257bd1e5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.623805
+      value: 9.4
       objectReference: {fileID: 0}
     - target: {fileID: 1025872468526481300, guid: 5a075d16cecf16f40b99943d257bd1e5,
         type: 3}
@@ -5611,6 +5611,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ParIciLaSortie
+      objectReference: {fileID: 0}
+    - target: {fileID: 1025872468526481323, guid: 5a075d16cecf16f40b99943d257bd1e5,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a075d16cecf16f40b99943d257bd1e5, type: 3}

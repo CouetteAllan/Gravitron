@@ -27,37 +27,36 @@ public class Levier : TriggerObjects
 
     private void Start()
     {
-        lastTrain = sens;
 
         switch (sens)
         {
             case Orientation.right:
                 ActiveRotation = Quaternion.Euler(0, 0, 45);
                 bentRotation = Quaternion.Euler(0, 0, 135);
-
+                lastTrain = bented ? Orientation.up : Orientation.down;
                 break;
             case Orientation.left:
                 ActiveRotation = Quaternion.Euler(0, 0, -45);
                 bentRotation = Quaternion.Euler(0, 0, -135);
-
+                lastTrain = bented ? Orientation.down : Orientation.up;
                 break;
             case Orientation.down:
                 ActiveRotation = Quaternion.Euler(0, 0, 45);
                 bentRotation = Quaternion.Euler(0, 0, -45);
-
+                lastTrain = bented ? Orientation.right : Orientation.left;
                 break;
             case Orientation.up:
                 ActiveRotation = Quaternion.Euler(0, 0, 135);
                 bentRotation = Quaternion.Euler(0, 0, -135);
-
+                lastTrain = bented ? Orientation.left : Orientation.right;
                 break;
         }
 
 
         if (sens == Orientation.right || sens == Orientation.left)
         {
-            if (GameManager.Instance.SendGravityDirection() == Vector2.up
-                || GameManager.Instance.SendGravityDirection() == Vector2.down)
+            if (GameManager.Instance.SendGravityDirection() == Vector2.right
+                || GameManager.Instance.SendGravityDirection() == Vector2.left)
             {
                 ActivateLever();
                 lastTrain = bented ? Orientation.down : Orientation.up;
@@ -65,8 +64,8 @@ public class Levier : TriggerObjects
         }
         else if (sens == Orientation.up || sens == Orientation.down)
         {
-            if (GameManager.Instance.SendGravityDirection() == Vector2.right
-                || GameManager.Instance.SendGravityDirection() == Vector2.left)
+            if (GameManager.Instance.SendGravityDirection() == Vector2.up
+                || GameManager.Instance.SendGravityDirection() == Vector2.down)
             {
                 ActivateLever();
                 lastTrain = bented ? Orientation.right : Orientation.left;

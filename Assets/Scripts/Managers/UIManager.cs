@@ -25,13 +25,17 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject badge1;
     [SerializeField] private GameObject badge2;
     [SerializeField] private GameObject badge3;
+    [SerializeField] private GameObject dot1;
+    [SerializeField] private GameObject dot2;
+    [SerializeField] private GameObject dot3;
     [SerializeField] private TMP_Text timerText;
 
     [SerializeField] private Canvas tuto;
 
     //--------------------------------- Pour le ScoreBoard ------------------------------------------------------
     [SerializeField] private Text timePassed;
-    [SerializeField] private float expectedTPassed;
+    [SerializeField] private float expectedMinPassed;
+    [SerializeField] private float expectedSecPassed;
     float timeSinceStart;
     private float startTime;
     private bool finished = false;
@@ -90,11 +94,13 @@ public class UIManager : MonoBehaviour
 
     public void AfficherMenuPause(bool setActive)
     {
+        AudioManager.Instance.Play("PopUp");
         menuPause.SetActive(setActive);
     }
 
     public void AfficherGameOver(bool setActive)
     {
+        AudioManager.Instance.Play("PopUp");
         menuGameOver.SetActive(setActive);
     }
 
@@ -187,6 +193,7 @@ public class UIManager : MonoBehaviour
 
     public void AfficherScoreBoard(bool setActive)
     {
+        AudioManager.Instance.Play("PopUp");
         if (tuto != null)
         {
             tuto.enabled = false;
@@ -227,13 +234,13 @@ public class UIManager : MonoBehaviour
     {
         finished = true;
         timerText.color = Color.red;
-        timePassed.text = timeSinceStart.ToString("f2") + "/" + expectedTPassed.ToString();
+        timePassed.text = timeSinceStart.ToString("f2") + "/" + (expectedMinPassed/60).ToString() + ":" + expectedSecPassed.ToString();
 
-        if (timeSinceStart > expectedTPassed)
+        if (timeSinceStart > (expectedMinPassed + expectedSecPassed))
         {
             timePassed.color = Color.red;
         }
-        else if (timeSinceStart < expectedTPassed)
+        else if (timeSinceStart < (expectedMinPassed + expectedSecPassed))
         {
             condition3 = true;
             
@@ -243,6 +250,7 @@ public class UIManager : MonoBehaviour
     public void ScoreDisplay()
     {
         int starCount = 0;
+
 
         if (carteMere.collected)
         {
@@ -269,17 +277,23 @@ public class UIManager : MonoBehaviour
         if (starCount == 1)
         {
             badge1.SetActive(true);
+            dot1.SetActive(false);
         }
         else if (starCount == 2)
         {
             badge1.SetActive(true);
             badge2.SetActive(true);
+            dot1.SetActive(false);
+            dot2.SetActive(false);
         }
         else if (starCount == 3)
         {
             badge1.SetActive(true);
             badge2.SetActive(true);
             badge3.SetActive(true);
+            dot1.SetActive(false);
+            dot2.SetActive(false);
+            dot3.SetActive(false);
         }
 
     }

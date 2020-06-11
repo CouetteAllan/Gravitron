@@ -4,10 +4,27 @@ using UnityEngine;
 
 public class Laser : InteractableObjects
 {
-    [SerializeField]
-    private AudioClip deadlyLaser;
-    
+    [SerializeField] private GameObject[] composants = new GameObject[2];
 
+
+    protected override void ActivateObject()
+    {
+        base.ActivateObject();
+        foreach (GameObject c in composants)
+        {
+            c.GetComponent<SpriteRenderer>().enabled = false;
+        }
+    }
+
+
+    protected override void DisabledObject()
+    {
+        base.DisabledObject();
+        foreach (GameObject c in composants)
+        {
+            c.GetComponent<SpriteRenderer>().enabled = true;
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -223,8 +223,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f1d095c17ffabe4cb00530e287639c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trigger: {fileID: 0}
-  deadlyLaser: {fileID: 8300000, guid: b380bc8f5c2b538429cb18d844a94599, type: 3}
+  active: 0
+  composants:
+  - {fileID: 8907395204705055794}
+  - {fileID: 8907395203505455644}
+  - {fileID: 8907395203615210794}
 --- !u!1 &8907395203615210794
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class ButtonClick : TriggerObjects
 {
-    /*private int directionVectorPorte = 1;
-    public int DirectionVectorPorte
-    {
-        get { return directionVectorPorte; }
-        private set { return; }
-    }*/
     [SerializeField]
     private Sprite pressed;
     [SerializeField]
@@ -17,55 +11,46 @@ public class ButtonClick : TriggerObjects
 
     private SpriteRenderer sRenderer;
 
+    private bool canBePressed;//booléen pour savoir si on peut presser le bouton 
+
 
     private void Start()
     {
         sRenderer = GetComponent<SpriteRenderer>();
     }
 
-
-    private void OnTriggerStay2D(Collider2D collision)
+    private void Update()
     {
-        JeanMichelTesteur jean = collision.GetComponent<JeanMichelTesteur>();
-        if(jean != null)
+        if(canBePressed && Input.GetButtonDown("Interact"))//Si on appuie sur E et qu'on est à côté du bouton
         {
-            if (Input.GetButtonDown("Interact"))
+            Snap();
+
+            if (sRenderer.sprite != pressed)
             {
-                Snap();
-
-                if (sRenderer.sprite != pressed)
-                {
-                    this.GetComponent<SpriteRenderer>().sprite = pressed;
-                }
-                else
-                {
-                    this.GetComponent<SpriteRenderer>().sprite = nopressed;
-                }
-
-                AudioManager.Instance.Play("click");
+                this.GetComponent<SpriteRenderer>().sprite = pressed;
             }
+            else
+            {
+                this.GetComponent<SpriteRenderer>().sprite = nopressed;
+            }
+
+            AudioManager.Instance.Play("click");
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+
+
+    private void OnTriggerEnter2D(Collider2D collision)   //Détecte si on est dans la range du bouton
     {
-        JeanMichelTesteur jean = collision.GetComponent<JeanMichelTesteur>();
-        if(jean != null)
+        if(collision.gameObject.CompareTag("Player"))
         {
-            if (Input.GetButtonDown("Interact"))
-            {
-                Snap();
-
-                if (sRenderer.sprite != pressed)
-                {
-                    this.GetComponent<SpriteRenderer>().sprite = pressed;
-                }
-                else
-                {
-                    this.GetComponent<SpriteRenderer>().sprite = nopressed;
-                }
-
-                AudioManager.Instance.Play("click");
-            }
+            canBePressed = true;      //Jean-Michel est dans la range donc il peut presser le bouton
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)   //Détecte si on sort de la range du bouton
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            canBePressed = false;     //Jean-Michel n'est plus dans la range donc il ne peut plus presser le bouton
         }
     }
 

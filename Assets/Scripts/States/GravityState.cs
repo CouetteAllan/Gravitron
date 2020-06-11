@@ -11,7 +11,8 @@ public class GravityState : JeanBaseState
 
         if (UIManager.Instance.SendEnergy() <= 0)
         {
-            jean.TransitionToState(jean.idleState);
+            jean.triedWithoutEnergy = true;
+            jean.GetComponent<Animator>().SetTrigger("NoBatteryLeft");
             return;
         }
 

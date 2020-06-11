@@ -18,6 +18,8 @@ public class JeanMichelTesteur : MonoBehaviour
         get { return move; }
     }
 
+    [HideInInspector] public bool triedWithoutEnergy = false;
+
     private float rotateGoal;
     public float RotateGoal
     {
@@ -76,13 +78,18 @@ public class JeanMichelTesteur : MonoBehaviour
     {
         if (isDead)
         {
-            GameManager.Instance.LateGameOver(deathLateTimer);
+            GameManager.Instance.LateGameOver(deathLateTimer); //Change le GameState en GameOver après un certains temps pour laisser quelques temps aux anims de se jouer
         }
         MoveWithGravity();
+
+        if (triedWithoutEnergy)
+        {
+            this.Dead(1); //GameOver après 2s pour laisser le temps à l'animation de se jouer
+        }
         
         #region Input pour la Gravité
 
-        if (!isFalling)
+        if (!isFalling)//Empêche le fait de pouvoir changer de gravité lorsqu'on tombe en mode gravité 
         {
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
@@ -168,17 +175,17 @@ public class JeanMichelTesteur : MonoBehaviour
              move = new Vector2(0 , -deplacement);
             this.transform.rotation = Quaternion.Euler(0, 0, -90);
         }
-        if (Vector2.right == GameManager.Instance.SendGravityDirection())
+        if (Vector2.right == GameManager.Instance.SendGravityDirection())//déplacement sur le mur de droite
         {
              move = new Vector2(0 , deplacement);
             this.transform.rotation = Quaternion.Euler(0, 0, 90);
         }
-        if (Vector2.up == GameManager.Instance.SendGravityDirection())
+        if (Vector2.up == GameManager.Instance.SendGravityDirection())//déplacement sur le mur du haut
         {
              move = new Vector2(-deplacement, 0);
             this.transform.rotation = Quaternion.Euler(0, 0, 180);
         }
-        if (Vector2.down == GameManager.Instance.SendGravityDirection())
+        if (Vector2.down == GameManager.Instance.SendGravityDirection())//déplacement sur le mur du bas
         {
              move = new Vector2(deplacement, 0);
             this.transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -194,7 +201,7 @@ public class JeanMichelTesteur : MonoBehaviour
         
     }
 
-    public void PlayClipJMT(string sound)
+    public void PlayClipJMT(string sound) //Permet de jouer les différents sons tels que les bruits de pas ou de saut en accord avec ses anims
     {
         switch (sound)
         {

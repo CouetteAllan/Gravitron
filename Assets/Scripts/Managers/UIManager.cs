@@ -34,7 +34,8 @@ public class UIManager : MonoBehaviour
 
     //--------------------------------- Pour le ScoreBoard ------------------------------------------------------
     [SerializeField] private Text timePassed;
-    [SerializeField] private float expectedTPassed;
+    [SerializeField] private float expectedMinPassed;
+    [SerializeField] private float expectedSecPassed;
     float timeSinceStart;
     private float startTime;
     private bool finished = false;
@@ -230,13 +231,13 @@ public class UIManager : MonoBehaviour
     {
         finished = true;
         timerText.color = Color.red;
-        timePassed.text = timeSinceStart.ToString("f2") + "/" + expectedTPassed.ToString();
+        timePassed.text = timeSinceStart.ToString("f2") + "/" + (expectedMinPassed/60).ToString() + ":" + expectedSecPassed.ToString();
 
-        if (timeSinceStart > expectedTPassed)
+        if (timeSinceStart > (expectedMinPassed + expectedSecPassed))
         {
             timePassed.color = Color.red;
         }
-        else if (timeSinceStart < expectedTPassed)
+        else if (timeSinceStart < (expectedMinPassed + expectedSecPassed))
         {
             condition3 = true;
             

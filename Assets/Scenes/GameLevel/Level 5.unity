@@ -3009,6 +3009,10 @@ PrefabInstance:
       propertyPath: collected
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 857216219, guid: 0960f25274032274f88d874873f19492, type: 3}
+      propertyPath: carteNoire
+      value: 
+      objectReference: {fileID: 929173354301937937}
     - target: {fileID: 2903534972030311768, guid: 0960f25274032274f88d874873f19492,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5906,6 +5910,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca8c00becd9dbae45a8ca025dad19e55, type: 3}
+--- !u!1 &929173354301937937 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8687765805360778203, guid: ca8c00becd9dbae45a8ca025dad19e55,
+    type: 3}
+  m_PrefabInstance: {fileID: 929173354301937936}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &929173354301937938 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7276786453593840836, guid: ca8c00becd9dbae45a8ca025dad19e55,

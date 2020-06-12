@@ -259,7 +259,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 1207158281}
+      objectReference: {fileID: 0}
     - target: {fileID: 7584916570233920028, guid: a2e7a11efe03fbb4ab898c9934b61c40,
         type: 3}
       propertyPath: m_Name
@@ -616,6 +616,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LevelRecap
+      objectReference: {fileID: 0}
+    - target: {fileID: 7276786453367652118, guid: ca8c00becd9dbae45a8ca025dad19e55,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7841040189285102727, guid: ca8c00becd9dbae45a8ca025dad19e55,
         type: 3}
@@ -3929,12 +3934,12 @@ PrefabInstance:
     - target: {fileID: 2241587015621598578, guid: e417998909e434c4fb7548fecd48729c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.075218
+      value: 12.2
       objectReference: {fileID: 0}
     - target: {fileID: 2241587015621598578, guid: e417998909e434c4fb7548fecd48729c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.259458
+      value: 1.09
       objectReference: {fileID: 0}
     - target: {fileID: 2241587015621598578, guid: e417998909e434c4fb7548fecd48729c,
         type: 3}

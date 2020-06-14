@@ -24,28 +24,28 @@ public class Porte : InteractableObjects
     {
         pillierTransform = this.GetComponent<Transform>();
         firstPosition = pillierTransform.localPosition;
-        if (reversed)
+        if (reversed) //si la porte doit être inversée (elle est ouverte de base)
         {
-            pillierTransform.localPosition = new Vector3(0, distance, 0);
+            pillierTransform.localPosition = new Vector3(0, distance - 1.7f, 0); //alors sa position est sa position finale en mode normale avec un petit différentiel sinon ça bug et la porte s'en va
         }
     }
     
     void Update()
     {
-        direction = Vector3.MoveTowards(this.transform.localPosition, targetMovePosition, distance);
-        if (isMoving)
+        direction = Vector3.MoveTowards(this.transform.localPosition, targetMovePosition, distance);// définit vers où s'ouvre la porte
+        if (isMoving)//petit flag toi même tu sais car c'est dans un update et pour éviter que le mouvement se fasse sans qu'on le demande
         {
-            Vector3 position = pillierTransform.localPosition;
-            position +=  direction * Time.deltaTime;
-            pillierTransform.localPosition = position;
-            if ( Vector3.Distance(pillierTransform.localPosition,targetMovePosition) <= 0.05)
+            Vector3 position = pillierTransform.localPosition;//la porte
+            position +=  direction * Time.deltaTime;          //bouge
+            pillierTransform.localPosition = position;       //vers le point d'arriver (elle s'ouvre)
+            if ( Vector3.Distance(pillierTransform.localPosition,targetMovePosition) <= 0.2) //quand elle atteint sa destination elle s'arrête
             {
                 pillierTransform.localPosition = targetMovePosition;
                 isMoving = false;
             }
         }
         if (isMovingBack)
-        {
+        { // le même movement mais inversé
             Vector3 position = pillierTransform.localPosition;
             position +=  -direction * Time.deltaTime;
             pillierTransform.localPosition = position;
@@ -74,7 +74,7 @@ public class Porte : InteractableObjects
             this.GetComponent<Collider2D>().enabled = true;
         }
 
-        MoveVertical(true);
+        MoveVertical();
         AudioManager.Instance.Play("door");
         
     }
@@ -93,7 +93,7 @@ public class Porte : InteractableObjects
             isMoving = true;
             this.GetComponent<Collider2D>().enabled = false;
         }
-        MoveVertical(false);
+        MoveVertical();
         AudioManager.Instance.Play("door");
 
 
@@ -101,7 +101,7 @@ public class Porte : InteractableObjects
 
     
 
-    private void MoveVertical(bool directionUp)
+    private void MoveVertical()
     {
         movDir = Vector2.up;
         this.targetMovePosition.y = Mathf.Clamp(pillierTransform.localPosition.y + (distance * movDir.y),0,distance);

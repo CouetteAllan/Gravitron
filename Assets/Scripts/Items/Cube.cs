@@ -12,8 +12,6 @@ public class Cube : MonoBehaviour
 
     private float vitesse;
 
-    private bool canKill = false;
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.GetComponent<TilemapCollider2D>() != null)
@@ -28,7 +26,7 @@ public class Cube : MonoBehaviour
             }
         }
 
-        JeanMichelTesteur jean = collision.collider.GetComponent<JeanMichelTesteur>();
+        /*JeanMichelTesteur jean = collision.collider.GetComponent<JeanMichelTesteur>();
         if(jean != null)
         {
             if (canKill)
@@ -43,19 +41,6 @@ public class Cube : MonoBehaviour
                 jean.Dead(0.4f);
                 
             }
-        }
-    }
-
-    private void Update()
-    {
-        vitesse = GetComponent<Rigidbody2D>().velocity.magnitude;
-        if (GetComponent<Rigidbody2D>().velocity.magnitude > 20)
-        {
-            canKill = true;
-        }
-        else
-        {
-            canKill = false;
-        }
+        }*/
     }
 }

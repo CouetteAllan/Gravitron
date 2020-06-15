@@ -53,24 +53,29 @@ public class JeanMichelTesteur : MonoBehaviour
     private bool facingRight = true;
     [SerializeField]
     private Animator zwoshAnimator;
-
     public Animator ZwoshAnim
     {
         get { return zwoshAnimator; }
     }
 
+    private Animator animJMT;
+
+    [HideInInspector] public bool isGrounded;
+    [HideInInspector] public bool isStomped;
 
     private float deathLateTimer;
 
     private bool isDead = false;
-    #endregion
+    
     [SerializeField] private CamShake shake;
+    #endregion
 
 
     void Start()
     {
         TransitionToState(idleState);
         rb2d = this.GetComponent<Rigidbody2D>();
+        this.animJMT = GetComponent<Animator>();
     }
     
     
@@ -89,10 +94,18 @@ public class JeanMichelTesteur : MonoBehaviour
 
         if (triedWithoutEnergy)
         {
-            this.Dead(1); //GameOver après 2s pour laisser le temps à l'animation de se jouer
+            this.Dead(1);                       //GameOver après 2s pour laisser le temps à l'animation de se jouer
         }
-        
-        #region Input pour la Gravité
+
+        if (isGrounded && isStomped)            // si un cube est sur la tête et que nous sommes sur le sol...
+        {
+            animJMT.SetTrigger("Crush");        // animation d'écrasement
+            AudioManager.Instance.Play("splosh");// bruit d'écrasement
+            this.Dead(0.5f);                    // délai de 0.5s avant le game over pour laisser le temps à l'animation de se jouer
+        }
+
+        #region Input pour la Gravité 
+        //flèches directionnelles changeant la gravitée correspondante
 
         if (!isFalling)//Empêche le fait de pouvoir changer de gravité lorsqu'on tombe en mode gravité 
         {
@@ -130,7 +143,7 @@ public class JeanMichelTesteur : MonoBehaviour
             }
         }
         
-        #endregion
+        #endregion 
 
 
         if (Input.GetKeyDown(KeyCode.Escape)) //Menu pause quand on appuie sur Echap
@@ -185,9 +198,9 @@ public class JeanMichelTesteur : MonoBehaviour
              move = new Vector2(0 , deplacement);
             this.transform.rotation = Quaternion.Euler(0, 0, 90);
         }
-        if (Vector2.up == GameManager.Instance.SendGravityDirection())//déplacement sur le mur du haut
+        if (Vector2.up == GameManager.Instance.SendGravityDirection())//déplacement sur le mur du haut (comme le sol sinon trop frustrant)
         {
-             move = new Vector2(-deplacement, 0);
+             move = new Vector2(deplacement, 0);
             this.transform.rotation = Quaternion.Euler(0, 0, 180);
         }
         if (Vector2.down == GameManager.Instance.SendGravityDirection())//déplacement sur le mur du bas

@@ -8,7 +8,8 @@ public class Levier : TriggerObjects
 
     private Quaternion ActiveRotation;
     private Quaternion bentRotation;
-    
+
+    private bool first = true;
     
     private Orientation lastTrain;
 
@@ -149,7 +150,14 @@ public class Levier : TriggerObjects
 
     IEnumerator StopTrain()
     {
-        Snap();
+        if (!first)
+        {
+            Snap();
+        }
+        else
+        {
+            first = false;
+        }
         yield return new WaitForSeconds(1);
         CancelInvoke();
     }

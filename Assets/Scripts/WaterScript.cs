@@ -20,21 +20,15 @@ public class WaterScript : MonoBehaviour
 
     public void ChangeWater(int currentEnergy)
     {
-        Debug.Log("WaterProcessing");
-        Debug.Log("currentEnergy = " + currentEnergy);
 
         for (int i = 0; i < waterParticles.Count; i++ )
         {
             if (5 * currentEnergy > i)
             {
-                Debug.Log("2 x currentEnergy < " + i);
-                Debug.Log("Water.SetActive(true)");
                 waterParticles[i].SetActive(true);
             }
             else
             {
-                Debug.Log("2 x currentEnergy > " + i);
-                Debug.Log("water.SetActive(false)");
                 waterParticles[i].SetActive(false);
             }
         }

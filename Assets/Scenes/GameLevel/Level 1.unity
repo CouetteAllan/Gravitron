@@ -1097,11 +1097,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: jeanMichelTesteur
       objectReference: {fileID: 0}
-    - target: {fileID: 3195452604685385334, guid: ec780e84153479b4691258a266c67b27,
-        type: 3}
-      propertyPath: m_AutoTiling
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3195452604685385336, guid: ec780e84153479b4691258a266c67b27,
         type: 3}
       propertyPath: m_LocalPosition.x

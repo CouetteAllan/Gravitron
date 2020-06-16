@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -49,6 +50,10 @@ public class GameManager : MonoBehaviour
         instance = this;
         localGravity = Physics2D.gravity;
         firstGravity = localGravity;
+        if(SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            this.ChangeState(GameState.MainMenu);
+        }
     }
 
     private void Start()
@@ -64,9 +69,6 @@ public class GameManager : MonoBehaviour
         gameState = state;
         switch (state)
         {
-            case GameState.MainMenu:
-                UIManager.Instance.AfficherMenuPause(false);
-                break;
             case GameState.InGame:
                 UIManager.Instance.AfficherMenuPause(false);
                 UIManager.Instance.AfficherScoreBoard(false);

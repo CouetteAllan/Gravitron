@@ -55,7 +55,10 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        menuPause.SetActive(false);
+        if (GameManager.Instance.GetGameState() == GameManager.GameState.MainMenu)
+        {
+            return;
+        }
         ChangeEnergy(0);
         startTime = Time.time;
     }
@@ -110,6 +113,10 @@ public class UIManager : MonoBehaviour
 
     public void ChangeEnergy(float amount)
     {
+        if (GameManager.Instance.GetGameState() == GameManager.GameState.MainMenu)
+        {
+            return;
+        }
         Debug.Log("Remplissage initial : " + remplissage);
         remplissage += amount;
         while (remplissage >= 1)
@@ -142,6 +149,10 @@ public class UIManager : MonoBehaviour
 
     public void Fgravity()
     {
+        if (GameManager.Instance.GetGameState() == GameManager.GameState.MainMenu)
+        {
+            return;
+        }
         Vector2 actualGravity = GameManager.Instance.SendGravityDirection();
         if (actualGravity == Vector2.up)
         {
@@ -249,6 +260,10 @@ public class UIManager : MonoBehaviour
 
     public void InGameTimer()
     {
+        if (GameManager.Instance.GetGameState() == GameManager.GameState.MainMenu)
+        {
+            return;
+        }
         if (finished)
             return;
 

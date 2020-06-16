@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7339502714356414929}
   - component: {fileID: 8420012570771821249}
   - component: {fileID: 8644248010679816879}
-  m_Layer: 15
+  m_Layer: 12
   m_Name: PlaquePression
   m_TagString: Untagged
   m_Icon: {fileID: 0}

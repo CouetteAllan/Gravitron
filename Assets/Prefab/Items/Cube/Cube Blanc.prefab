@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4772812217171276013}
   - component: {fileID: 4772812217171276012}
   - component: {fileID: 4772812217171276003}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube Blanc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,13 +97,13 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 300
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 2
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &4772812217171276012

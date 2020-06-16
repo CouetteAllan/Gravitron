@@ -145,19 +145,19 @@ public class UIManager : MonoBehaviour
         Vector2 actualGravity = GameManager.Instance.SendGravityDirection();
         if (actualGravity == Vector2.up)
         {
-            Arrow.transform.rotation = Quaternion.Euler(0, 0, 180);
+            Arrow.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         if (actualGravity == Vector2.down)
         {
-            Arrow.transform.rotation = Quaternion.Euler(0, 0, 0);
+            Arrow.transform.rotation = Quaternion.Euler(0, 0, 180);
         }
         if (actualGravity == Vector2.left)
         {
-            Arrow.transform.rotation = Quaternion.Euler(0, 0, -90);
+            Arrow.transform.rotation = Quaternion.Euler(0, 0, 90);
         }
         if (actualGravity == Vector2.right)
         {
-            Arrow.transform.rotation = Quaternion.Euler(0, 0, 90);
+            Arrow.transform.rotation = Quaternion.Euler(0, 0, -90);
         }
     }
 

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class IdleState : JeanBaseState
 {
+    // ----------------------------  Allan ------------------------------
     private Vector2 jumpDirection;
     public override void EnterState(JeanMichelTesteur jean)
     {
@@ -20,7 +21,12 @@ public class IdleState : JeanBaseState
         
     }
 
-    
+    public override void FixedUpdate(JeanMichelTesteur jean)
+    {
+
+    }
+
+
     public override void Update(JeanMichelTesteur jean)
     {
         if (Input.GetButton("Horizontal"))

@@ -7,10 +7,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8880122139783946083, guid: 981f9fb28fb170c449fc2ac86bc34e08,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 8880122139953820357, guid: 981f9fb28fb170c449fc2ac86bc34e08,
         type: 3}
       propertyPath: m_Name
       value: DoubleCubeNoirNoir
+      objectReference: {fileID: 0}
+    - target: {fileID: 8880122139953820357, guid: 981f9fb28fb170c449fc2ac86bc34e08,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8880122139953820358, guid: 981f9fb28fb170c449fc2ac86bc34e08,
         type: 3}
@@ -73,5 +83,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 36107ea42c83d884b8cfcff31c936f0a,
         type: 3}
+    - target: {fileID: 8880122140491610795, guid: 981f9fb28fb170c449fc2ac86bc34e08,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 981f9fb28fb170c449fc2ac86bc34e08, type: 3}

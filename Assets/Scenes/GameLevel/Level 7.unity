@@ -4124,6 +4124,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ParIciLaSortie (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1025872468526481321, guid: 5a075d16cecf16f40b99943d257bd1e5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1025872468526481323, guid: 5a075d16cecf16f40b99943d257bd1e5,
         type: 3}
       propertyPath: m_SortingOrder

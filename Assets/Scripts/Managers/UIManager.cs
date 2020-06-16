@@ -130,6 +130,7 @@ public class UIManager : MonoBehaviour
             energy = 0;
             totalBattery.color = Color.red;
         }
+        WaterScript.Instance.ChangeWater(energy);
         EnergyMask.Instance.ChangeMaskSize(remplissage);
         Debug.Log("remplissage de l'énergie : " + remplissage);
         energyTxt.text = " X" + energy;

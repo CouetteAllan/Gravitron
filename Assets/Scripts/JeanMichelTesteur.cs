@@ -20,7 +20,12 @@ public class JeanMichelTesteur : MonoBehaviour
     [HideInInspector] public bool won = false;
     [HideInInspector] public bool triedWithoutEnergy = false;
 
-    
+    public GameObject tutoEnergyScene2;
+    private bool tutoPresent = false;
+    public bool TutoPresent
+    {
+        get { return tutoPresent; }
+    }
 
     [SerializeField]
     private float speed;
@@ -70,6 +75,10 @@ public class JeanMichelTesteur : MonoBehaviour
         TransitionToState(idleState);
         rb2d = this.GetComponent<Rigidbody2D>();
         this.animJMT = GetComponent<Animator>();
+        if (tutoEnergyScene2 != null)
+        {
+            tutoPresent = true;
+        }
     }
     
     
@@ -82,14 +91,14 @@ public class JeanMichelTesteur : MonoBehaviour
 
         if (isDead)
         {
-            Debug.Log("Jui tré mor");
             GameManager.Instance.LateGameOver(deathLateTimer); //Change le GameState en GameOver après un certains temps pour laisser quelques temps aux anims de se jouer
             if (isStomped)
             {
                 animJMT.SetTrigger("Crush");// l'anim est mise ici car sinon le script ne se joue pas jusqu'au bout
                                             // vu que je désactive le script depuis l'anim pour ne pas bouger une fois qu'on est mort
             }
-            
+            this.rb2d.gravityScale = 0;
+            this.rb2d.velocity = Vector2.zero;
         }
         MoveWithGravity();
 

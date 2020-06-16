@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sortie : MonoBehaviour
+public class Sortie : MonoBehaviour // Emile
 {
 
     [SerializeField] private int levelIndex = 0;

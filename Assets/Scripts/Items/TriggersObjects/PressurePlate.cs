@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PressurePlate : TriggerObjects
+public class PressurePlate : TriggerObjects // Emile
 {
     [SerializeField] private Sprite PlaquePression;
     [SerializeField] private Sprite PlaquePressee;

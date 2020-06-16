@@ -20,7 +20,10 @@ public class WaterScript : MonoBehaviour // Emile
 
     public void ChangeWater(int currentEnergy)
     {
-
+        if (GameManager.Instance.GetGameState() == GameManager.GameState.MainMenu)
+        {
+            return;
+        }
         for (int i = 0; i < waterParticles.Count; i++ )
         {
             if (5 * currentEnergy > i)

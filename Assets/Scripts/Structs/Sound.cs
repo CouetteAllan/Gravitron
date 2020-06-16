@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [System.Serializable]
-public class Sound
+public class Sound // Emile
 {
     public string name;
 

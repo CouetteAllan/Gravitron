@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelList : MonoBehaviour
+public class LevelList : MonoBehaviour // Emile
 {
     public static int lastLevelUnlock = 14;
 

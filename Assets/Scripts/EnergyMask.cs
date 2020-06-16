@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnergyMask : MonoBehaviour
+public class EnergyMask : MonoBehaviour // Emile
 {
     private static EnergyMask instance;
     public static EnergyMask Instance

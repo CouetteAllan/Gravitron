@@ -14,6 +14,11 @@ public class WalkingState : JeanBaseState
         jean.GetComponent<Animator>().SetBool("Idling", false);
         jean.GetComponent<Animator>().SetBool("Falling", false);
         jean.GetComponent<Animator>().SetBool("Jumping", false);
+
+        if (jean.TutoPresent)
+        {
+            jean.tutoEnergyScene2.SetActive(false); //enlève le filtre noir du niveau 2 lorsque l'on bouge
+        }
     }
 
     public override void OnTriggerEnter2D(JeanMichelTesteur jean)

@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour
     
     [SerializeField] private Text chargesLeft;
     [SerializeField] private Image totalBattery;
-    [SerializeField] private Text energyTxt;
+    [SerializeField] private TMP_Text energyTxt;
     [SerializeField] private int energy = 4;
     [SerializeField] private int expectedELeft;
 

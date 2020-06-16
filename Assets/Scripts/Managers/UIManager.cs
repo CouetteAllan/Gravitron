@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour
     
     [SerializeField] private Text chargesLeft;
     [SerializeField] private Image totalBattery;
-    [SerializeField] private Text energyTxt;
+    [SerializeField] private TMP_Text energyTxt;
     [SerializeField] private int energy = 4;
     [SerializeField] private int expectedELeft;
 
@@ -68,7 +68,6 @@ public class UIManager : MonoBehaviour
 
 
     //------------------------------------------------------------------------ MENU PAUSE ------------------------------------------------------------------------
-
 
 
     public void Resume()
@@ -167,11 +166,11 @@ public class UIManager : MonoBehaviour
     //------------------------------------------------------------------------ MENU PRINCIPAL ------------------------------------------------------------------------
 
 
-    public void Play()
+    public void PlayLastLevelUnlock()
     {
-        SceneManager.LoadScene(1);
+        ChangeScene(LevelList.lastLevelUnlock);
     }
-    
+
 
     public void Quit()
     {
@@ -187,6 +186,12 @@ public class UIManager : MonoBehaviour
 
     
     //------------------------------------------------------------------------ MENU VICTOIRE ------------------------------------------------------------------------
+
+    public void nextLevel()
+    {
+        int nextLevelIndex = FindObjectOfType<Sortie>().GetIndex() + 1;
+        ChangeScene(nextLevelIndex);
+    }
 
 
     //-------------------------------------------------------- SCORE BOARD ---------------------------------------------------------

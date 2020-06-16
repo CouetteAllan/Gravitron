@@ -289,7 +289,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   won: 0
   triedWithoutEnergy: 0
-  step: {fileID: 8300000, guid: 62e4f65aa1f680246b53ee90adb05d9e, type: 3}
   speed: 10
   jump: 3500
   isFalling: 0

@@ -177,6 +177,31 @@ public class UIManager : MonoBehaviour
         Application.Quit();
     }
 
+    public void LoadLevelList()
+    {
+        DontDestroyOnLoad(gameObject);
+        ChangeScene(0);
+
+        GameObject mainMenu = GameObject.Find("MenuPrincipal");
+        if (mainMenu == null)
+        {
+            Debug.LogError("mainMenu object not found!!");
+            Destroy(gameObject);
+            return;
+        }
+        mainMenu.SetActive(false);
+
+        GameObject levelList = GameObject.Find("ListeNiveaux");
+        if (levelList == null)
+        {
+            Debug.LogError("levelList object not found!!");
+            Destroy(gameObject);
+            return;
+        }
+        levelList.SetActive(true);
+        Destroy(gameObject);
+    }
+
     public void ChangeScene(int scene)
     {
         SceneManager.LoadScene(scene);

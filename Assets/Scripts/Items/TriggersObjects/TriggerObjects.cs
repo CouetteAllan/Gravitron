@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class TriggerObjects : MonoBehaviour
+public class TriggerObjects : MonoBehaviour // Emile
 {
     [SerializeField] private InteractableObjects[] activableObjects;
 

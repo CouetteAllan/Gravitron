@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class Levier : TriggerObjects
+public class Levier : TriggerObjects // Emile
 {
 
     [SerializeField] private float rotationSpeed = 1;

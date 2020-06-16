@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Level : MonoBehaviour
+public class Level : MonoBehaviour // Emile
 {
     private Button levelButton;
     [SerializeField] private List<Image> cartes = new List<Image>();

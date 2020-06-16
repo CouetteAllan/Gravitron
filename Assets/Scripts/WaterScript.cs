@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaterScript : MonoBehaviour
+public class WaterScript : MonoBehaviour // Emile
 {
     public static WaterScript Instance { get; private set; }
 

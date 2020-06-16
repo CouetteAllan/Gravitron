@@ -162,15 +162,24 @@ public class JeanMichelTesteur : MonoBehaviour
         currentState.Update(this);
         
 
-        if (deplacement > 0 && !facingRight)
+        if (deplacement > 0 && !facingRight && Vector2.up != GameManager.Instance.SendGravityDirection())
         {
             // ... flip JMT
             Flip();
         }
         
-        else if (deplacement < 0 && facingRight)
+        else if (deplacement < 0 && facingRight && Vector2.up != GameManager.Instance.SendGravityDirection())
         {
             
+            Flip();
+        }
+
+        if (deplacement > 0 && facingRight && Vector2.up == GameManager.Instance.SendGravityDirection())
+        {
+            Flip(); //pour éviter un bug de moonwalk une fois au plafond
+        }
+        else if (deplacement < 0 && !facingRight && Vector2.up == GameManager.Instance.SendGravityDirection())
+        {
             Flip();
         }
     }
@@ -190,8 +199,9 @@ public class JeanMichelTesteur : MonoBehaviour
         deplacement = Input.GetAxis("Horizontal");
         if (Vector2.left == GameManager.Instance.SendGravityDirection())//déplacement sur le mur de gauche
         {
-             move = new Vector2(0 , -deplacement);
+            move = new Vector2(0 , -deplacement);
             this.transform.rotation = Quaternion.Euler(0, 0, -90);
+            
         }
         if (Vector2.right == GameManager.Instance.SendGravityDirection())//déplacement sur le mur de droite
         {

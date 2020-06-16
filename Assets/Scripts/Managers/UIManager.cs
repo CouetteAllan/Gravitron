@@ -70,7 +70,6 @@ public class UIManager : MonoBehaviour
     //------------------------------------------------------------------------ MENU PAUSE ------------------------------------------------------------------------
 
 
-
     public void Resume()
     {
         GameManager.Instance.ChangeState(GameManager.GameState.InGame);
@@ -167,11 +166,11 @@ public class UIManager : MonoBehaviour
     //------------------------------------------------------------------------ MENU PRINCIPAL ------------------------------------------------------------------------
 
 
-    public void Play()
+    public void PlayLastLevelUnlock()
     {
-        SceneManager.LoadScene(1);
+        ChangeScene(LevelList.lastLevelUnlock);
     }
-    
+
 
     public void Quit()
     {
@@ -187,6 +186,12 @@ public class UIManager : MonoBehaviour
 
     
     //------------------------------------------------------------------------ MENU VICTOIRE ------------------------------------------------------------------------
+
+    public void nextLevel()
+    {
+        int nextLevelIndex = FindObjectOfType<Sortie>().GetIndex() + 1;
+        ChangeScene(nextLevelIndex);
+    }
 
 
     //-------------------------------------------------------- SCORE BOARD ---------------------------------------------------------

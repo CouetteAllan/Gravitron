@@ -26,4 +26,9 @@ public class Sortie : MonoBehaviour
     }
 
 
+    public int GetIndex()
+    {
+        return levelIndex;
+    }
+
 }

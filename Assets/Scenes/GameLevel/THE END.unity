@@ -352,8 +352,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: "FIN DU JEU\nMerci d'avoir jou\xE9 !!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDEVELOPPEURS\nAllan\nSky
     \nEmile \n\n\n\nGRAPHISTES\nAntoine\nEmilie\nJoanne\nJuliette\nJustine\nNans\nQuentin\nStecy\nVadim\n\n\nTESTEURS\nDavid
-    D\nKillian Robic\n\n\n\nASSISTANTS\nEponine\nLucille\nDavid D\n\n\n\nBonne Chance
-    pour les cartes m\xE8res ;)"
+    D\nKillian Robic\n\n\n\nASSISTANTS\nEponine\nLucille\nDavid D\n\nSPONSOR: \n\nhuman
+    Academy Europe\n\nAVIS:\n\nCeci n'est qu'une B\xEAta,\nd'autre \xE9l\xE9ments
+    son \xE0 venir! \n\nBonne Chance pour les cartes m\xE8res ;)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 29f02b5eb16863b4b832ad4e9d95c9e5, type: 2}
   m_sharedMaterial: {fileID: -8465390168701474337, guid: 29f02b5eb16863b4b832ad4e9d95c9e5,
@@ -423,12 +424,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1006242934}
-    characterCount: 268
+    characterCount: 362
     spriteCount: 0
-    spaceCount: 65
-    wordCount: 36
+    spaceCount: 83
+    wordCount: 50
     linkCount: 0
-    lineCount: 50
+    lineCount: 57
     pageCount: 1
     materialCount: 2
   m_isUsingLegacyAnimationComponent: 0

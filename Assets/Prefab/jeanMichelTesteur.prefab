@@ -289,10 +289,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   won: 0
   triedWithoutEnergy: 0
+  tutoEnergyScene2: {fileID: 0}
   speed: 10
   jump: 3500
   isFalling: 0
-  zwoshAnimator: {fileID: 2527845401423828748}
+  fXAnimator: {fileID: 2527845401423828748}
   isGrounded: 0
   isStomped: 0
   shake: {fileID: 0}

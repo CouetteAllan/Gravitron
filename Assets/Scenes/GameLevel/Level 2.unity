@@ -5000,6 +5000,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3195452604685385339, guid: ec780e84153479b4691258a266c67b27,
         type: 3}
+      propertyPath: tutoEnergyScene2
+      value: 
+      objectReference: {fileID: 1841330345}
+    - target: {fileID: 3195452604685385339, guid: ec780e84153479b4691258a266c67b27,
+        type: 3}
       propertyPath: shake
       value: 
       objectReference: {fileID: 1207158283}

@@ -20,7 +20,7 @@ public class GravityState : JeanBaseState
         jean.GetComponent<Animator>().SetBool("Idling", false);
         jean.GetComponent<Animator>().SetBool("Falling", true);
         jean.GetComponent<Animator>().SetBool("Jumping", false);
-        jean.ZwoshAnim.SetTrigger("GravityChange");
+        jean.FXAnim.SetTrigger("GravityChange");
         jean.GetComponent<Animator>().SetTrigger("GravityChange");
 
     }

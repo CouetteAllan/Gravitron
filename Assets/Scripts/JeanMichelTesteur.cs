@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class JeanMichelTesteur : MonoBehaviour
 {
+    //-----------------------------------------------  Allan
+
     #region Variables Jean Michel
     [HideInInspector]
     public JeanBaseState currentState;
@@ -20,7 +22,7 @@ public class JeanMichelTesteur : MonoBehaviour
     [HideInInspector] public bool won = false;
     [HideInInspector] public bool triedWithoutEnergy = false;
 
-    public GameObject tutoEnergyScene2;
+    public GameObject tutoEnergyScene2; //permet de récupérer le tuto du niveau 2 pour le faire disparaître
     private bool tutoPresent = false;
     public bool TutoPresent
     {
@@ -51,10 +53,10 @@ public class JeanMichelTesteur : MonoBehaviour
 
     private bool facingRight = true;
     [SerializeField]
-    private Animator zwoshAnimator;
-    public Animator ZwoshAnim
+    private Animator fXAnimator;
+    public Animator FXAnim
     {
-        get { return zwoshAnimator; }
+        get { return fXAnimator; }
     }
 
     private Animator animJMT;
@@ -66,7 +68,7 @@ public class JeanMichelTesteur : MonoBehaviour
 
     private bool isDead = false;
     
-    [SerializeField] private CamShake shake;
+    [SerializeField] private CamShake shake; //permet de secouer la caméra à chaque echec de Jean-Michel
     #endregion
 
 

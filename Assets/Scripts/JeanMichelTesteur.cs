@@ -20,13 +20,7 @@ public class JeanMichelTesteur : MonoBehaviour
     [HideInInspector] public bool won = false;
     [HideInInspector] public bool triedWithoutEnergy = false;
 
-    private float rotateGoal;
-    public float RotateGoal
-    {
-        get { return rotateGoal; }
-    }
-    [SerializeField]
-    private AudioClip step;
+    
 
     [SerializeField]
     private float speed;
@@ -42,7 +36,7 @@ public class JeanMichelTesteur : MonoBehaviour
     }
     float deplacement;
 
-    public bool isFalling = false;
+    [HideInInspector] public bool isFalling = false;
     
     private Rigidbody2D rb2d;
     public Rigidbody2D Rigidbody2D
@@ -88,7 +82,14 @@ public class JeanMichelTesteur : MonoBehaviour
 
         if (isDead)
         {
+            Debug.Log("Jui tré mor");
             GameManager.Instance.LateGameOver(deathLateTimer); //Change le GameState en GameOver après un certains temps pour laisser quelques temps aux anims de se jouer
+            if (isStomped)
+            {
+                animJMT.SetTrigger("Crush");// l'anim est mise ici car sinon le script ne se joue pas jusqu'au bout
+                                            // vu que je désactive le script depuis l'anim pour ne pas bouger une fois qu'on est mort
+            }
+            
         }
         MoveWithGravity();
 
@@ -99,7 +100,6 @@ public class JeanMichelTesteur : MonoBehaviour
 
         if (isGrounded && isStomped)            // si un cube est sur la tête et que nous sommes sur le sol...
         {
-            animJMT.SetTrigger("Crush");        // animation d'écrasement
             AudioManager.Instance.Play("splosh");// bruit d'écrasement
             this.Dead(0.5f);                    // délai de 0.5s avant le game over pour laisser le temps à l'animation de se jouer
         }
@@ -226,7 +226,6 @@ public class JeanMichelTesteur : MonoBehaviour
         this.isDead = true;
         this.shake.Shake();
         deathLateTimer = time;
-        
     }
 
     public void PlayClipJMT(string sound) //Permet de jouer les différents sons tels que les bruits de pas ou de saut en accord avec ses anims

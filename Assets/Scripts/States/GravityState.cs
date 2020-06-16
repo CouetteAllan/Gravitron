@@ -34,4 +34,9 @@ public class GravityState : JeanBaseState
     {
 
     }
+
+    public override void FixedUpdate(JeanMichelTesteur jean)
+    {
+        
+    }
 }

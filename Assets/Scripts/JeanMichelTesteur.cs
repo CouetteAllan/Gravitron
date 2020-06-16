@@ -74,6 +74,7 @@ public class JeanMichelTesteur : MonoBehaviour
 
     void Start()
     {
+        MoveWithGravity();
         TransitionToState(idleState);
         rb2d = this.GetComponent<Rigidbody2D>();
         this.animJMT = GetComponent<Animator>();
@@ -82,8 +83,11 @@ public class JeanMichelTesteur : MonoBehaviour
             tutoPresent = true;
         }
     }
-    
-    
+    private void FixedUpdate()
+    {
+        currentState.FixedUpdate(this);
+    }
+
     void Update()
     {
         if (won)

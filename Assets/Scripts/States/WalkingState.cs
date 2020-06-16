@@ -17,8 +17,15 @@ public class WalkingState : JeanBaseState
 
         if (jean.TutoPresent)
         {
-            jean.tutoEnergyScene2.SetActive(false); //enlève le filtre noir du niveau 2 lorsque l'on bouge
+            jean.tutoEnergyScene2.SetActive(false); //enlève le filtre noir d
         }
+    }
+
+    public override void FixedUpdate(JeanMichelTesteur jean)
+    {
+        Vector2 position = jean.Rigidbody2D.position;
+        position += jean.Speed * jean.Move * Time.deltaTime;
+        jean.Rigidbody2D.position = position;
     }
 
     public override void OnTriggerEnter2D(JeanMichelTesteur jean)
@@ -30,9 +37,6 @@ public class WalkingState : JeanBaseState
 
     public override void Update(JeanMichelTesteur jean)
     {
-        Vector2 position = jean.Rigidbody2D.position;
-        position += jean.Move * jean.Speed * Time.deltaTime;
-        jean.Rigidbody2D.position = position;
         float horizontal = Input.GetAxis("Horizontal");
         jean.GetComponent<Animator>().SetFloat("Move",horizontal);
 

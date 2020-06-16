@@ -4316,7 +4316,7 @@ PrefabInstance:
     - target: {fileID: 6027545492714867347, guid: 536264d00a9d5eb439f58bcd4a7e7cca,
         type: 3}
       propertyPath: sounds.Array.size
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6027545492714867347, guid: 536264d00a9d5eb439f58bcd4a7e7cca,
         type: 3}
@@ -4371,7 +4371,7 @@ PrefabInstance:
     - target: {fileID: 6027545492714867347, guid: 536264d00a9d5eb439f58bcd4a7e7cca,
         type: 3}
       propertyPath: sounds.Array.data[2].volume
-      value: 0.2
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6027545492714867347, guid: 536264d00a9d5eb439f58bcd4a7e7cca,
         type: 3}
@@ -4576,6 +4576,26 @@ PrefabInstance:
     - target: {fileID: 6027545492714867347, guid: 536264d00a9d5eb439f58bcd4a7e7cca,
         type: 3}
       propertyPath: sounds.Array.data[12].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6027545492714867347, guid: 536264d00a9d5eb439f58bcd4a7e7cca,
+        type: 3}
+      propertyPath: sounds.Array.data[13].name
+      value: deadlyLaser
+      objectReference: {fileID: 0}
+    - target: {fileID: 6027545492714867347, guid: 536264d00a9d5eb439f58bcd4a7e7cca,
+        type: 3}
+      propertyPath: sounds.Array.data[13].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: ad8965cc26d007e439d1770d49babbc2, type: 3}
+    - target: {fileID: 6027545492714867347, guid: 536264d00a9d5eb439f58bcd4a7e7cca,
+        type: 3}
+      propertyPath: sounds.Array.data[13].volume
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6027545492714867347, guid: 536264d00a9d5eb439f58bcd4a7e7cca,
+        type: 3}
+      propertyPath: sounds.Array.data[13].pitch
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6027545492714867349, guid: 536264d00a9d5eb439f58bcd4a7e7cca,

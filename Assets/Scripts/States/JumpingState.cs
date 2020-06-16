@@ -17,6 +17,13 @@ public class JumpingState : JeanBaseState
         }
     }
 
+    public override void FixedUpdate(JeanMichelTesteur jean)
+    {
+        Vector2 position = jean.Rigidbody2D.position;
+        position += jean.Speed * jean.Move * Time.deltaTime;
+        jean.Rigidbody2D.position = position;
+    }
+
     public override void OnTriggerEnter2D(JeanMichelTesteur jean)
     {
         jean.TransitionToState(jean.idleState);
@@ -25,8 +32,6 @@ public class JumpingState : JeanBaseState
 
     public override void Update(JeanMichelTesteur jean)
     {
-        Vector2 position = jean.Rigidbody2D.position;
-        position += jean.Move * jean.Speed * Time.deltaTime;
-        jean.Rigidbody2D.position = position;
+
     }
 }

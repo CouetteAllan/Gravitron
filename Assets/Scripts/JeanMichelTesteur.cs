@@ -99,7 +99,7 @@ public class JeanMichelTesteur : MonoBehaviour
                 animJMT.SetTrigger("Crush");// l'anim est mise ici car sinon le script ne se joue pas jusqu'au bout
                                             // vu que je désactive le script depuis l'anim pour ne pas bouger une fois qu'on est mort
             }
-            this.rb2d.gravityScale = 0;
+            this.rb2d.gravityScale = -1;
             this.rb2d.velocity = Vector2.zero;
         }
         MoveWithGravity();

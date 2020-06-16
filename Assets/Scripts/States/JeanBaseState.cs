@@ -7,5 +7,7 @@ public abstract class JeanBaseState
     public abstract void Update(JeanMichelTesteur jean);
 
     public abstract void OnTriggerEnter2D(JeanMichelTesteur jean);
+
+    public abstract void FixedUpdate(JeanMichelTesteur jean);
     
 }

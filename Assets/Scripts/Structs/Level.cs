@@ -7,7 +7,7 @@ public class Level : MonoBehaviour
 {
     private Button levelButton;
     [SerializeField] private List<Image> cartes = new List<Image>();
-    
+    [SerializeField] private GameObject cadenas;
 
     private Color lockedColor = new Color(0.2f, 0.2f, 0.2f);
 
@@ -30,6 +30,7 @@ public class Level : MonoBehaviour
             this.levelButton.interactable = false;
             Debug.Log("Bouton désactivé");
             levelButton.GetComponent<Image>().color = lockedColor;
+            cadenas.SetActive(true);
         }
     }
 }

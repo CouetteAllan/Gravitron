@@ -2,6 +2,7 @@
 
 public abstract class JeanBaseState 
 {
+    // Sky
     public abstract void EnterState(JeanMichelTesteur jean);
 
     public abstract void Update(JeanMichelTesteur jean);

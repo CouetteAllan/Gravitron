@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class CarteMere : MonoBehaviour
 {
+    // Sky
     [SerializeField] private GameObject halo;
     public float aura;
     public float amplitude;

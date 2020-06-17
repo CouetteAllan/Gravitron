@@ -18,7 +18,7 @@ public class WaterScript : MonoBehaviour // Emile
         ChangeWater(UIManager.Instance.SendEnergy());
     }
 
-    public void ChangeWater(int currentEnergy)
+    public void ChangeWater(int currentEnergy) //Retire des particules d'eau quand on utilise de l'énergie 
     {
         if (GameManager.Instance.GetGameState() == GameManager.GameState.MainMenu)
         {

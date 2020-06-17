@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ButtonClick : TriggerObjects
 {
+    // ---------------- Allan ------------
     [SerializeField]
     private Sprite pressed;
     [SerializeField]

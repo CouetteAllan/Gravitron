@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Zap : InteractableObjects
 {
+    //Sky
     protected override void ActivateObject()
     {
         base.ActivateObject();
@@ -26,7 +27,7 @@ public class Zap : InteractableObjects
         {
             jean.Dead(1f);
 
-            jean.GetComponent<Animator>().SetTrigger("Electrified");
+            jean.GetComponent<Animator>().SetTrigger("Electrified"); //la désactivation du script de JeanMichel pour ne pas bouger se fait dans l'anim
             jean.GetComponent<Animator>().SetBool("Walking", false);
             jean.GetComponent<Animator>().SetBool("Idling", false);
             jean.GetComponent<Animator>().SetBool("Falling", false);

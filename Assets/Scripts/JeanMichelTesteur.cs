@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class JeanMichelTesteur : MonoBehaviour
 {
-    //-----------------------------------------------  Allan
+    //-----------------------------------------------  Allan ------------------------------------------------------
 
     #region Variables Jean Michel
     [HideInInspector]
@@ -170,8 +170,7 @@ public class JeanMichelTesteur : MonoBehaviour
                 GameManager.Instance.ChangeState(GameManager.GameState.InGame);
             }
         }
-
-        Debug.Log(GameManager.Instance.GetGameState().ToString());
+        
         currentState.Update(this);
         
 
@@ -201,7 +200,7 @@ public class JeanMichelTesteur : MonoBehaviour
 
     
 
-    public void TransitionToState(JeanBaseState state)
+    public void TransitionToState(JeanBaseState state) //voir FSM
     {
         currentState = state;
         currentState.EnterState(this);
@@ -254,7 +253,7 @@ public class JeanMichelTesteur : MonoBehaviour
         }
         
     }
-    private void Flip()
+    private void Flip() //retourne le sprite
     {
         
         facingRight = !facingRight;

@@ -5,10 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class Cube : MonoBehaviour
 {
-    [SerializeField] private AudioClip land;
-    [SerializeField] private AudioClip bigLand;
-
-    [SerializeField] private AudioClip splosh;
+    //-------------- Emile
 
     private float vitesse;
 

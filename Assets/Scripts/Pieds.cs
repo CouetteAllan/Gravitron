@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pieds : MonoBehaviour
+public class Pieds : MonoBehaviour // -------- Allan ------ (sert à check si on est sur le sol pour pouvoir resauter ou reset la gravité)
 {
     private bool groundCheck;
     private void Start()

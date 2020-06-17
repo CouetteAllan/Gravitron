@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScriptFXBackground : MonoBehaviour
+public class ScriptFXBackground : MonoBehaviour //sert à tourner les petits courant d'air dans le sens de la gravité
 {
-    private Animator animator;
+    // -------------------------------- Allan -----------------------
     private float transformRotationZ;
 
     void Start()
     {
-        this.animator = GetComponent<Animator>();
         this.transformRotationZ = GetComponent<Transform>().rotation.z;
     }
     void Update()

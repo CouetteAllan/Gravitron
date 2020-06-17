@@ -278,7 +278,7 @@ public class UIManager : MonoBehaviour
     {
         finished = true;
         timerText.color = Color.red;
-        timePassed.text = ((int)timeSinceStart /60).ToString() + ":" + (timeSinceStart % 60).ToString("f2") + 
+        timePassed.text = ((int)timeSinceStart /60).ToString() + ":" + (timeSinceStart % 60).ToString("f0") + 
                           "/" + (expectedMinPassed/60).ToString() + ":" + expectedSecPassed.ToString();
 
         if (timeSinceStart > (expectedMinPassed + expectedSecPassed))

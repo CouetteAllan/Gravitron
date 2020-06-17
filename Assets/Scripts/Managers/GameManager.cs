@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    //  Allan
     private Vector2 localGravity;
     private Vector2 firstGravity;
     

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WalkingState : JeanBaseState
 {
+    //Allan
     private Vector2 gravityDirection;
     private Vector2 jumpDirection;
 

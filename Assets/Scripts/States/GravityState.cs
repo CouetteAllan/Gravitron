@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GravityState : JeanBaseState
 {
-
+    //Allan
     public override void EnterState(JeanMichelTesteur jean)
     {
         jean.isFalling = true;

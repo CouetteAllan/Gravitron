@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class JumpingState : JeanBaseState
 {
+    //Allan
     public override void EnterState(JeanMichelTesteur jean)
     {
         jean.GetComponent<Animator>().SetBool("Walking", false);

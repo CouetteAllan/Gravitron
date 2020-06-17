@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
+    //Sky
     public static UIManager Instance;
     
     [SerializeField] private Text chargesLeft;
@@ -123,7 +124,6 @@ public class UIManager : MonoBehaviour
         {
             remplissage -= 1;
             energy++;
-            //totalBattery.color = Color.white;
             AudioManager.Instance.Play("energyUp");
         }
         if (amount == -1)

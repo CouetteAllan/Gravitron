@@ -271,7 +271,6 @@ public class UIManager : MonoBehaviour
 
         string minutes = ((int)timeSinceStart / 60).ToString();
         string seconds = (timeSinceStart % 60).ToString("f2");
-        float lastTime = timeSinceStart;
         timerText.text = minutes + ": " + seconds;
     }
 
@@ -279,7 +278,8 @@ public class UIManager : MonoBehaviour
     {
         finished = true;
         timerText.color = Color.red;
-        timePassed.text = timeSinceStart.ToString("f2") + "/" + (expectedMinPassed/60).ToString() + ":" + expectedSecPassed.ToString();
+        timePassed.text = ((int)timeSinceStart /60).ToString() + ":" + (timeSinceStart % 60).ToString("f2") + 
+                          "/" + (expectedMinPassed/60).ToString() + ":" + expectedSecPassed.ToString();
 
         if (timeSinceStart > (expectedMinPassed + expectedSecPassed))
         {

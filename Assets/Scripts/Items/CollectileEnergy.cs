@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CollectileEnergy : MonoBehaviour
 {
+    // Emile
     [SerializeField] private float energyLevel;
 
     private void OnTriggerEnter2D(Collider2D collision)

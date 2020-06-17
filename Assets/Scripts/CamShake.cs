@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CamShake : MonoBehaviour
 {
+    //Sky
     [SerializeField]
     Animator camAnim;
 

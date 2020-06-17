@@ -5,7 +5,7 @@
 ///   GitHub:         https://github.com/ivuecode/
 ///-----------------------------------------------------------------
 using UnityEngine;
-
+// ----------------------------- Script pour gérer le liquide (à ne pas faire attention) -----------------
 [ExecuteInEditMode]
 public class BlurController : MonoBehaviour
 {
